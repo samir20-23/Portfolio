@@ -22,15 +22,15 @@ body{
 ::-webkit-scrollbar {
   width: 12px; /* Width of the scrollbar */
 }
-
+/* test */
 /* Scrollbar track (background) */
 ::-webkit-scrollbar-track {
-  background: #261e3b;
+  background: #261e3bf6;
 }
 
 /* Scrollbar thumb (the handle) */
 ::-webkit-scrollbar-thumb {
-  background: #763bf6;
+  background: #763bf6f7;
 }
 
 /* Scrollbar thumb when hovered */

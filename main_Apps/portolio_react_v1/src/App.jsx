@@ -35,7 +35,7 @@ function App() {
     <div className="App lg:w-full w-min">
   <header className="App-header fixed w-full z-10 bg-current">
     <div className='flex items-center justify-between lg:hidden p-5'>
-      <h1 className="text-blue-500 text-4xl md:text-3xl font-bold">Ayoub <span>El Bouzidi</span></h1>
+      <h1 className="text-blue-500 text-4xl md:text-3xl font-bold">Samir <span>Aoulad Amar</span></h1>
       <span className='text-white p-6 menu' onClick={toggleMenu}>
         <FontAwesomeIcon className='w-12 h-12' icon={isMenuOpen ? faXmark:faBars} />
       </span>
@@ -43,7 +43,7 @@ function App() {
   
     <nav className={`flex top-0 left-0 h-full flex-col items-center lg:justify-between lg:block lg:flex lg:flex-row lg:space-y-0 p-4 bg-black text-white space-y-8 transition-transform duration-300  ${isMenuOpen ? 'block' : 'hidden'}`}>
       {/* Logo */}
-      <h1 className="text-blue-500 text-4xl md:text-3xl font-bold">Ayoub <span>El Bouzidi</span></h1>
+      <h1 className="text-blue-500 text-4xl md:text-3xl font-bold">Samir <span>Aoulad Amar</span></h1>
 
       {/* Navigation Links */}
       <div className="flex flex-col sm:flex-row text-sm sm:text-lg space-y-9 sm:space-y-0 sm:space-x-6">
@@ -68,7 +68,7 @@ function App() {
   </div>
   <div className="text-center lg:text-left">
     <h3 className="text-white text-4xl sm:text-3xl">
-      Hi, It's <span className="text-blue-500 font-bold">Ayoub El Bouzidi</span> <br />
+      Hi, It's <span className="text-blue-500 font-bold">Samir Aoulad Amar</span> <br />
       I'm a <span className="text-blue-500 font-bold animate-pulse">Full-Stack Developer</span>
     </h3>
     <p className="text-white mt-4 text-2xl md:text-base">
@@ -78,10 +78,10 @@ function App() {
     </p>
     {/* Social Icons */}
     <div className="flex justify-center lg:justify-start space-x-4 text-blue-500 text-5xl mt-6">
-      <a href="https://www.linkedin.com/in/ayoub-el-bouzidi-0897a9298/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/samir-aoulad-amar-a238a9334/" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faLinkedin} />
       </a>
-      <a href="https://github.com/Ayoub-El-Bouzidi" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/Samir-El-Bouzidi" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faGithub} />
       </a>
     </div>
@@ -91,7 +91,7 @@ function App() {
         Hire me
       </button>
       <button className="w-28 text-xl rounded-lg btn bg-blue-500 text-white hover:bg-blue-600 flex items-center justify-center">
-        <a href="/cv.pdf" download="Ayoub_El_Bouzidi_CV.pdf" className="flex items-center space-x-2 text-white">
+        <a href="/cv.pdf" download="Samir_Aoulad_Amar_cv.pdf" className="flex items-center space-x-2 text-white">
           <span>CV</span>
           <FontAwesomeIcon icon={faFileArrowDown} />
         </a>

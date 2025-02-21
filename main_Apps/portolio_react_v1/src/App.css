@@ -7,7 +7,7 @@
 
 body{
   font-family: 'Roboto', sans-serif;
-  background: #1a1a2e;
+  background: #1c1a2e;
   min-height: 100vh;
 }
 
@@ -16,7 +16,7 @@ body{
 }
 
 .icon-link:hover {
-  color: rgb(0, 8, 255); /* Change this to your preferred color */
+  color: rgb(81, 0, 255); /* Change this to your preferred color */
 }
 /* Scrollbar container */
 ::-webkit-scrollbar {
@@ -25,15 +25,15 @@ body{
 
 /* Scrollbar track (background) */
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #261e3b;
 }
 
 /* Scrollbar thumb (the handle) */
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
+  background: #763bf6;
 }
 
 /* Scrollbar thumb when hovered */
 ::-webkit-scrollbar-thumb:hover {
-  background: #60a5fa; /* Light blue when hovered */
+  background: #8c60fa; /* Light blue when hovered */
 }

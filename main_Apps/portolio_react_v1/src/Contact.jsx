@@ -46,8 +46,8 @@ function Contact() {
             <div>
                 <h1 className="text-4xl font-bold text-white mt-8">Contact Me</h1>
                 <h3 className="lg:text-2xl text-xl text-white mt-4"><span className='text-blue-500'><FontAwesomeIcon icon={faLocationDot} /></span> Tangier-Morocco</h3>
-                <h3 className="lg:text-2xl text-xl text-white mt-4"><span className='text-blue-500'><FontAwesomeIcon icon={faEnvelope} /></span> elbouzidi.ayoub28@gmail.com</h3>
-                <h3 className="lg:text-2xl text-xl text-white mt-4"><span className='text-blue-500'><FontAwesomeIcon icon={faPhone} /></span> +212 6 96 17 69 00</h3>
+                <h3 className="lg:text-2xl text-xl text-white mt-4"><span className='text-blue-500'><FontAwesomeIcon icon={faEnvelope} /></span> aouladamarsamir@gmail.com</h3>
+                <h3 className="lg:text-2xl text-xl text-white mt-4"><span className='text-blue-500'><FontAwesomeIcon icon={faPhone} /></span> +212 718087106</h3>
             </div>
             <div>
               {sent ? (

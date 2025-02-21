@@ -2,23 +2,7 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import { motion } from "framer-motion";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
@@ -30,23 +14,29 @@ export default function Skills() {
       className="mb-24 max-w-[53rem] scroll-mt-28 text-center sm:mb-24"
     >
       <SectionHeading>My skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2.5 text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
-            key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}
-          >
-            {skill}
-          </motion.li>
-        ))}
-      </ul>
+      
+      <div className="flex flex-col items-center space-y-4">
+        <img
+          src="https://skillicons.dev/icons?i=laravel,bootstrap,html,css,vscode,github,vue,figma,tailwind,git"
+          alt="Skills Set 1"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=nodejs,javascript,angular,linux,md,react,python,npm"
+          alt="Skills Set 2"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=php,androidstudio,kotlin,arduino,kali,mysql"
+          alt="Skills Set 3"
+        />
+        <img
+          src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=50&duration=4&pause=20&color=9B31FE&center=true&vCenter=true&width=482&lines=..."
+          alt="Samir Aoulad Amar"
+        />
+        <img
+          src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=17&duration=4000&pause=1000&color=6D26BFFF&center=true&vCenter=true&width=482&lines=If+you+fail+get+up+and+try+again"
+          alt="Typing SVG"
+        />
+      </div>
     </section>
   );
 }

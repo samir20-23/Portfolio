@@ -28,29 +28,34 @@ export const links = [
   },
 ] as const;
 
-export const projectsData = [
+export const projectsData = [ 
   {
-    title: "Desky: Private Call for bids.",
+    title: "DevStore: Electronic Products Store",
     description:
-      "Desky aims to bridge the gap between startups and markets in the Moroccan Business landscape.",
+      "DevStore is an online store offering a wide range of electronic products, including AirPods, smartphones, and more, with a focus on quality and customer satisfaction.",
     tags: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind",
-      "Zustand",
-      "Express",
-      "MongoDB",
+      "laravel",
+      "bootstrap",
+      "JavaScript",
+      "Responsive Design",
+      "E-commerce",
     ],
     imageUrl: Desky,
-    pageUrl: "https://desky-eight.vercel.app/en",
+    pageUrl: "https://samir20-23.github.io/DevStore/DevStore/index.html",
   },
   {
-    title: "CarHub",
+    title: "Avoncy: Vue.js & AJAX E-Commerce Store",
     description:
-      "Car Showcase website presents various car types, showcasing comprehensive information in a well-designed format with advanced filtering and pagination support for an enhanced user experience.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "API"],
-    imageUrl: CarHub,
-    pageUrl: "https://carhub-lovat.vercel.app/",
+      "Avoncy is an online store built with Vue.js and AJAX, providing a seamless shopping experience with dynamic updates and a modern interface. It's a perfect solution for managing and selling a variety of products online.",
+      tags: [
+        "Vue.js",
+        "AJAX",
+        "E-commerce",
+        "JavaScript",
+        "Responsive Design",
+      ],
+      imageUrl: Desky,
+      pageUrl: "https://samir20-23.github.io/DevStore/DevStore/index.html",
   },
 ] as const;
 

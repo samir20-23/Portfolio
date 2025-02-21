@@ -19,28 +19,27 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        I am web developer from <span className="font-medium">Morocco</span>, I
-        decided to pursue my passion for programming. I enrolled in a coding
-        bootcamp and learned{" "}
-        <span className="font-medium">full-stack web development</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">
-          React, Next.js, Node.js, and MongoDB
-        </span>
-        . I am also familiar with PHP and MySQL. I am always looking to learn
-        new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a software
-        developer.
+        I am a <span className="font-medium">Full-Stack Developer</span> from{" "}
+        <span className="font-medium">Tanger, Morocco</span>. I specialize in
+        creating innovative, user-friendly applications using modern technologies
+        like <span className="font-medium">React, laravel , angular , Node.js, MySQL, PHP</span>, and{" "}
+        <span className="font-medium">Laravel</span>. I have experience in both backend and frontend
+        development, with a focus on delivering seamless user experiences and
+        optimized solutions.
       </p>
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, and watching movies. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}
-        <span className="font-medium">history and philosophy</span>.
+        I am always eager to learn and grow, and currently, I'm interested in
+        mobile development with <span className="font-medium">Kotlin</span> and{" "}
+        <span className="font-medium">Jetpack Compose</span>. My passion for programming is driven by the
+        challenge of solving complex problems and continuously improving myself.
+      </p>
+      <p>
+        <span className="italic">When I'm not coding</span>, I enjoy playing football, reading, and traveling.
+        I’m fluent in <span className="font-medium">Arabic</span> (native), with a basic level of{" "}
+        <span className="font-medium">English</span> and school-level{" "}
+        <span className="font-medium">French</span>.
+      </p>
+      <p> 
       </p>
     </motion.section>
   );

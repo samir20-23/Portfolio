@@ -81,7 +81,7 @@ function App() {
       <a href="https://www.linkedin.com/in/samir-aoulad-amar-a238a9334/" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faLinkedin} />
       </a>
-      <a href="https://github.com/Samir-El-Bouzidi" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/samir20-23" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faGithub} />
       </a>
     </div>

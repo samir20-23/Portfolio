@@ -38,9 +38,9 @@ const Educations = () => {
           >
             <div className="w-4 h-4 bg-blue-600 rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
             <div className="absolute left-[-270px] w-64 p-4 border-2 border-solid border-blue-500 rounded-full bg-gray-800">
-              <h2 className="text-white text-lg text-center">High School</h2>
+              <h2 className="text-white text-lg text-center"> School</h2>
               <p className="text-white text-lg">
-                Bachelor's in PC Science (2021 - 2022)
+                 (2021 - 2022)
               </p>
             </div>
           </motion.div>
@@ -54,8 +54,8 @@ const Educations = () => {
           >
             <div className="w-4 h-4 bg-blue-600 rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
             <div className="absolute left-[50px] w-64 p-4 border-2 border-solid border-blue-500 rounded-full bg-gray-800">
-              <h2 className="text-white text-lg text-center">University</h2>
-              <p className="text-white text-lg">Economy Science (2022 - 2023)</p>
+              <h2 className="text-white text-lg text-center">school</h2>
+              <p className="text-white text-lg">(2022 - 2023)</p>
             </div>
           </motion.div>
 

@@ -3,7 +3,11 @@
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&duration=4&pause=20&color=6D26BFFF&center=true&vCenter=true&width=482&lines=Portfolio+Projects" alt="Samir Aoulad Amar" />
 </h1> 
 </div>
- 
+<div id="badges"  align="center">
+<a href="https://samiraouladamar-portfolio.vercel.app/" align="center">
+<img  src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=20&duration=4&pause=20&color=255cc3&center=true&vCenter=true&width=482&lines=click+here+to+show+my+portfolio" alt="portfolio Samir Aoulad Amar" />
+</a> 
+</div>
 <div id="badges"  align="center">
   <img src="https://media3.giphy.com/media/xT0BKqD9olWLpzPb2w/giphy.webp?cid=ecf05e47brr7shv4hvzp6etvbil3rv1kc0vc7loo83pmnr9q&ep=v1_gifs_related&rid=giphy.webp&ct=g" width="20">  
  <h3>

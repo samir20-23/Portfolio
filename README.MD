@@ -1,7 +1,8 @@
 
 <div id="badges"  align="center">
+click here to show my portfolio :
 <a href="https://samiraouladamar-portfolio.vercel.app/" align="center">
-click here to show my portfolio : <img  src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=15&duration=4&pause=20&color=255cc3&center=true&vCenter=true&width=482&lines=🔗+🔗" alt="portfolio Samir Aoulad Amar" />
+🔗🔗🔗🔗🔗
 </a> 
 <div id="badges"  align="center">
 <h1 align="center">

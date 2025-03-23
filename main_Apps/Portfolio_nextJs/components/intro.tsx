@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
@@ -13,6 +13,23 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
+  // Random Icon Logic
+  const icons = ["💻", "🚀", "🦾", "🎉", "🔥", "👨‍💻", "⚡", "✨", "😃", "⚠", "✅", "🌟", "🪂"];
+  const [randomIcon, setRandomIcon] = useState("🚀");
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * icons.length);
+    setRandomIcon(icons[randomIndex]);
+
+    // Change the icon every 3 seconds
+    const interval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * icons.length);
+      setRandomIcon(icons[randomIndex]);
+    }, 3000);
+
+    return () => clearInterval(interval); // Cleanup interval when the component unmounts
+  }, []);
 
   return (
     <section
@@ -33,15 +50,15 @@ export default function Intro() {
             <Image
               src="/samir.jpg"
               alt="Aoulad Amar Samir"
-              width="288"
-              height="288"
+              width="190"
+              height="190" 
               quality="100"
               priority={true}
-              className="h-72 w-72 rounded-xl object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-30 w-30 rounded-xl object-cover border-[0.15rem] rounded-[200px] border-white shadow-xl"
             />
           </motion.div>
           <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
+            className="absolute bottom-0 right-0 text-4xl animate-pulse"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -51,9 +68,18 @@ export default function Intro() {
               duration: 0.7,
             }}
           >
-            🚀
+            {randomIcon}
           </motion.span>
         </div>
+
+      </div>
+      <div id="badges" className="flex justify-center items-center w-full mt-4">
+        <h1>
+          <img
+            src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&duration=4&pause=20&color=6D26BFFF&center=true&vCenter=true&width=482&lines=Samir+Aoulad+Amar"
+            alt="Samir Aoulad Amar"
+          />
+        </h1>
       </div>
       <motion.h1
         className="mb-10 mt-8 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"

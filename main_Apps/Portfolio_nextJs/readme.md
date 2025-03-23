@@ -5,7 +5,7 @@
 
 ```bash
 bun install 
-bun ren dev
+bun run dev
 :::or:::
 npm install
 npm run dev

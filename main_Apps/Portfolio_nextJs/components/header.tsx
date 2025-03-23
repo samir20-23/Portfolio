@@ -58,15 +58,7 @@ export default function Header() {
             </motion.li>
           ))}
         </ul>
-      </nav>
-      <div id="badges" className="flex justify-center items-center w-full mt-4">
-        <h1>
-          <img
-            src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&duration=4&pause=20&color=6D26BFFF&center=true&vCenter=true&width=482&lines=Samir+Aoulad+Amar"
-            alt="Samir Aoulad Amar"
-          />
-        </h1>
-      </div>
+      </nav> 
     </header>
   );
 }

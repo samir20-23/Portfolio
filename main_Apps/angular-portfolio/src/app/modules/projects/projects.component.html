@@ -1,0 +1,25 @@
+<section class="projects star-bg">
+  <div class="container">
+    <div class="projects__header">
+      <h1>Projects</h1>
+      <p class="projects__intro">Some of my web projects combining frontend, backend, and UI/UX design.</p>
+    </div>
+    
+    <div class="projects__grid">
+      <div class="project-card" *ngFor="let project of projects">
+        <div class="project-card__image">
+          <img [src]="project.image" [alt]="project.title">
+        </div>
+        <div class="project-card__content">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <a [href]="project.link" class="project-card__link">View the project →</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="projects__more">
+      <a href="#" class="btn btn--primary">Explore More →</a>
+    </div>
+  </div>
+</section>

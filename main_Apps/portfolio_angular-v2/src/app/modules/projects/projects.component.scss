@@ -1,0 +1,102 @@
+.projects {
+  padding: 8rem 0 5rem;
+  min-height: 100vh;
+  
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(0, 255, 194, 0.5);
+      
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  
+  &__intro {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  &__more {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 194, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 194, 0.2);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 255, 194, 0.4);
+  }
+  
+  &__image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  
+  &__content {
+    padding: 1.5rem;
+    
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: #00FFC2;
+    }
+    
+    p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1rem;
+    }
+  }
+  
+  &__link {
+    font-size: 0.95rem;
+    color: #00FFC2;
+    display: inline-block;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateX(5px);
+      text-shadow: 0 0 5px rgba(0, 255, 194, 0.8);
+    }
+  }
+}

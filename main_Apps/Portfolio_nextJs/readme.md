@@ -48,7 +48,7 @@ This project provides a **contact form** integrated into a portfolio website, al
 
 ```bash
 git clone https://github.com/samir20-23/portfolio.git
-cd portfolio
+cd portfolio/portfolio_nextjs
 ```
 
 ### 2️⃣ Install Dependencies

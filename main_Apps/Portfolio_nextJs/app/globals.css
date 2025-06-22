@@ -13,3 +13,12 @@ html.dark {
 .borderBlack {
   @apply border border-black/10;
 }
+/* Hide scrollbar but keep scroll functionality */
+.scroll-hidden::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Optional */
+}
+.scroll-hidden {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}

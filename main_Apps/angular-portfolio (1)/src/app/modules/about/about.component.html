@@ -1,0 +1,72 @@
+<section class="about-page star-bg">
+  <div class="container">
+    <div class="about-page__header">
+      <h1>Who I Am</h1>
+      <p class="about-page__intro">Feel free to reach out for collaboration, questions, or just to say hi. I'd love to hear from you!</p>
+    </div>
+    
+    <div class="tabs">
+      <div class="tabs__nav">
+        <button 
+          class="tabs__btn" 
+          [class.active]="activeTab === 'education'"
+          (click)="setActiveTab('education')"
+        >
+          Education
+        </button>
+        <button 
+          class="tabs__btn" 
+          [class.active]="activeTab === 'skills'"
+          (click)="setActiveTab('skills')"
+        >
+          Hard Skills
+        </button>
+        <button 
+          class="tabs__btn" 
+          [class.active]="activeTab === 'experience'"
+          (click)="setActiveTab('experience')"
+        >
+          Experience
+        </button>
+      </div>
+      
+      <div class="tabs__content">
+        <!-- Education Tab -->
+        <div class="tab-panel" *ngIf="activeTab === 'education'">
+          <div class="education-grid">
+            <div class="education-card" *ngFor="let item of education">
+              <h3>{{ item.title }}</h3>
+              <p class="education-card__meta">
+                {{ item.period }} — {{ item.institution }}
+                <span *ngIf="item.location">– {{ item.location }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skills Tab -->
+        <div class="tab-panel" *ngIf="activeTab === 'skills'">
+          <div class="skills-grid">
+            <div class="skill-card" *ngFor="let skill of skills">
+              <div class="skill-card__icon">
+                <img src="assets/images/icons/{{ skill.icon }}.svg" alt="{{ skill.name }} icon">
+              </div>
+              <p class="skill-card__name">{{ skill.name }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Experience Tab -->
+        <div class="tab-panel" *ngIf="activeTab === 'experience'">
+          <div class="experience-grid">
+            <div class="experience-card" *ngFor="let item of experience">
+              <h3>{{ item.title }}</h3>
+              <p class="experience-card__meta">{{ item.period }} — {{ item.company }}</p>
+              <p class="experience-card__description">{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

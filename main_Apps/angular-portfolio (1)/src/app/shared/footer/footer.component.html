@@ -1,0 +1,64 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <div class="footer__logo">
+        <div class="logo-box">
+          <span>DD</span>
+        </div>
+        <p class="footer__tagline">Website Portfolio</p>
+      </div>
+      
+      <div class="footer__sitemap">
+        <div class="footer__links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/about">About</a></li>
+            <li><a routerLink="/projects">Project</a></li>
+            <li><a routerLink="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="#">Customer Support</a></li>
+            <li><a href="#">Delivery Details</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer__newsletter">
+        <h4>Join our newsletter</h4>
+        <form [formGroup]="newsletterForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <input 
+              type="email" 
+              formControlName="email" 
+              placeholder="Your email address"
+              [class.invalid]="newsletterForm.get('email')?.invalid && newsletterForm.get('email')?.touched"
+            >
+            <button type="submit" class="btn btn--primary" [disabled]="newsletterForm.invalid">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer__social">
+      <a href="#" class="social-icon social-icon--twitter">
+        <span class="material-icons">alternate_email</span>
+      </a>
+      <a href="#" class="social-icon social-icon--instagram">
+        <span class="material-icons">photo_camera</span>
+      </a>
+      <a href="#" class="social-icon social-icon--linkedin">
+        <span class="material-icons">work</span>
+      </a>
+    </div>
+    
+    <div class="footer__copyright">
+      <p>&copy; {{ 2025 }} Dina Dehbi. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

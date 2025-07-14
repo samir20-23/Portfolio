@@ -9,13 +9,26 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-
+import "../app/intro.css";
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   // Random Icon Logic
-  const icons = ["💻", "🚀", "🦾", "🎉", "🔥", "👨‍💻", "⚡", "✨", "😃", "⚠", "✅", "🌟", "🪂"];
+  const icons = [
+    "💻",
+    "🚀",
+    "🦾",
+    "🎉",
+    "🔥",
+    "👨‍💻",
+    "⚡",
+    "✨",
+    "😃",
+    "✅",
+    "🌟",
+    "🏆",
+  ];
   const [randomIcon, setRandomIcon] = useState("🚀");
 
   useEffect(() => {
@@ -46,14 +59,17 @@ export default function Intro() {
               type: "tween",
               duration: 0.2,
             }}
+            id="mg-container"
           >
             <Image
               src="/samir.jpg"
               alt="Aoulad Amar Samir"
-              width="190"
-              height="190" 
+              width="140"
+              height="140"
               quality="100"
               priority={true}
+              id="profile-img"
+              style={{ borderRadius: "50px", border: "none" }}
               className="h-30 w-30 rounded-xl object-cover border-[0.15rem] rounded-[200px] border-white shadow-xl"
             />
           </motion.div>
@@ -67,11 +83,11 @@ export default function Intro() {
               delay: 0.1,
               duration: 0.7,
             }}
+            id="randomIcon"
           >
             {randomIcon}
           </motion.span>
         </div>
-
       </div>
       <div id="badges" className="flex justify-center items-center w-full mt-4">
         <h1>
@@ -104,7 +120,8 @@ export default function Intro() {
           href="/aouladAmarSamir.pdf"
           download
         >
-          Get My CV <HiDownload className="opacity-60 group-hover:translate-y-0.5 transition" />
+          Get My CV{" "}
+          <HiDownload className="opacity-60 group-hover:translate-y-0.5 transition" />
         </a>
         <Link
           href="#contact"

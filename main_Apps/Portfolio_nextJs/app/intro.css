@@ -1,0 +1,35 @@
+ 
+/* 5) Responsive: scale down the container (and its circle) on smaller viewports */
+@media (max-width: 640px) {
+  #mg-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 36px;   /* half of 100px */
+  }
+  #mg-container::before {
+    border-radius: 36px;
+  }
+  #profile-img {
+    border-radius: 36px !important;
+  }
+  #randomIcon {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 400px) {
+  #mg-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 29px;   /* half of 80px */
+  }
+  #mg-container::before {
+    border-radius: 29px;
+  }
+  #profile-img {
+    border-radius: 29px !important;
+  }
+  #randomIcon {
+    font-size: 15px;
+  }
+}

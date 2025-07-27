@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,6 +13,7 @@ export default function Project({
   description,
   tags,
   imageUrl,
+  dynamicImages,
   pageUrl,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,6 +23,21 @@ export default function Project({
   });
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
+  // ✅ Use either static image or rotate dynamic ones
+  const [currentImage, setCurrentImage] = useState(
+    dynamicImages?.[0] || imageUrl
+  );
+
+  useEffect(() => {
+    if (!dynamicImages || dynamicImages.length === 0) return;
+
+    const interval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * dynamicImages.length);
+      setCurrentImage(dynamicImages[randomIndex]);
+    }, 3600);
+    return () => clearInterval(interval);
+  }, [dynamicImages]);
 
   return (
     <motion.div
@@ -34,8 +50,10 @@ export default function Project({
     >
       <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
         <Link href={pageUrl} target="_blank">
-        
-          <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem] overflow-y-auto max-h-[18rem] scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-white/30 scroll-hidden" style={{ scrollBehavior: "smooth" }}>
+          <div
+            className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem] overflow-y-auto max-h-[18rem] scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-white/30 scroll-hidden"
+            style={{ scrollBehavior: "smooth" }}
+          >
             <h3 className="text-2xl font-semibold">{title}</h3>
             <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
               {description}
@@ -44,7 +62,6 @@ export default function Project({
               {tags.map((tag, index) => (
                 <li
                   key={index}
-                  style={{ cursor: "pointer" }}
                   className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70 hover:bg-gray-200 dark:hover:bg-white/20"
                 >
                   {tag}
@@ -54,8 +71,10 @@ export default function Project({
           </div>
 
           <Image
-            src={imageUrl}
-            alt="Project I worked on"
+            src={currentImage}
+            alt="Project image"
+            width={600}
+            height={400}
             quality={95}
             className="absolute hidden sm:block top-16 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
               transition

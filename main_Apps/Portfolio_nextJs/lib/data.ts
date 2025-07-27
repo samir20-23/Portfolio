@@ -2,8 +2,8 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import Desky from "@/public/Desky.png";
 import SoliLMS from "@/public/SoliLMS.png";
+import FiveSystems from "@/public/fiveSystems/FiveSystems.png";
 
 import CarHub from "@/public/CarHub.png";
 
@@ -30,7 +30,7 @@ export const links = [
   },
 ] as const;
 
-export const projectsData = [ 
+export const projectsData = [
   {
     title: "DevStore: Electronic Products Store",
     description:
@@ -42,28 +42,50 @@ export const projectsData = [
       "Responsive Design",
       "E-commerce",
     ],
-    imageUrl: Desky,
+    dynamicImages: ["/stor/CarHub.png", "/stor/Desky.png"],
+    // imageUrl: Desky,
     pageUrl: "",
   },
- {
-  title: "SoliLMS: Centralized Educational Resource Management",
-  description:
-    "SoliLMS is a secure, Laravel-powered platform for organizing, sharing, and tracking pedagogical documents and resources. It features intuitive categorization, role-based access, real-time usage dashboards, and automatic notifications for updates or new materials.",
-  tags: [
-    "Laravel",
-    "PHP",
-    "Blade",
-    "Vue.js",
-    "MySQL",
-    "Resource Sharing",
-    "Role-Based Access",
-    "Dashboard",
-  ],
- imageUrl: SoliLMS,   //   your imported SoliLMS logo asset
+  {
+    title: "SoliLMS: Centralized Educational Resource Management",
+    description:
+      "SoliLMS is a secure, Laravel-powered platform for organizing, sharing, and tracking pedagogical documents and resources. It features intuitive categorization, role-based access, real-time usage dashboards, and automatic notifications for updates or new materials.",
+    tags: [
+      "Laravel",
+      "PHP",
+      "Blade",
+      "Vue.js",
+      "MySQL",
+      "Resource Sharing",
+      "Role-Based Access",
+      "Dashboard",
+    ],
+    dynamicImages: ["/Solilms/SoliLMS.png", "/Solilms/SoliLMS2.png "],
+    // imageUrl: SoliLMS, //   your imported SoliLMS logo asset
 
-  pageUrl: "https://github.com/samir20-23/FileRouge_v2",
-}
-,
+    pageUrl: "https://github.com/samir20-23/FileRouge_v2",
+  },
+  ,
+  {
+    title: "Five Systems: Technical Installations & Maintenance",
+    description:
+      "Five Systems is a Moroccan company based in Tangier specializing in the design, installation, and maintenance of high-quality electrical, HVAC, plumbing, and fire safety systems for residential and commercial projects.",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "SCSS",
+      "Tailwind CSS",
+      "Responsive Design",
+    ],
+    dynamicImages: [
+      "/fiveSystems/fivesystem0.png",
+      "/fiveSystems/fivesystem1.png",
+      "/fiveSystems/fivesystem2.png",
+      "/fiveSystems/FiveSystems.png",
+    ],
+    pageUrl: "https://five-systems.vercel.app",
+  },
 ] as const;
 
 export const skillsData = [

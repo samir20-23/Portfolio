@@ -64,12 +64,12 @@ export default function Intro() {
             <Image
               src="/samir.jpg"
               alt="Aoulad Amar Samir"
-              width="140"
-              height="140"
+              width="150"
+              height="150"
               quality="100"
               priority={true}
               id="profile-img"
-              style={{ borderRadius: "50px", border: "none" }}
+              style={{ borderRadius: "50px", border: "2px solid white" }}
               className="h-30 w-30 rounded-xl object-cover border-[0.15rem] rounded-[200px] border-white shadow-xl"
             />
           </motion.div>

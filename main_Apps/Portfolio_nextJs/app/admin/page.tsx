@@ -2,13 +2,31 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AdminPage() {
+  const router = useRouter();
   const [jsonStr, setJsonStr] = useState<string>(""); // holds the file text
   const [status, setStatus] = useState<string>("");
 
   useEffect(() => {
-    // load raw JSON text from our API route
+    const club = localStorage.getItem("clubName");
+    const clubExpiry = localStorage.getItem("clubExpiry");
+
+    // check if value exists and not expired
+    if (!club || !clubExpiry || new Date().getTime() > Number(clubExpiry)) {
+      const answer = prompt("What is your club?");
+      if (answer?.toLowerCase() === "barca") {
+        const oneDayLater = new Date().getTime() + 24 * 60 * 60 * 1000;
+        localStorage.setItem("clubName", "barca");
+        localStorage.setItem("clubExpiry", oneDayLater.toString());
+      } else {
+        router.push("/"); // redirect to home
+        return;
+      }
+    }
+
+    // fetch JSON content
     fetch("/api/data")
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -20,21 +38,22 @@ export default function AdminPage() {
       .catch((err) => {
         setStatus("Error loading file: " + err.message);
       });
-  }, []);
+  }, [router]);
 
   const handleSave = async () => {
-    // send whatever is in the textarea straight to the API
-    const res = await fetch("/api/data", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: jsonStr,
-    });
+    if (confirm("Are you sure you want to save?")) {
+      const res = await fetch("/api/data", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: jsonStr,
+      });
 
-    if (res.ok) {
-      setStatus("✅ Saved, no syntax check.");
-    } else {
-      const err = await res.json();
-      setStatus("❌ Save failed: " + err.error);
+      if (res.ok) {
+        setStatus("✅ Saved, no syntax check.");
+      } else {
+        const err = await res.json();
+        setStatus("❌ Save failed: " + err.error);
+      }
     }
   };
 

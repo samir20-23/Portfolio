@@ -86,7 +86,7 @@ export default function Project({
               group-hover:-rotate-2
               group-even:group-hover:translate-x-3
               group-even:group-hover:translate-y-3
-              group-even:group-hover:rotate-2
+              group-even:group-even:rotate-2
               group-even:right-[initial] group-even:-left-40
             `}
           />

@@ -3,6 +3,7 @@
 click here to show my portfolio :
 <a href="https://samiraouladamar-portfolio.vercel.app/" align="center">
 🔗🔗🔗🔗🔗
+🔗🔗🔗🔗🔗
 </a> 
 <div id="badges"  align="center">
 <h1 align="center">
@@ -83,5 +84,7 @@ For any inquiries or feedback, feel free to reach out to me at:
 
 ## 🤝 Contributing
 
+If you'd like to contribute to any of the projects in this repository, feel free to fork the repo, make changes, and create a pull request.
+If you'd like to contribute to any of the projects in this repository, feel free to fork the repo, make changes, and create a pull request.
 If you'd like to contribute to any of the projects in this repository, feel free to fork the repo, make changes, and create a pull request.
 </div>

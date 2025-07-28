@@ -1,0 +1,38 @@
+{
+  "links": [
+    { "name": "Home", "hash": "#home" },
+    { "name": "About", "hash": "#about" },
+    { "name": "Skills", "hash": "#skills" },
+    { "name": "Projects", "hash": "#projects" },
+    { "name": "Contact", "hash": "#contact" }
+  ],
+  "projectsData": [
+    {
+      "title": "DevStore: Electronic Products Store",
+      "description": "DevStore is an online store offering a wide range of electronic products, including AirPods, smartphones, and more, with a focus on quality and customer satisfaction.",
+      "tags": ["laravel", "bootstrap", "JavaScript", "Responsive Design", "E-commerce"],
+      "dynamicImages": ["/stor/CarHub.png", "/stor/Desky.png"],
+      "pageUrl": ""
+    },
+    {
+      "title": "SoliLMS: Centralized Educational Resource Management",
+      "description": "SoliLMS is a secure, Laravel-powered platform for organizing, sharing, and tracking pedagogical documents and resources. It features intuitive categorization, role-based access, real-time usage dashboards, and automatic notifications for updates or new materials.",
+      "tags": ["Laravel", "PHP", "Blade", "Vue.js", "MySQL", "Resource Sharing", "Role-Based Access", "Dashboard"],
+      "dynamicImages": ["/Solilms/SoliLMS.png", "/Solilms/SoliLMS2.png"],
+      "pageUrl": "https://github.com/samir20-23/FileRouge_v2"
+    }, 
+    {
+      "title": "Five Systems: Technical Installations & Maintenance",
+      "description": "Five Systems is a Moroccan company based in Tangier specializing in the design, installation, and maintenance of high-quality electrical, HVAC, plumbing, and fire safety systems for residential and commercial projects.",
+      "tags": ["Next.js", "React", "TypeScript", "SCSS", "Tailwind CSS", "Responsive Design"],
+      "dynamicImages": [
+        "/fiveSystems/fivesystem0.png",
+        "/fiveSystems/fivesystem1.png",
+        "/fiveSystems/fivesystem2.png",
+        "/fiveSystems/FiveSystems.png"
+      ],
+      "pageUrl": "https://five-systems.vercel.app"
+    }
+  ],
+  "skillsData": ["HTML", "CSS", "Tailwind", "BootStrap", "SASS", "JavaScript", "TypeScript", "React.js", "Next.js", "Node.js", "Express.js", "PHP", "MongoDB", "MySQL", "WordPress", "Framer Motion", "Git", "Figma", "Framer"]
+} 

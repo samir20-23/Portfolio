@@ -1,99 +1,59 @@
-# Dina Dehbi Portfolio
+# PortfolioAngular
 
-A modern, responsive portfolio website built with Angular 16+ and Sass, featuring a dark theme with neon teal accents and starfield background.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
 
-## Features
+## Development server
 
-- **Modern Design**: Dark theme with neon teal (#00FFC2) accents and starfield background
-- **Responsive**: Mobile-first design that works on all devices
-- **Angular 16+**: Built with the latest Angular features
-- **Lazy Loading**: Optimized performance with lazy-loaded modules
-- **Sass Styling**: Organized SCSS with variables, mixins, and BEM methodology
-- **Interactive Elements**: Smooth animations and hover effects
-- **Contact Form**: Functional contact form with validation
+To start a local development server, run:
 
-## Pages
-
-- **Home**: Hero section with introduction and about preview
-- **About**: Tabbed interface showing education, skills, and experience
-- **Projects**: Showcase of web development projects
-- **Contact**: Contact form and information
-
-## Installation
-
-1. Clone the repository:
-\`\`\`bash
-git clone <repository-url>
-cd portfolio
-\`\`\`
-
-2. Install dependencies:
-\`\`\`bash
-npm install
-\`\`\`
-
-3. Start the development server:
-\`\`\`bash
+```bash
 ng serve
-\`\`\`
+```
 
-4. Open your browser and navigate to `http://localhost:4200`
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Build
+## Code scaffolding
 
-To build the project for production:
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-\`\`\`bash
-ng build --prod
-\`\`\`
+```bash
+ng generate component component-name
+```
 
-The build artifacts will be stored in the `dist/` directory.
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-## Project Structure
+```bash
+ng generate --help
+```
 
-\`\`\`
-src/
-├── app/
-│   ├── modules/
-│   │   ├── home/
-│   │   ├── about/
-│   │   ├── projects/
-│   │   └── contact/
-│   ├── shared/
-│   │   ├── header/
-│   │   └── footer/
-│   ├── app-routing.module.ts
-│   ├── app.component.ts
-│   └── app.module.ts
-├── assets/
-│   └── images/
-├── styles.scss
-└── index.html
-\`\`\`
+## Building
 
-## Technologies Used
+To build the project run:
 
-- Angular 16+
-- TypeScript
-- Sass/SCSS
-- RxJS
-- Angular Router
-- Reactive Forms
+```bash
+ng build
+```
 
-## Color Scheme
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-- Primary Background: #0B0F1A
-- Text Color: #FFFFFF
-- Accent Color: #00FFC2 (Neon Teal)
-- Card Background: rgba(255, 255, 255, 0.05)
+## Running unit tests
 
-## Browser Support
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+```bash
+ng test
+```
 
-## License
+## Running end-to-end tests
 
-This project is licensed under the MIT License.
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

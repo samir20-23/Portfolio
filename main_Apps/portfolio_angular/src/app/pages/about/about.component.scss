@@ -1,0 +1,23 @@
+.about {
+  padding: 40px;
+
+  h2 {
+    color: #222;
+    font-size: 2rem;
+  }
+
+  p {
+    margin: 10px 0 20px;
+    font-size: 1.1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+  }
+}

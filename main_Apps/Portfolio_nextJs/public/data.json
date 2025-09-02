@@ -95,13 +95,13 @@
         "Admin Panel"
       ],
       "dynamicImages": [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XCrOHiC4T32b4G6CyAq4AxEcHxRHhVkiag&s",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XCrOHiC4T32b4G6CyAq4AxEcHxRHhVkiag&s",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XCrOHiC4T32b4G6CyAq4AxEcHxRHhVkiag&s",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XCrOHiC4T32b4G6CyAq4AxEcHxRHhVkiag&s",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XCrOHiC4T32b4G6CyAq4AxEcHxRHhVkiag&s",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XCrOHiC4T32b4G6CyAq4AxEcHxRHhVkiag&s",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XCrOHiC4T32b4G6CyAq4AxEcHxRHhVkiag&s"
+      "/kan-kids/kan1.png",
+        "/kan-kids/kan2.png",
+        "/kan-kids/kan3.png",
+        "/kan-kids/kan4.png",
+        "/kan-kids/kan5.png",
+        "/kan-kids/kan6.png",
+        "/kan-kids/kan7.png"
       ],
       "pageUrl": "https://kan-kids-ecommerce.vercel.app/"
     }

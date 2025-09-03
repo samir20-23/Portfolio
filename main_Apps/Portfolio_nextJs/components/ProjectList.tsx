@@ -1,11 +1,11 @@
 "use client"; // Mark as client component
 
-import data from "../data/data.json";
+import { projectsData } from "@/lib/projects";
 import Project from "./project";
 import { useState } from "react";
 
 export default function ProjectList() {
-  const projects = data.projectsData;
+  const projects = projectsData;
   const [visibleCount, setVisibleCount] = useState(
     projects.length > 10 ? 10 : projects.length
   );

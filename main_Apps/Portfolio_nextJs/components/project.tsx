@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -9,8 +9,8 @@ type ProjectProps = {
   title: string;
   description: string;
   tags: string[];
-  imageUrl?: string;
-  dynamicImages?: string[];
+  imageUrl?: string | StaticImageData;
+  dynamicImages?: (string | StaticImageData)[];
   pageUrl: string;
 };
 

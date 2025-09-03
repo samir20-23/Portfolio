@@ -1,6 +1,6 @@
 "use client"; // Mark as client component
 
-import data from "../public/data.json";
+import data from "../data/data.json";
 import Project from "./project";
 import { useState } from "react";
 

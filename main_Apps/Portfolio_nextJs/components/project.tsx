@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
+import SectionHeading from "./section-heading";
 
 type ProjectProps = {
   title: string;
@@ -39,9 +40,9 @@ export default function Project({
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
       className="group mb-3 sm:mb-8 last:mb-0"
-    >
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <Link href={pageUrl || "#"} target="_blank">
+    > 
+          <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
+        <Link href={pageUrl || ""} target="_blank">
           <div
             className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem] overflow-y-auto max-h-[18rem] scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-white/30 scroll-hidden"
             style={{ scrollBehavior: "smooth" }}
@@ -68,7 +69,7 @@ export default function Project({
               alt={`Screenshot of ${title}`}
               width={600}
               height={400}
-              className={`absolute hidden sm:block top-16 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
+              className={`sm:absolute block top-16 -right-40 w-full sm:w-[28.25rem] rounded-t-lg shadow-2xl
                 transition
                 group-hover:scale-[1.04]
                 group-hover:-translate-x-3
@@ -77,7 +78,12 @@ export default function Project({
                 group-even:group-hover:translate-x-3
                 group-even:group-hover:translate-y-3
                 group-even:group-even:rotate-2
-                group-even:right-[initial] group-even:-left-40`}
+                group-even:right-[initial] group-even:-left-40
+                sm:group-even:ml-[18rem] sm:group-even:mr-0 sm:group-even:left-auto sm:group-even:right-auto
+                object-cover object-center
+                mt-4 sm:mt-0
+                max-h-[15rem] sm:max-h-none
+                `}
             />
           )}
         </Link>

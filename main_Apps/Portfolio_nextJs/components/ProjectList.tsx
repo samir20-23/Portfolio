@@ -3,8 +3,11 @@
 import { projectsData } from "@/lib/data";
 import Project from "./project";
 import { useState } from "react";
+import SectionHeading from "./section-heading";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function ProjectList() {
+  const { ref } = useSectionInView("Projects", 0.5);
   const projects = projectsData;
   const [visibleCount, setVisibleCount] = useState(
     projects.length > 10 ? 10 : projects.length
@@ -17,7 +20,8 @@ export default function ProjectList() {
       : "space-y-8";
 
   return (
-    <div>
+    <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
+      <SectionHeading>My projects</SectionHeading>
       <div className={containerClass}>
         {projects.slice(0, visibleCount).map((proj) => (
           <Project key={proj.title + proj.pageUrl} {...proj} />
@@ -34,6 +38,6 @@ export default function ProjectList() {
           </button>
         </div>
       )}
-    </div>
+    </section>
   );
 }

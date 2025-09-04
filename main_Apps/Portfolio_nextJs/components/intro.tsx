@@ -84,6 +84,9 @@ export default function Intro() {
               duration: 0.7,
             }}
             id="randomIcon"
+            style={{
+              fontSize: '15px'
+            }}
           >
             {randomIcon}
           </motion.span>

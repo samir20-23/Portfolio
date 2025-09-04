@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -9,8 +8,8 @@ type ProjectProps = {
   title: string;
   description: string;
   tags: string[];
-  imageUrl?: string | StaticImageData;
-  dynamicImages?: (string | StaticImageData)[];
+  imageUrl?: string;
+  dynamicImages?: string[];
   pageUrl: string;
 };
 
@@ -34,15 +33,6 @@ export default function Project({
   const [currentImage, setCurrentImage] = useState(
     dynamicImages?.[0] || imageUrl || ""
   );
-
-  useEffect(() => {
-    if (!dynamicImages?.length) return;
-    const interval = setInterval(() => {
-      const i = Math.floor(Math.random() * dynamicImages.length);
-      setCurrentImage(dynamicImages[i]);
-    }, 3600);
-    return () => clearInterval(interval);
-  }, [dynamicImages]);
 
   return (
     <motion.div
@@ -73,12 +63,11 @@ export default function Project({
           </div>
 
           {currentImage && (
-            <Image
-              src={currentImage}
+            <img
+              src={currentImage as string}
               alt={`Screenshot of ${title}`}
               width={600}
               height={400}
-              quality={95}
               className={`absolute hidden sm:block top-16 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
                 transition
                 group-hover:scale-[1.04]

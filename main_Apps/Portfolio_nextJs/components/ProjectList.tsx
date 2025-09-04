@@ -1,6 +1,6 @@
 "use client"; // Mark as client component
 
-import { projectsData } from "@/lib/projects";
+import { projectsData } from "@/lib/data";
 import Project from "./project";
 import { useState } from "react";
 

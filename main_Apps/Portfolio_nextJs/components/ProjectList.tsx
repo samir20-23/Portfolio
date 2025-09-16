@@ -14,10 +14,7 @@ export default function ProjectList() {
   );
 
   // Determine layout: vertical list if <=6, grid wrap if >6
-  const containerClass =
-    projects.length > 6
-      ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-      : "space-y-8";
+  const containerClass = "flex flex-wrap justify-center gap-8";
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28 mb-28">

@@ -1,24 +1,173 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 html {
-  --line-color: #5c3ad7;
+    --line-color: #5c3ad7;
 }
 
 html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+    --line-color: rgba(255, 255, 255, 0.2);
 }
 
 .borderBlack {
-  @apply border border-black/10;
+    @apply border border-black/10;
 }
+
+
 /* Hide scrollbar but keep scroll functionality */
+
 .scroll-hidden::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* Optional */
+    width: 0px;
+    background: transparent;
+    /* Optional */
 }
+
 .scroll-hidden {
-  -ms-overflow-style: none;  /* IE & Edge */
-  scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;
+    /* IE & Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+
+/* mouse  */
+
+
+/* mouse */
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient( circle, var(--primary2) 0%, var(--primary-light) 50%, rgba(0, 255, 255, 0) 100%);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.255);
+    transition: transform 0.05s linear;
+    z-index: 2;
+}
+
+.particle {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--primary2);
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(0, 38, 255, 0.477);
+    animation: fadeOut 0.9s linear forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+
+/* icons in profile img  */
+
+
+/* ✨ Floating badges animations — add to globals.css */
+
+
+/* float path 1: slow wandering (use for top-left badge) */
+
+@keyframes floatPath1 {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate3d(6px, -8px, 0) rotate(-2deg);
+    }
+    /* right + up */
+    50% {
+        transform: translate3d(12px, 4px, 0) rotate(1deg);
+    }
+    /* right + down */
+    75% {
+        transform: translate3d(-6px, 8px, 0) rotate(-1deg);
+    }
+    /* left + down */
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    /* back home */
+}
+
+
+/* float path 2: slower, bigger wander (use for bottom-right badge) */
+
+@keyframes floatPath2 {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    20% {
+        transform: translate3d(-10px, -6px, 0) rotate(1deg);
+    }
+    /* left + up */
+    40% {
+        transform: translate3d(8px, -12px, 0) rotate(-1deg);
+    }
+    /* right + up */
+    60% {
+        transform: translate3d(14px, 6px, 0) rotate(2deg);
+    }
+    /* right + down */
+    80% {
+        transform: translate3d(-8px, 10px, 0) rotate(-2deg);
+    }
+    /* left + down */
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+
+/* utility classes to apply the animations */
+
+.animate-float1 {
+    animation: floatPath1 6.5s ease-in-out infinite;
+    will-change: transform;
+    transform-origin: center;
+    left: 162%;
+    top: 114px;
+}
+
+.animate-float2 {
+    animation: floatPath2 9s ease-in-out infinite;
+    will-change: transform;
+    transform-origin: center;
+    left: -74%;
+}
+
+
+/* Respect user preference for reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-float1,
+    .animate-float2 {
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
+
+/* hide floating badges on coarse-pointer devices (touch) to avoid accidental taps */
+
+@media (pointer: coarse) {
+    .animate-float1,
+    .animate-float2 {
+        display: none !important;
+    }
 }

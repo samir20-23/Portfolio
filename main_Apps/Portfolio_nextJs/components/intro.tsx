@@ -61,13 +61,34 @@ export default function Intro() {
             }}
             id="mg-container"
           >
+            <div className="relative">
+              <div className="absolute  animate-float1">
+                <a
+                  href="https://github.com/samir20-23/"
+                  target="_blank"
+                  className="w-10 h-10 flex items-center justify-center rounded-full text-white transition"
+                >
+                  <i className="fab fa-github"></i>
+                </a>
+              </div>
+
+              <div className="absolute bottom-4  animate-float2">
+                <a
+                  href="https://www.linkedin.com/in/samir-aoulad-amar-a238a9334/"
+                  target="_blank"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white transition"
+                >
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
             <Image
               src="/samir.jpg"
               alt="Aoulad Amar Samir"
               width="150"
               height="150"
-              quality="100"
-              priority={true}
+              quality={100}
+              priority
               id="profile-img"
               style={{ borderRadius: "50px", border: "2px solid white" }}
               className="h-30 w-30 rounded-xl object-cover border-[0.15rem] rounded-[200px] border-white shadow-xl"
@@ -85,7 +106,7 @@ export default function Intro() {
             }}
             id="randomIcon"
             style={{
-              fontSize: '15px'
+              fontSize: "15px",
             }}
           >
             {randomIcon}

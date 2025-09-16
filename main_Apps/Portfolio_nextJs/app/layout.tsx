@@ -1,3 +1,4 @@
+// app/layout.tsx
 import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -6,6 +7,7 @@ import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +23,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth">
+      <head>
+        {/* Load GSAP via next/script for predictable timing */}
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+          strategy="afterInteractive"
+        />
+
+        {/* Font Awesome (single version). self-closing in JSX */}
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+
+        {/* favicon / avatar (self-closing) */}
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://avatars.githubusercontent.com/u/144660881?v=4"
+        />
+
+        {/* your local script (runs after hydration) */}
+        <Script src="/script.js" strategy="afterInteractive" />
+      </head>
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 relative pt-24 sm:pt-32 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
@@ -30,6 +55,7 @@ export default function RootLayout({
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
+            <div className="cursor" />
             {children}
             <Footer />
 

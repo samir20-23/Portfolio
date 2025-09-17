@@ -1,0 +1,408 @@
+{
+    "meta": {
+        "file": "dataAI.json",
+        "owner_full_name": "Samir Aoulad Amar",
+        "short_name": "Samir",
+        "location": "Tangier, Morocco",
+        "email": "aouladamarsamir@gmail.com",
+        "cv_files": {
+            "en": "AouladAmarSamir_cv-E.pdf",
+            "fr": "AouladAmarSamir_cv-F.pdf"
+        },
+        "generated_at": "2025-09-18"
+    },
+    "profile": {
+        "name": "Samir Aoulad Amar",
+        "display_name": "Samir Aoulad Amar",
+        "title": "Full-Stack Developer — Frontend & Backend",
+        "short_title": "Full-Stack Developer",
+        "summary": "I build scalable, user-friendly web applications using React, Next.js, Laravel and Node.js.",
+        "about_short": "Full-Stack Developer from Tangier. Focus on clean architecture, performance and UX.",
+        "about_long": "I’m a results-driven Full-Stack Developer based in Tangier, Morocco. I create maintainable web applications with a strong focus on clean architecture, performance and great UX. I have practical experience with backend systems (Laravel, MySQL, PHP) and modern frontends (React, Next.js, Tailwind). Currently exploring mobile development with Kotlin and Jetpack Compose. In my free time I enjoy football, reading and traveling.",
+        "education": [{
+            "school": "SOLICODE - OFPPT",
+            "program": "Full-stack web development bootcamp",
+            "start": "2023-10",
+            "end": "2025-06",
+            "notes": "Practical full-stack training"
+        }],
+        "languages": {
+            "arabic": "native",
+            "darija": "native",
+            "english": "B1 (basic/intermediate)",
+            "french": "A1 (school level)"
+        },
+        "contact": {
+            "email": "aouladamarsamir@gmail.com",
+            "location": "Tangier, Morocco"
+        },
+        "hobbies": ["football", "reading", "traveling"]
+    },
+    "skills": {
+        "frontend": ["HTML", "CSS", "Bootstrap", "SASS", "Tailwind CSS", "JavaScript", "TypeScript", "React", "Next.js", "Vue.js"],
+        "backend": ["PHP", "Laravel", "Node.js", "Express", "REST APIs"],
+        "databases": ["MySQL", "MongoDB", "Firebase Firestore"],
+        "tools": ["Git", "GitHub", "Composer", "NPM/Yarn", "Figma", "Stripe", "Firebase"],
+        "other": ["Responsive Design", "E-commerce", "Authentication", "i18n"]
+    },
+    "projects": [{
+            "id": "devstore",
+            "title": "DevStore",
+            "summary": "Online store for electronics with product catalog, responsive design and e-commerce features.",
+            "technologies": ["Laravel", "Bootstrap", "JavaScript", "MySQL", "Responsive Design"],
+            "tags": ["e-commerce", "store", "responsive"],
+            "alt": "Screenshot of DevStore storefront",
+            "slug": "devstore",
+            "live": null,
+            "github": null
+        },
+        {
+            "id": "solilms",
+            "title": "SoliLMS",
+            "summary": "Secure platform for organizing and sharing educational resources with role-based access and dashboards.",
+            "technologies": ["Laravel", "PHP", "Blade", "Vue.js", "MySQL"],
+            "tags": ["lms", "education", "dashboard"],
+            "alt": "Screenshot of SoliLMS dashboard",
+            "slug": "solilms",
+            "live": null,
+            "github": null
+        },
+        {
+            "id": "fivesystems",
+            "title": "Five Systems",
+            "summary": "Corporate website for technical installations & maintenance with modern responsive UI.",
+            "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+            "tags": ["company", "website", "corporate"],
+            "alt": "Screenshot of Five Systems website",
+            "slug": "five-systems",
+            "live": null,
+            "github": null
+        },
+        {
+            "id": "tiktokflow",
+            "title": "TikTok-Flow",
+            "summary": "Short-video social app with authentication, uploads, likes, comments and realtime updates.",
+            "technologies": ["Next.js", "React", "Firebase Firestore", "Supabase"],
+            "tags": ["social", "media", "realtime"],
+            "alt": "Screenshot of TikTok-Flow feed",
+            "slug": "tiktok-flow",
+            "live": null,
+            "github": null
+        },
+        {
+            "id": "kan-kids",
+            "title": "Kan-Kids",
+            "summary": "Multilingual kids clothing e-commerce with cart, admin panel, Stripe and WhatsApp ordering.",
+            "technologies": ["Next.js", "React", "Tailwind CSS", "Laravel API", "Firebase", "Stripe", "i18n"],
+            "tags": ["e-commerce", "multilingual", "admin"],
+            "alt": "Screenshot of Kan-Kids product page",
+            "slug": "kan-kids",
+            "live": null,
+            "github": null
+        }
+    ],
+    "responses": {
+        "fallback": {
+            "en": "I didn't understand that. Try asking: 'hello', 'what is your name', 'where are you located', or 'projects'.",
+            "fr": "Je n'ai pas compris. Essayez: 'bonjour', 'comment tu t'appelles', 'où es-tu', ou 'projets'.",
+            "ar": "ما فهمتش. جرّب تكتب: 'سلام', 'شنو سميتك', 'فين كتسكن', أو 'المشاريع'."
+        },
+        "greeting": {
+            "type": "template",
+            "variants": {
+                "en": ["Hello — I’m here to help! Ask me about my projects, skills, or how to contact me."],
+                "fr": ["Bonjour — je suis là pour aider ! Demande mes projets, compétences ou contact."],
+                "ar": ["سلام — أنا هنا باش نعاونك! سول على المشاريع، المهارات أو التواصل."]
+            }
+        },
+        "about": {
+            "type": "template",
+            "variants": {
+                "en": ["I’m Samir, a Full-Stack Developer from Tangier. I build scalable web apps with React, Next.js, Laravel and Node.js."],
+                "fr": ["Je suis Samir, développeur Full-Stack de Tanger. Je crée des applications web avec React, Next.js, Laravel et Node.js."],
+                "ar": ["أنا سمير، مطور Full-Stack من طنجة. كنصوب تطبيقات ويب ب React، Next.js، Laravel و Node.js."]
+            }
+        }
+    },
+    "triggers": [{
+            "id": "greet",
+            "patterns": [
+                "hello",
+                "hi",
+                "hey",
+                "salam",
+                "salam 3likom",
+                "as-salamu alaykum",
+                "bonjour",
+                "salut",
+                "hola"
+            ],
+            "response": {
+                "action": "respond",
+                "response_key": "greeting"
+            }
+        },
+        {
+            "id": "ask_name_direct",
+            "patterns": [
+                "what is your name",
+                "what's your name",
+                "who are you",
+                "comment tu t'appelles",
+                "quel est ton nom",
+                "shnou smitek",
+                "chnou smitek",
+                "kifach tsmitk",
+                "شنو سميتك",
+                "سمّيتك شنو",
+                "اسمك شنو"
+            ],
+            "response": {
+                "action": "direct_value",
+                "value_key": "profile.name",
+                "value_mode": "raw"
+            },
+            "notes": "When matching name questions, return only the raw name string (no 'my name is')."
+        },
+        {
+            "id": "ask_location",
+            "patterns": [
+                "where are you",
+                "where are you located",
+                "where do you live",
+                "ou es-tu",
+                "où es-tu",
+                "وين كتسكن",
+                "فين ساكن",
+                "فين كتكون"
+            ],
+            "response": {
+                "action": "direct_value",
+                "value_key": "profile.contact.location",
+                "value_mode": "raw"
+            }
+        },
+        {
+            "id": "ask_email",
+            "patterns": [
+                "what is your email",
+                "how can i contact you",
+                "contact email",
+                "email",
+                "adresse email",
+                "ton email",
+                "البريد الالكتروني",
+                "علاش نبعت لك",
+                "فين نقدر نراسل"
+            ],
+            "response": {
+                "action": "direct_value",
+                "value_key": "profile.contact.email",
+                "value_mode": "raw"
+            }
+        },
+        {
+            "id": "ask_cv",
+            "patterns": [
+                "get my cv",
+                "download cv",
+                "cv",
+                "mon cv",
+                "telecharger cv",
+                "حمل السيرة الذاتية",
+                "فين نلقى السيفي"
+            ],
+            "response": {
+                "action": "template",
+                "templates": {
+                    "en": "You can download my CV here: {{cv_en_link}}",
+                    "fr": "Téléchargez mon CV ici : {{cv_fr_link}}",
+                    "ar": "تقدر تحمل السيرة الذاتية من هنا: {{cv_en_link}}"
+                },
+                "replace_keys": {
+                    "cv_en_link": "/assets/cv/AouladAmarSamir_cv-E.pdf",
+                    "cv_fr_link": "/assets/cv/AouladAmarSamir_cv-F.pdf"
+                }
+            }
+        },
+        {
+            "id": "ask_skills",
+            "patterns": [
+                "skills",
+                "what are your skills",
+                "compétences",
+                "mes compétences",
+                "شنو المهارات ديالك",
+                "شنو كتخدم"
+            ],
+            "response": {
+                "action": "list_value",
+                "value_key": "skills",
+                "format": "compact"
+            }
+        },
+        {
+            "id": "ask_projects_list",
+            "patterns": [
+                "projects",
+                "show projects",
+                "mes projets",
+                "projets",
+                "liste des projets",
+                "projects list",
+                "شنو المشاريع",
+                "وريني المشاريع"
+            ],
+            "response": {
+                "action": "list_projects",
+                "value_key": "projects",
+                "format": "card"
+            }
+        },
+        {
+            "id": "project_detail_lookup",
+            "patterns": [
+                "tell me about {project}",
+                "info {project}",
+                "parle-moi de {project}",
+                "parlez-moi de {project}",
+                "شنو على {project}",
+                "عطيني معلومات على {project}",
+                "{project} details",
+                "{project} info"
+            ],
+            "response": {
+                "action": "project_lookup",
+                "project_key_field": "id",
+                "response_mode": "card"
+            },
+            "notes": "Replace {project} with project id or title (case-insensitive). Example ids: devstore, solilms, fivesystems, tiktokflow, kan-kids"
+        },
+        {
+            "id": "ask_education",
+            "patterns": [
+                "are you a student",
+                "where did you study",
+                "education",
+                "where did you learn",
+                "formation",
+                "etudes",
+                "فين قرات",
+                "فين قريتي"
+            ],
+            "response": {
+                "action": "direct_value",
+                "value_key": "profile.education[0].school",
+                "value_mode": "raw"
+            }
+        },
+        {
+            "id": "ask_hobbies",
+            "patterns": [
+                "what do you do in free time",
+                "hobbies",
+                "loisirs",
+                "شنو كتدير فالوقت الفاضي",
+                "شنو الهوايات"
+            ],
+            "response": {
+                "action": "direct_value",
+                "value_key": "profile.hobbies",
+                "value_mode": "list"
+            }
+        },
+        {
+            "id": "ask_languages",
+            "patterns": [
+                "what languages do you speak",
+                "languages",
+                "langues",
+                "شنو اللغات اللي كتقرا",
+                "شنو اللغات"
+            ],
+            "response": {
+                "action": "direct_value",
+                "value_key": "profile.languages",
+                "value_mode": "object"
+            }
+        },
+        {
+            "id": "thanks",
+            "patterns": ["thank you", "thanks", "merci", "شكرا"],
+            "response": {
+                "action": "template",
+                "templates": {
+                    "en": "You're welcome — happy to help!",
+                    "fr": "De rien — ravi d'aider !",
+                    "ar": "بلا جميل — مرحبا!"
+                }
+            }
+        }
+    ],
+    "matching": {
+        "case_sensitive": false,
+        "trim_punctuation": true,
+        "strip_accents": true,
+        "use_contains_match": true,
+        "use_word_boundaries": false,
+        "language_detection": true,
+        "note": "Implement simple normalization on user input before pattern matching: lowercase, trim, remove extra spaces."
+    },
+    "formatting_rules": {
+        "direct_value_modes": {
+            "raw": "Return raw string or value as-is (no extra words).",
+            "list": "Return a comma-separated list of values.",
+            "object": "Return JSON object/stringified object for code to parse.",
+            "compact": "Return short comma-separated categories (for UI display)."
+        },
+        "templates": "Templates may contain {{key}} placeholders that will be replaced with values from meta or profile."
+    },
+    "examples": {
+        "example_inputs_and_expected_outputs": [{
+                "input": "hello",
+                "expected": "Greeting template in user's language (e.g. 'Hello — I’m here to help!...')."
+            },
+            {
+                "input": "what is your name?",
+                "expected": "Samir Aoulad Amar"
+            },
+            {
+                "input": "where are you located?",
+                "expected": "Tangier, Morocco"
+            },
+            {
+                "input": "tell me about DevStore",
+                "expected": "Project card with DevStore summary and tech list"
+            },
+            {
+                "input": "donne moi ton CV",
+                "expected": "Template with link to fr CV"
+            },
+            {
+                "input": "salam",
+                "expected": "Greeting in Arabic/Darija"
+            }
+        ]
+    },
+    "ui_hints": {
+        "bot_message_style": {
+            "bot_background_class": "ai-message",
+            "bot_text_class": "ai-text",
+            "user_message_class": "user-text",
+            "bot_color_hint": "#f0f0ff",
+            "user_color_hint": "#e8ffe8",
+            "note": "These are hints only; style in CSS/JS as you like. The user wanted AI responses to appear in a different color than user messages."
+        },
+        "chat_button": {
+            "position": "bottom-right",
+            "style": "round",
+            "dark_mode_aware": true
+        }
+    },
+    "dev_notes": {
+        "how_to_match_project": "Normalize input, try exact id match, then title contains match. Use synonyms array (project titles and ids).",
+        "name_response_exact": "Return only the raw name string (profile.name) when name is asked; do not prepend 'My name is'.",
+        "education_response_exact": "Return school name only for education queries.",
+        "fallback_logic": "If no pattern matches, return 'fallback' in detected language; consider suggesting nearby intents."
+    }
+}

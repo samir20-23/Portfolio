@@ -73,3 +73,15 @@
         font-size: 15px;
     }
 }
+
+@media (max-width: 640px) {
+    .layla-thumbtwo .textcircletext {
+        width: 120px;
+        height: 120px;
+        font-size: 12px;
+    }
+    .layla-thumbtwo .textcircletext span {
+        font-size: 12px;
+        transform-origin: 0 60px;
+    }
+}

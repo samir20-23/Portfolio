@@ -46,6 +46,7 @@ html.dark {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.079);
     transition: transform 0.05s linear;
     z-index: 2;
+    display: none;
 }
 
 .particle {
@@ -56,7 +57,9 @@ html.dark {
     border-radius: 50%;
     pointer-events: none;
     box-shadow: 0 0 10px rgba(0, 38, 255, 0.16);
-    animation: fadeOut 0.9s linear forwards;
+    /* animation: fadeOut 0.9s linear forwards;
+     */
+    display: none;
 }
 
 @keyframes fadeOut {
@@ -141,7 +144,7 @@ html.dark {
     will-change: transform;
     transform-origin: center;
     left: 162%;
-    top: 114px;
+    top: 88px;
 }
 
 .animate-float2 {

@@ -43,19 +43,19 @@ html.dark {
     position: absolute;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.255);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.079);
     transition: transform 0.05s linear;
     z-index: 2;
 }
 
 .particle {
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 4px;
+    height: 4px;
     background: var(--primary2);
     border-radius: 50%;
     pointer-events: none;
-    box-shadow: 0 0 10px rgba(0, 38, 255, 0.477);
+    box-shadow: 0 0 10px rgba(0, 38, 255, 0.16);
     animation: fadeOut 0.9s linear forwards;
 }
 

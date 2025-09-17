@@ -16,18 +16,6 @@ export default function Intro() {
 
   // Random Icon Logic
   const icons = [
-    "💻",
-    "🚀",
-    "🦾",
-    "🎉",
-    "🔥",
-    "👨‍💻",
-    "⚡",
-    "✨",
-    "😃",
-    "✅",
-    "🌟",
-    "🏆",
   ];
   const [randomIcon, setRandomIcon] = useState("🚀");
 

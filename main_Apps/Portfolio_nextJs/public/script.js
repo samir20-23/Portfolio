@@ -1,5 +1,17 @@
 // public/script.js
 (function() {
+    //text circle
+    const text = document.querySelector(".textcircletext");
+    text.innerHTML = text.innerText
+        .split("")
+        .map(
+            (char, i) => `<span style="transform:rotate(${i * 10}deg)">${char}</span>`
+        )
+        .join("");
+    //text circle
+
+
+
     const cursor = document.querySelector(".cursor");
     if (!cursor) return;
 

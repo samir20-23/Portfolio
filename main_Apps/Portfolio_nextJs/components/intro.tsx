@@ -82,17 +82,29 @@ export default function Intro() {
                 </a>
               </div>
             </div>
-            <Image
-              src="/samir.jpg"
-              alt="Aoulad Amar Samir"
-              width="150"
-              height="150"
-              quality={100}
-              priority
-              id="profile-img"
-              style={{ borderRadius: "50px", border: "2px solid white" }}
-              className="h-30 w-30 rounded-xl object-cover border-[0.15rem] rounded-[200px] border-white shadow-xl"
-            />
+
+            <div
+              className="layla-thumb layla-thumbtwo m-auto text-center mt-4 mb-13"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
+              <Image
+                src="/samir.jpg"
+                alt="Aoulad Amar Samir"
+                width="160"
+                height="160"
+                quality={100}
+                priority
+                id="profile-img" 
+                style={{ borderRadius: "100px", border: "2px solid white" }}
+                className=" rounded-xl object-cover border-[0.15rem] rounded-[200px] border-white shadow-xl animate-float"
+              />
+              <div className="textcircle">
+                <div className="textcircletext">
+                  <p>fullstack developer frontEnd backEnd</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
           <motion.span
             className="absolute bottom-0 right-0 text-4xl animate-pulse"

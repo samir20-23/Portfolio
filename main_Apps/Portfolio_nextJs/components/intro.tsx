@@ -15,8 +15,7 @@ export default function Intro() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   // Random Icon Logic
-  const icons = [
-  ];
+  const icons = ["", "", "", "", "", "", "", "", "", "", "", ""];
   const [randomIcon, setRandomIcon] = useState("🚀");
 
   useEffect(() => {
@@ -83,7 +82,7 @@ export default function Intro() {
                 height="160"
                 quality={100}
                 priority
-                id="profile-img" 
+                id="profile-img"
                 style={{ borderRadius: "100px", border: "2px solid white" }}
                 className=" rounded-xl object-cover border-[0.15rem] rounded-[200px] border-white shadow-xl animate-float"
               />

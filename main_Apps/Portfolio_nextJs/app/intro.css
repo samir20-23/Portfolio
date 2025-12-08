@@ -45,12 +45,15 @@
         border-radius: 36px;
         /* half of 100px */
     }
+
     #mg-container::before {
         border-radius: 36px;
     }
+
     #profile-img {
         border-radius: 100px !important;
     }
+
     #randomIcon {
         font-size: 36px;
     }
@@ -63,12 +66,15 @@
         border-radius: 100px;
         /* half of 80px */
     }
+
     #mg-container::before {
         border-radius: 100px;
     }
+
     #profile-img {
         border-radius: 100px !important;
     }
+
     #randomIcon {
         font-size: 15px;
     }
@@ -80,6 +86,7 @@
         height: 120px;
         font-size: 12px;
     }
+
     .layla-thumbtwo .textcircletext span {
         font-size: 12px;
         transform-origin: 0 60px;

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html {
     --line-color: #5c3ad7;
 }
@@ -38,7 +39,7 @@ html.dark {
 .cursor {
     width: 20px;
     height: 20px;
-    background: radial-gradient( circle, var(--primary2) 0%, var(--primary-light) 50%, rgba(0, 255, 255, 0) 100%);
+    background: radial-gradient(circle, var(--primary2) 0%, var(--primary-light) 50%, rgba(0, 255, 255, 0) 100%);
     border-radius: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -67,10 +68,12 @@ html.dark {
         opacity: 1;
         transform: scale(1);
     }
+
     50% {
         opacity: 0.5;
         transform: scale(1.5);
     }
+
     100% {
         opacity: 0;
         transform: scale(2);
@@ -90,21 +93,26 @@ html.dark {
     0% {
         transform: translate3d(0, 0, 0) rotate(0deg);
     }
+
     25% {
         transform: translate3d(6px, -8px, 0) rotate(-2deg);
     }
+
     /* right + up */
     50% {
         transform: translate3d(12px, 4px, 0) rotate(1deg);
     }
+
     /* right + down */
     75% {
         transform: translate3d(-6px, 8px, 0) rotate(-1deg);
     }
+
     /* left + down */
     100% {
         transform: translate3d(0, 0, 0) rotate(0deg);
     }
+
     /* back home */
 }
 
@@ -115,21 +123,26 @@ html.dark {
     0% {
         transform: translate3d(0, 0, 0) rotate(0deg);
     }
+
     20% {
         transform: translate3d(-10px, -6px, 0) rotate(1deg);
     }
+
     /* left + up */
     40% {
         transform: translate3d(8px, -12px, 0) rotate(-1deg);
     }
+
     /* right + up */
     60% {
         transform: translate3d(14px, 6px, 0) rotate(2deg);
     }
+
     /* right + down */
     80% {
         transform: translate3d(-8px, 10px, 0) rotate(-2deg);
     }
+
     /* left + down */
     100% {
         transform: translate3d(0, 0, 0) rotate(0deg);
@@ -158,6 +171,7 @@ html.dark {
 /* Respect user preference for reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
+
     .animate-float1,
     .animate-float2 {
         animation: none !important;
@@ -169,8 +183,42 @@ html.dark {
 /* hide floating badges on coarse-pointer devices (touch) to avoid accidental taps */
 
 @media (pointer: coarse) {
+
     .animate-float1,
     .animate-float2 {
         display: none !important;
     }
+}
+
+#boxModel {
+    position: relative;
+}
+
+#model {
+    position: absolute;
+    width: 1263px;
+    height: 725px;
+    opacity: 0.1;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+canvas a {
+    display: none !important;
+    opacity: 0;
+}
+
+#model>a,
+#model>a img {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+:global(#model > a),
+:global(#model > a img) {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }

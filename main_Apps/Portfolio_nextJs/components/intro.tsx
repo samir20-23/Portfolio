@@ -10,33 +10,63 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import "../app/intro.css";
+
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
-  // Random Icon Logic
-  const icons = ["", "", "", "", "", "", "", "", "", "", "", ""];
+  const icons = ["🔥", "✨", "🚀", "👨‍💻", "🎯", "💡", "⚡️", "🌟", "🧠", "🛠", "📦", "🎉"];
   const [randomIcon, setRandomIcon] = useState("🚀");
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * icons.length);
-    setRandomIcon(icons[randomIndex]);
+    const pick = () => {
+      const idx = Math.floor(Math.random() * icons.length);
+      setRandomIcon(icons[idx]);
+    };
 
-    // Change the icon every 3 seconds
-    const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * icons.length);
-      setRandomIcon(icons[randomIndex]);
-    }, 3000);
-
-    return () => clearInterval(interval); // Cleanup interval when the component unmounts
+    pick();
+    const interval = setInterval(pick, 3000);
+    return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const win = window;
+
+    if (!win.UnicornStudio) {
+      win.UnicornStudio = { isInitialized: false };
+
+      const script = document.createElement("script");
+      script.src =
+        "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.5.2/dist/unicornStudio.umd.js";
+      script.async = true;
+
+      script.onload = () => {
+        if (!win.UnicornStudio.isInitialized) {
+          win.UnicornStudio.init();
+          win.UnicornStudio.isInitialized = true;
+        }
+      };
+
+      (document.head || document.body).appendChild(script);
+    } else {
+      if (!win.UnicornStudio.isInitialized) {
+        win.UnicornStudio.init();
+        win.UnicornStudio.isInitialized = true;
+      }
+    }
+  }, []);
+
 
   return (
     <section
       ref={ref}
       id="home"
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+
     >
+     
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
@@ -75,6 +105,8 @@ export default function Intro() {
               data-aos="fade-up"
               data-aos-duration="2000"
             >
+
+
               <Image
                 src="/samir.jpg"
                 alt="Aoulad Amar Samir"
@@ -118,6 +150,7 @@ export default function Intro() {
             src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&duration=4&pause=20&color=6D26BFFF&center=true&vCenter=true&width=482&lines=Samir+Aoulad+Amar"
             alt="Samir Aoulad Amar"
           />
+
         </h1>
       </div>
       <motion.h1
@@ -163,6 +196,8 @@ export default function Intro() {
             href="https://www.linkedin.com/in/samir-aoulad-amar-a238a9334/"
             target="_blank"
           >
+
+
             <BsLinkedin />
           </a>
           <a

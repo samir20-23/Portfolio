@@ -68,11 +68,15 @@ export default function RootLayout({
             <Footer />
             <SocialDock />
             <Toaster position="top-right" />
-            <ChatAi />
-            <ThemeSwitch />
+            <div
+              className="fixed  right-3 bg-white w-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950 dark:border-gray-800 z-50"
+              style={{ bottom: "36px" }}  >
+              <ChatAi />
+              <ThemeSwitch />
+            </div>
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>
-    </html>
+    </html >
   );
 }

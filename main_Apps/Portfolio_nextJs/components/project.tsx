@@ -73,6 +73,7 @@ export default function Project({
           >
             Explore Project Details
             <span className="block w-4 h-[1px] bg-white group-hover/link:bg-purple-400 group-hover/link:translate-x-1 transition-all" />
+            <FaArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
           </Link>
         </div>
       </div>

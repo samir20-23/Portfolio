@@ -1,27 +1,129 @@
 {
   "links": [
-    { "name": "Home", "hash": "#home" },
-    { "name": "About", "hash": "#about" },
-    { "name": "Skills", "hash": "#skills" },
-    { "name": "Projects", "hash": "#projects" },
-    { "name": "Contact", "hash": "#contact" }
+    {
+      "name": "Home",
+      "hash": "#home"
+    },
+    {
+      "name": "About",
+      "hash": "#about"
+    },
+    {
+      "name": "Skills",
+      "hash": "#skills"
+    },
+    {
+      "name": "Projects",
+      "hash": "#projects"
+    },
+    {
+      "name": "Contact",
+      "hash": "#contact"
+    }
   ],
   "projectsData": [
     {
-      "title": "DevStore: Electronic Products Store",
-      "description": "DevStore is an online store offering a wide range of electronic products, including AirPods, smartphones, and more, with a focus on quality and customer satisfaction.",
+      "title": "Tusitala: Luxury Napa Valley Estate Platform",
+      "slug": "tusitala-napa-estate",
+      "description": "A high-end real estate and hospitality platform built for a private Napa Valley residence. I architected the cloud infrastructure using AWS Lightsail to ensure high availability and performance. The front-end experience was crafted using WordPress and Elementor, featuring a sophisticated, multi-page architecture (The Estate, Experience, Gallery, Location) designed for high-net-worth clients. The project focuses on refined aesthetics, seamless navigation for monthly and extended stay inquiries, and full mobile responsiveness to match the luxury branding of the property.",
       "tags": [
-        "laravel",
-        "bootstrap",
-        "JavaScript",
+        "AWS Lightsail",
+        "WordPress",
+        "Elementor",
+        "Cloud Hosting",
+        "Luxury UI/UX",
         "Responsive Design",
-        "E-commerce"
+        "Lead Generation",
+        "Real Estate Tech"
       ],
-      "dynamicImages": ["/stor/CarHub.png", "/stor/Desky.png"],
-      "pageUrl": ""
+      "dynamicImages": [
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagehome.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/homePage/section1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/homePage/section2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpageExperience.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/experiencePage/section1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/experiencePage/section2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagetheEstate.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagelocation.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/locationPage/section1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/locationPage/section2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagegallery.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/contactform.png"
+      ],
+      "pageUrl": "https://tusitalanapa.com"
+    },
+    {
+      "title": "TCF-Canada: Exam Simulation & Training Platform",
+      "slug": "tcf-canada",
+      "description": "A technical simulation platform built to replicate the TCF Canada exam environment. I developed a custom 'Exam Engine' that manages timed sessions and complex question types like MCQs, Oral comprehension, and Matching. The logic uses Next.js API routes to communicate with Supabase for real-time data storage. I integrated Stripe and PayPal to handle the payment flow: when a user pays, a database trigger automatically grants them test attempts. The app includes a Student Dashboard to review past attempts with detailed scoring and an Admin Panel to manage the question bank and track user payments.",
+      "tags": [
+        "Next.js",
+        "Supabase (DB & Auth)",
+        "Tailwind CSS",
+        "Stripe API",
+        "PayPal SDK",
+        "Exam Engine Logic",
+        "Real-time Scoring",
+        "PostgreSQL"
+      ],
+      "dynamicImages": [
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/landingPageHeroSection.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/studentDashboard.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/TestPage.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/attempts.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/cardStartTest.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/dashboard.png"
+      ],
+      "pageUrl": "https://tcf-platform.vercel.app/"
+    },
+    {
+      "title": "Five Systems: Technical Installations & Maintenance",
+      "slug": "five-systems",
+      "description": "Five Systems is a Moroccan company based in Tangier specializing in the design, installation, and maintenance of high-quality electrical, HVAC, plumbing, and fire safety systems for residential and commercial projects.",
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "SCSS",
+        "Tailwind CSS",
+        "Responsive Design"
+      ],
+      "dynamicImages": [
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem0.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/FiveSystems.png"
+      ],
+      "pageUrl": "https://five-systems.vercel.app"
+    },
+    {
+      "title": "Atelier Duré: Artisanal E-commerce Store",
+      "slug": "atelier-dure-shopify",
+      "description": "A premium e-commerce platform built on Shopify for a handcrafted ceramics brand. I managed the end-to-end store setup, including custom theme liquid modifications to align with the brand’s 'Art of Handmade' aesthetic. The project involved advanced product catalog management with complex variant pricing (Sets of 2, 4, 6, and 12), SEO optimization for artisanal keywords, and the integration of a seamless, high-conversion checkout flow. I focused on maintaining a minimalist UI/UX that reflects the organic nature of the pottery products.",
+      "tags": [
+        "Shopify",
+        "Liquid",
+        "E-commerce",
+        "Product Management",
+        "UI/UX Design",
+        "SEO",
+        "Payment Gateway",
+        "Responsive Design"
+      ],
+      "dynamicImages": [
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/fullhomepage.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section3.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section4.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section5.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/contactForm.png"
+      ],
+      "pageUrl": "https://atelierdure.com/"
     },
     {
       "title": "SoliLMS: Centralized Educational Resource Management",
+      "slug": "solilms",
       "description": "SoliLMS is a secure, Laravel-powered platform for organizing, sharing, and tracking pedagogical documents and resources. It features intuitive categorization, role-based access, real-time usage dashboards, and automatic notifications for updates or new materials.",
       "tags": [
         "Laravel",
@@ -33,30 +135,15 @@
         "Role-Based Access",
         "Dashboard"
       ],
-      "dynamicImages": ["/Solilms/SoliLMS.png", "/Solilms/SoliLMS2.png"],
+      "dynamicImages": [
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS2.png"
+      ],
       "pageUrl": "https://github.com/samir20-23/FileRouge_v2"
     },
     {
-      "title": "Five Systems: Technical Installations & Maintenance",
-      "description": "Five Systems is a Moroccan company based in Tangier specializing in the design, installation, and maintenance of high-quality electrical, HVAC, plumbing, and fire safety systems for residential and commercial projects.",
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "SCSS",
-        "Tailwind CSS",
-        "Responsive Design"
-      ],
-      "dynamicImages": [
-        "/fiveSystems/fivesystem0.png",
-        "/fiveSystems/fivesystem1.png",
-        "/fiveSystems/fivesystem2.png",
-        "/fiveSystems/FiveSystems.png"
-      ],
-      "pageUrl": "https://five-systems.vercel.app"
-    },
-    {
       "title": "TikTok-Flow: Social Video Sharing App",
+      "slug": "tiktok-flow",
       "description": "TikTok-Flow is a social media platform that allows users to upload, view, and interact with short-form videos. Features include user authentication, video uploading, likes, comments, and real-time updates powered by Firebase Firestore.",
       "tags": [
         "Next.js",
@@ -70,17 +157,17 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "/tiktok-flow/tiktokflow1.png",
-        "/tiktok-flow/tiktokflow2.png",
-        "/tiktok-flow/tiktokflow3.png",
-        "/tiktok-flow/tiktokflow4.png",
-        "/tiktok-flow/tiktokflow1.png",
-        "/tiktok-flow/tiktokflow5.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow3.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow4.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow5.png"
       ],
       "pageUrl": "https://tiktok-flow.vercel.app"
     },
     {
       "title": "Kan-Kids: Kids Clothing E-commerce Store",
+      "slug": "kan-kids",
       "description": "Kan-Kids is an online store for children's clothing with multilingual support (Arabic/English). Features include product catalog with size & age filters, multiple images per product, cart & checkout, WhatsApp ordering integration, admin dashboard for inventory and orders, responsive design and performance optimizations.",
       "tags": [
         "Next.js",
@@ -95,13 +182,13 @@
         "Admin Panel"
       ],
       "dynamicImages": [
-      "/kan-kids/kan1.png",
-        "/kan-kids/kan2.png",
-        "/kan-kids/kan3.png",
-        "/kan-kids/kan4.png",
-        "/kan-kids/kan5.png",
-        "/kan-kids/kan6.png",
-        "/kan-kids/kan7.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan3.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan4.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan5.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan6.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan7.png"
       ],
       "pageUrl": "https://kan-kids-ecommerce.vercel.app/"
     }

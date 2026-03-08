@@ -29,34 +29,8 @@ export default function Intro() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
+  // initialization moved to layout.tsx
 
-    const win = window;
-
-    if (!win.UnicornStudio) {
-      win.UnicornStudio = { isInitialized: false };
-
-      const script = document.createElement("script");
-      script.src =
-        "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.5.2/dist/unicornStudio.umd.js";
-      script.async = true;
-
-      script.onload = () => {
-        if (!win.UnicornStudio.isInitialized) {
-          win.UnicornStudio.init();
-          win.UnicornStudio.isInitialized = true;
-        }
-      };
-
-      (document.head || document.body).appendChild(script);
-    } else {
-      if (!win.UnicornStudio.isInitialized) {
-        win.UnicornStudio.init();
-        win.UnicornStudio.isInitialized = true;
-      }
-    }
-  }, []);
 
 
   return (
@@ -66,7 +40,7 @@ export default function Intro() {
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
 
     >
-     
+
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div

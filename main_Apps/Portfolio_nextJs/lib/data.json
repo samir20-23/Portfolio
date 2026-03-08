@@ -1,10 +1,25 @@
 {
   "links": [
-    { "name": "Home", "hash": "#home" },
-    { "name": "About", "hash": "#about" },
-    { "name": "Skills", "hash": "#skills" },
-    { "name": "Projects", "hash": "#projects" },
-    { "name": "Contact", "hash": "#contact" }
+    {
+      "name": "Home",
+      "hash": "#home"
+    },
+    {
+      "name": "About",
+      "hash": "#about"
+    },
+    {
+      "name": "Skills",
+      "hash": "#skills"
+    },
+    {
+      "name": "Projects",
+      "hash": "#projects"
+    },
+    {
+      "name": "Contact",
+      "hash": "#contact"
+    }
   ],
   "projectsData": [
     {
@@ -18,8 +33,8 @@
         "E-commerce"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor/CarHub.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor/Desky.png"
+        "/stor/CarHub.png",
+        "/stor/Desky.png"
       ],
       "pageUrl": ""
     },
@@ -37,8 +52,8 @@
         "Dashboard"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS2.png"
+        "/Solilms/SoliLMS.png",
+        "/Solilms/SoliLMS2.png"
       ],
       "pageUrl": "https://github.com/samir20-23/FileRouge_v2"
     },
@@ -54,10 +69,10 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem0.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem1.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem2.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/FiveSystems.png"
+        "/fiveSystems/fivesystem0.png",
+        "/fiveSystems/fivesystem1.png",
+        "/fiveSystems/fivesystem2.png",
+        "/fiveSystems/FiveSystems.png"
       ],
       "pageUrl": "https://five-systems.vercel.app"
     },
@@ -76,11 +91,11 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow1.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow2.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow3.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow4.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow5.png"
+        "/tiktok-flow/tiktokflow1.png",
+        "/tiktok-flow/tiktokflow2.png",
+        "/tiktok-flow/tiktokflow3.png",
+        "/tiktok-flow/tiktokflow4.png",
+        "/tiktok-flow/tiktokflow5.png"
       ],
       "pageUrl": "https://tiktok-flow.vercel.app"
     },
@@ -100,15 +115,38 @@
         "Admin Panel"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan1.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan2.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan3.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan4.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan5.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan6.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan7.png"
+        "/kan-kids/kan1.png",
+        "/kan-kids/kan2.png",
+        "/kan-kids/kan3.png",
+        "/kan-kids/kan4.png",
+        "/kan-kids/kan5.png",
+        "/kan-kids/kan6.png",
+        "/kan-kids/kan7.png"
       ],
       "pageUrl": "https://kan-kids-ecommerce.vercel.app/"
+    },
+    {
+      "title": "TCF-Canada: Exam Simulation & Training Platform",
+      "description": "A technical simulation platform built to replicate the TCF Canada exam environment. I developed a custom 'Exam Engine' that manages timed sessions and complex question types like MCQs, Oral comprehension, and Matching. The logic uses Next.js API routes to communicate with Supabase for real-time data storage. I integrated Stripe and PayPal to handle the payment flow: when a user pays, a database trigger automatically grants them test attempts. The app includes a Student Dashboard to review past attempts with detailed scoring and an Admin Panel to manage the question bank and track user payments.",
+      "tags": [
+        "Next.js",
+        "Supabase (DB & Auth)",
+        "Tailwind CSS",
+        "Stripe API",
+        "PayPal SDK",
+        "Exam Engine Logic",
+        "Real-time Scoring",
+        "PostgreSQL"
+      ],
+      "dynamicImages": [
+        "/tcf_canada/landingPageHeroSection.png",
+        "/tcf_canada/studentDashboard.png",
+        "/tcf_canada/TestPage.png",
+        "/tcf_canada/attempts.png",
+        "/tcf_canada/cardStartTest.png",
+        "/tcf_canada/dashboard.png"
+      ],
+      "pageUrl": "https://tcf-platform.vercel.app/"
     }
   ],
   "skillsData": [

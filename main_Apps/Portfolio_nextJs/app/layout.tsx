@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
+import ChatAi from "@/components/chatAi";
 import SocialDock from "@/components/social-dock";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
@@ -48,7 +49,7 @@ export default function RootLayout({
         <Script src="/script.js" strategy="afterInteractive" />
       </head>
       <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-24 sm:pt-32 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 min-h-screen overflow-x-hidden`}
+        className={`${inter.className} bg-gray-50 text-gray-950 relative  dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 min-h-screen overflow-x-hidden`}
         id="boxModel"
       >
         <div
@@ -67,6 +68,7 @@ export default function RootLayout({
             <Footer />
             <SocialDock />
             <Toaster position="top-right" />
+            <ChatAi />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>

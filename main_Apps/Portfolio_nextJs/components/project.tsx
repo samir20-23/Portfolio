@@ -39,23 +39,16 @@ export default function Project({
       {/* Content Section */}
       <div className="p-8 flex flex-col flex-1 min-h-0">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
-            {title}
-          </h3>
-          <div className="flex gap-3 text-gray-400">
-            {pageUrl && (
-              <a href={pageUrl} target="_blank" className="hover:text-white transition-colors">
-                <FaExternalLinkAlt size={18} />
-              </a>
-            )}
-            <a href="https://github.com/samir20-23" target="_blank" className="hover:text-white transition-colors">
-              <FaGithub size={20} />
-            </a>
-          </div>
+          <Link href={`/projects/${slug}`}>
+            <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
+              {title}
+            </h3>
+          </Link>
+          {/* External links removed for a cleaner card look, as requested */}
         </div>
 
         {/* Scrollable Description Box */}
-        <div className="flex-1 overflow-y-auto pr-2 mb-6 custom-scrollbar-hide">
+        <div className="flex-1 overflow-y-auto pr-2 mb-6 custom-scrollbar-hide cursor-default">
           <p className="text-gray-400 leading-relaxed text-sm">
             {description}
           </p>

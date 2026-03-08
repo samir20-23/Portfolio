@@ -1,99 +1,84 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import React, { useMemo } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import SectionHeading from "./section-heading";
-
-type ProjectProps = {
-  title: string;
-  description: string;
-  tags: string[];
-  imageUrl?: string;
-  dynamicImages?: string[];
-  pageUrl: string;
-};
+import { ProjectData } from "@/lib/types";
+import ImageCarousel from "./image-carousel";
+import { FaExternalLinkAlt, FaGithub, FaArrowRight } from "react-icons/fa";
 
 export default function Project({
   title,
   description,
   tags,
-  imageUrl,
   dynamicImages,
+  slug,
   pageUrl,
-}: ProjectProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
-  const [currentImage, setCurrentImage] = useState(
-    dynamicImages?.[0] || imageUrl || ""
-  );
+}: ProjectData) {
+  // Randomize autoplay delay between 3000 and 7000ms
+  const randomDelay = useMemo(() => Math.floor(Math.random() * 4000) + 3000, []);
 
   return (
     <motion.div
-      ref={ref}
-      style={{ scale: scaleProgress, opacity: opacityProgress }}
-      className="group mb-3 sm:mb-8 last:mb-0"
-    > 
-          <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-auto sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20 transition">
-        <Link href={pageUrl || ""} target="_blank">
-          {/* Mobile Image */}
-          {currentImage && (
-            <img
-              src={currentImage as string}
-              alt={`Screenshot of ${title}`}
-              width={600}
-              height={400}
-              className="block sm:hidden w-full rounded-t-lg shadow-lg"
-            />
-          )}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col h-[550px] w-full max-w-[550px]"
+    >
+      {/* Image Section */}
+      <div className="relative h-64 w-full shrink-0 overflow-hidden">
+        <ImageCarousel images={dynamicImages || []} autoplayDelay={randomDelay} />
 
-          <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-            <h3 className="text-2xl font-semibold">{title}</h3>
-            <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-              {description}
-            </p>
-            <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-              {tags.map((tag) => (
-                <li
-                  key={tag}
-                  className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
+        {/* Hover Overlay for Carousel Nav Instruction */}
+        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity flex items-center justify-between px-4">
+          <span className="text-white/20 text-xs">Scroll/Click Arrows</span>
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="p-8 flex flex-col flex-1 min-h-0">
+        <div className="flex justify-between items-start mb-4">
+          <Link href={`/projects/${slug}`}>
+            <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
+              {title}
+            </h3>
+          </Link>
+          {/* External links removed for a cleaner card look, as requested */}
+        </div>
+
+        {/* Scrollable Description Box */}
+        <div className="flex-1 overflow-y-auto pr-2 mb-6 custom-scrollbar-hide cursor-default">
+          <p className="text-gray-400 leading-relaxed text-sm">
+            {description}
+          </p>
+        </div>
+
+        {/* Bottom Section: Tags and Link */}
+        <div className="mt-auto pt-6 border-t border-white/10">
+          <div className="flex flex-wrap gap-2 mb-6">
+            {tags.slice(0, 4).map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-[10px] font-medium text-purple-300 uppercase tracking-wider"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
 
-          {/* Desktop Image */}
-          {currentImage && (
-            <img
-              src={currentImage as string}
-              alt={`Screenshot of ${title}`}
-              width={600}
-              height={400}
-              className={`absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-                transition 
-                group-hover:scale-[1.04]
-                group-hover:-translate-x-3
-                group-hover:translate-y-3
-                group-hover:-rotate-2
+          <Link
+            href={`/projects/${slug}`}
+            className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-purple-400 transition-colors group/link"
+          >
+            Explore Project Details
+            <span className="block w-4 h-[1px] bg-white group-hover/link:bg-purple-400 group-hover/link:translate-x-1 transition-all" />
+          </Link>
+        </div>
+      </div>
 
-                group-even:group-hover:translate-x-3
-                group-even:group-hover:translate-y-3
-                group-even:group-hover:rotate-2
-
-                group-even:right-[initial] group-even:-left-40`}
-            />
-          )}
-        </Link>
-      </section>
+      {/* Glass Shine Effect */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
     </motion.div>
   );
 }

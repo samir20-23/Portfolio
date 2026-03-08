@@ -179,6 +179,9 @@ html.dark {
     }
 }
 
+#badges {
+    margin-top: 40px
+}
 
 /* hide floating badges on coarse-pointer devices (touch) to avoid accidental taps */
 
@@ -195,29 +198,33 @@ html.dark {
 }
 
 #model {
-    position: absolute;
-    width: 1263px;
-    height: 725px;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0.1;
-    left: 0;
-    top: 0;
     z-index: -1;
+    pointer-events: none;
 }
 
-canvas a {
-    display: none !important;
-    opacity: 0;
+#model canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
+.custom-scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+canvas a,
 #model>a,
 #model>a img {
-    display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-}
-
-:global(#model > a),
-:global(#model > a img) {
     display: none !important;
     visibility: hidden !important;
     pointer-events: none !important;

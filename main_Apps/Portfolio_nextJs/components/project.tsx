@@ -1,99 +1,80 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import SectionHeading from "./section-heading";
-
-type ProjectProps = {
-  title: string;
-  description: string;
-  tags: string[];
-  imageUrl?: string;
-  dynamicImages?: string[];
-  pageUrl: string;
-};
+import { ProjectData } from "@/lib/types";
+import ImageCarousel from "./image-carousel";
+import { FaExternalLinkAlt, FaGithub, FaArrowRight } from "react-icons/fa";
 
 export default function Project({
   title,
   description,
   tags,
-  imageUrl,
   dynamicImages,
-  pageUrl,
-}: ProjectProps) {
+  slug,
+}: ProjectData) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
 
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
-  const [currentImage, setCurrentImage] = useState(
-    dynamicImages?.[0] || imageUrl || ""
-  );
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
     <motion.div
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
-      className="group mb-3 sm:mb-8 last:mb-0"
-    > 
-          <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-auto sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20 transition">
-        <Link href={pageUrl || ""} target="_blank">
-          {/* Mobile Image */}
-          {currentImage && (
-            <img
-              src={currentImage as string}
-              alt={`Screenshot of ${title}`}
-              width={600}
-              height={400}
-              className="block sm:hidden w-full rounded-t-lg shadow-lg"
-            />
-          )}
+      className="group mb-8 last:mb-0 w-full max-w-[45rem]"
+    >
+      <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col sm:flex-row h-full sm:min-h-[22rem]">
 
-          <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-            <h3 className="text-2xl font-semibold">{title}</h3>
-            <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-              {description}
-            </p>
-            <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+        {/* Left Side: Images/Carousel */}
+        <div className="relative w-full sm:w-[50%] h-[200px] sm:h-auto overflow-hidden">
+          <ImageCarousel
+            images={dynamicImages || []}
+            title={title}
+          />
+        </div>
+
+        {/* Right Side: Content */}
+        <div className="flex flex-col p-6 sm:p-8 w-full sm:w-[50%] h-full">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
+              {title}
+            </h3>
+          </div>
+
+          <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3 group-hover:text-gray-300 transition-colors">
+            {description}
+          </p>
+
+          <div className="mt-auto">
+            <ul className="flex flex-wrap gap-2 mb-6">
               {tags.map((tag) => (
                 <li
                   key={tag}
-                  className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
+                  className="bg-purple-500/10 border border-purple-500/20 px-3 py-1 text-[0.65rem] font-medium uppercase tracking-wider text-purple-300 rounded-full"
                 >
                   {tag}
                 </li>
               ))}
             </ul>
+
+            <div className="flex items-center gap-4">
+              <Link
+                href={`/projects/${slug}`}
+                className="flex items-center gap-2 text-sm font-semibold text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-all active:scale-95"
+              >
+                View Details <FaArrowRight className="text-xs opacity-70" />
+              </Link>
+            </div>
           </div>
-
-          {/* Desktop Image */}
-          {currentImage && (
-            <img
-              src={currentImage as string}
-              alt={`Screenshot of ${title}`}
-              width={600}
-              height={400}
-              className={`absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-                transition 
-                group-hover:scale-[1.04]
-                group-hover:-translate-x-3
-                group-hover:translate-y-3
-                group-hover:-rotate-2
-
-                group-even:group-hover:translate-x-3
-                group-even:group-hover:translate-y-3
-                group-even:group-hover:rotate-2
-
-                group-even:right-[initial] group-even:-left-40`}
-            />
-          )}
-        </Link>
-      </section>
+        </div>
+      </div>
     </motion.div>
   );
 }
+

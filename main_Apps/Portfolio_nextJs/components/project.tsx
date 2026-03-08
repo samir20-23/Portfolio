@@ -32,7 +32,7 @@ export default function Project({
 
         {/* Hover Overlay for Carousel Nav Instruction */}
         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity flex items-center justify-between px-4">
-          <span className="text-white/20 text-xs">Scroll/Click Arrows</span>
+          <span className="text-white/20 text-xs"></span>
         </div>
       </div>
 

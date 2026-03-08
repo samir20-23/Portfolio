@@ -22,7 +22,6 @@
     }
   ],
   "projectsData": [
-    
     {
       "title": "Tusitala: Luxury Napa Valley Estate Platform",
       "slug": "tusitala-napa-estate",
@@ -38,18 +37,18 @@
         "Real Estate Tech"
       ],
       "dynamicImages": [
-        "/napa_tusitala/fullpagehome.png",
-        "/napa_tusitala/homePage/section1.png",
-        "/napa_tusitala/homePage/section2.png",
-        "/napa_tusitala/fullpageExperience.png",
-        "/napa_tusitala/experiencePage/section1.png",
-        "/napa_tusitala/experiencePage/section2.png",
-        "/napa_tusitala/fullpagetheEstate.png",
-        "/napa_tusitala/fullpagelocation.png",
-        "/napa_tusitala/locationPage/section1.png",
-        "/napa_tusitala/locationPage/section2.png",
-        "/napa_tusitala/fullpagegallery.png",
-        "/napa_tusitala/contactform.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagehome.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/homePage/section1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/homePage/section2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpageExperience.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/experiencePage/section1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/experiencePage/section2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagetheEstate.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagelocation.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/locationPage/section1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/locationPage/section2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagegallery.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/contactform.png"
       ],
       "pageUrl": "https://tusitalanapa.com"
     },
@@ -68,16 +67,16 @@
         "PostgreSQL"
       ],
       "dynamicImages": [
-        "/tcf_canada/landingPageHeroSection.png",
-        "/tcf_canada/studentDashboard.png",
-        "/tcf_canada/TestPage.png",
-        "/tcf_canada/attempts.png",
-        "/tcf_canada/cardStartTest.png",
-        "/tcf_canada/dashboard.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/landingPageHeroSection.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/studentDashboard.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/TestPage.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/attempts.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/cardStartTest.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/dashboard.png"
       ],
       "pageUrl": "https://tcf-platform.vercel.app/"
     },
-      {
+    {
       "title": "Five Systems: Technical Installations & Maintenance",
       "slug": "five-systems",
       "description": "Five Systems is a Moroccan company based in Tangier specializing in the design, installation, and maintenance of high-quality electrical, HVAC, plumbing, and fire safety systems for residential and commercial projects.",
@@ -90,10 +89,10 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "/fiveSystems/fivesystem0.png",
-        "/fiveSystems/fivesystem1.png",
-        "/fiveSystems/fivesystem2.png",
-        "/fiveSystems/FiveSystems.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem0.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/FiveSystems.png"
       ],
       "pageUrl": "https://five-systems.vercel.app"
     },
@@ -112,13 +111,13 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "/shopify_atelierdure/fullhomepage.png",
-        "/shopify_atelierdure/section1.png",
-        "/shopify_atelierdure/section2.png",
-        "/shopify_atelierdure/section3.png",
-        "/shopify_atelierdure/section4.png",
-        "/shopify_atelierdure/section5.png",
-        "/shopify_atelierdure/contactForm.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/fullhomepage.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section3.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section4.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section5.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/contactForm.png"
       ],
       "pageUrl": "https://atelierdure.com/"
     },
@@ -137,12 +136,11 @@
         "Dashboard"
       ],
       "dynamicImages": [
-        "/Solilms/SoliLMS.png",
-        "/Solilms/SoliLMS2.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS2.png"
       ],
       "pageUrl": "https://github.com/samir20-23/FileRouge_v2"
     },
-  
     {
       "title": "TikTok-Flow: Social Video Sharing App",
       "slug": "tiktok-flow",
@@ -159,11 +157,11 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "/tiktok-flow/tiktokflow1.png",
-        "/tiktok-flow/tiktokflow2.png",
-        "/tiktok-flow/tiktokflow3.png",
-        "/tiktok-flow/tiktokflow4.png",
-        "/tiktok-flow/tiktokflow5.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow3.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow4.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow5.png"
       ],
       "pageUrl": "https://tiktok-flow.vercel.app"
     },
@@ -184,13 +182,13 @@
         "Admin Panel"
       ],
       "dynamicImages": [
-        "/kan-kids/kan1.png",
-        "/kan-kids/kan2.png",
-        "/kan-kids/kan3.png",
-        "/kan-kids/kan4.png",
-        "/kan-kids/kan5.png",
-        "/kan-kids/kan6.png",
-        "/kan-kids/kan7.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan1.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan3.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan4.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan5.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan6.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan7.png"
       ],
       "pageUrl": "https://kan-kids-ecommerce.vercel.app/"
     }

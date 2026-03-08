@@ -26,14 +26,14 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
     return (
         <AnimatePresence>
             {isOpen && (
-                <>
+                <div className="fixed inset-0 z-[999] flex items-center justify-center p-4">
                     {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[999] cursor-pointer"
+                        className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
                     />
 
                     {/* Modal Container */}
@@ -41,7 +41,7 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-4xl max-h-[90vh] bg-gray-900 border border-white/10 rounded-3xl z-[1000] overflow-hidden shadow-2xl flex flex-col"
+                        className="relative w-full max-w-4xl max-h-[90vh] bg-gray-900 border border-white/10 rounded-3xl z-[1000] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between p-6 border-b border-white/10 shrink-0 bg-gray-900/50 backdrop-blur-md">
@@ -59,7 +59,7 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
                             {children}
                         </div>
                     </motion.div>
-                </>
+                </div>
             )}
         </AnimatePresence>
     );

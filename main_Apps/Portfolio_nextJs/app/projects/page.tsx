@@ -13,15 +13,18 @@ export default function ProjectsPage() {
     const [search, setSearch] = useState("");
     const [activeTab, setActiveTab] = useState("All");
 
-    const categories = ["All", "React", "Next.js", "Fullstack", "Laravel"];
+    const categories = ["All", "React", "Next.js", "Fullstack", "Laravel", "WordPress", "Shopify", "UI/UX"];
 
     const filteredProjects = useMemo(() => {
         return projectsData.filter((project) => {
             const matchesSearch = project.title.toLowerCase().includes(search.toLowerCase()) ||
                 project.description.toLowerCase().includes(search.toLowerCase());
+
+            const projectTags = project.tags.map(t => t.toLowerCase());
             const matchesCategory = activeTab === "All" ||
-                project.tags.some(tag => tag.toLowerCase() === activeTab.toLowerCase()) ||
-                (activeTab === "Fullstack" && project.tags.some(tag => ["laravel", "next.js", "php"].includes(tag.toLowerCase())));
+                projectTags.includes(activeTab.toLowerCase()) ||
+                (activeTab === "Fullstack" && projectTags.some(tag => ["laravel", "next.js", "php", "supabase"].includes(tag))) ||
+                (activeTab === "UI/UX" && projectTags.some(tag => ["figma", "tailwind", "responsive design"].includes(tag)));
 
             return matchesSearch && matchesCategory;
         });
@@ -29,7 +32,7 @@ export default function ProjectsPage() {
 
     return (
         <main className="min-h-screen bg-gray-950 text-white selection:bg-purple-500/30">
-            <div className="pt-32 pb-20 px-4 max-w-7xl mx-auto">
+            <div className="pt-40 pb-20 px-4 max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -37,31 +40,31 @@ export default function ProjectsPage() {
                 >
                     <SectionHeading>All Projects</SectionHeading>
                     <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-                        A comprehensive list of my work, ranging from small experiments to full-scale applications.
+                        A deep dive into my work across various technologies and platforms.
                     </p>
                 </motion.div>
 
                 {/* Search and Filter Bar */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 bg-white/5 p-4 rounded-2xl border border-white/10 backdrop-blur-sm">
-                    <div className="relative w-full md:w-96">
-                        <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-16 bg-white/5 p-6 rounded-3xl border border-white/10 backdrop-blur-md">
+                    <div className="relative w-full lg:w-96">
+                        <FaSearch className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-500" />
                         <input
                             type="text"
-                            placeholder="Search projects..."
+                            placeholder="Search by name or tech..."
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 outline-none focus:border-purple-500/50 transition-all text-sm"
+                            className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-14 pr-6 outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all text-sm"
                         />
                     </div>
 
-                    <div className="flex flex-wrap items-center justify-center gap-2">
+                    <div className="flex flex-wrap items-center justify-center gap-3">
                         {categories.map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setActiveTab(cat)}
-                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === cat
-                                        ? "bg-purple-600 text-white shadow-[0_0_20px_rgba(147,51,234,0.3)]"
-                                        : "bg-white/5 text-gray-400 hover:bg-white/10"
+                                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all border ${activeTab === cat
+                                        ? "bg-purple-600 border-purple-500 text-white shadow-[0_0_20px_rgba(147,51,234,0.4)] scale-105"
+                                        : "bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:border-white/20"
                                     }`}
                             >
                                 {cat}
@@ -72,25 +75,20 @@ export default function ProjectsPage() {
 
                 {/* Projects Grid */}
                 {filteredProjects.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 justify-items-center">
                         {filteredProjects.map((project, index) => (
-                            <motion.div
-                                key={project.slug}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                className="w-full flex justify-center"
-                            >
-                                <Project {...project} />
-                            </motion.div>
+                            <Project key={project.slug} {...project} />
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-20">
-                        <p className="text-gray-500 text-lg">No projects found matching your criteria.</p>
+                    <div className="text-center py-32">
+                        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/5 mb-6">
+                            <FaFilter className="text-gray-600 text-2xl" />
+                        </div>
+                        <p className="text-gray-500 text-xl font-medium">No projects found matching your criteria.</p>
                         <button
                             onClick={() => { setSearch(""); setActiveTab("All"); }}
-                            className="mt-4 text-purple-400 hover:underline"
+                            className="mt-6 px-8 py-3 bg-purple-600/10 text-purple-400 rounded-full hover:bg-purple-600/20 transition-all font-bold"
                         >
                             Clear all filters
                         </button>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload, HiEye } from "react-icons/hi";
+import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare, FaHeadset } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
@@ -146,21 +146,21 @@ export default function Intro() {
         onClose={() => setIsCVModalOpen(false)}
         title="Curriculum Vitae"
       >
-        <div className="flex flex-col gap-6 h-[70vh]">
+        <div className="flex flex-col gap-6 h-full min-h-[650px]">
           <div className="flex-1 w-full bg-black/20 rounded-2xl overflow-hidden relative border border-white/5">
             <iframe
               src="/aouladAmarSamir.pdf#toolbar=0"
-              className="w-full h-full"
+              className="w-full h-full min-h-[550px]"
               title="CV Viewer"
             />
           </div>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center">
             <a
               href="/aouladAmarSamir.pdf"
               download
-              className="flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition-all"
+              className="group bg-purple-600 px-8 py-3 flex items-center gap-3 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition shadow-lg text-white font-bold"
             >
-              <HiDownload /> Download PDF
+              Download PDF <HiDownload className="opacity-70 group-hover:translate-y-1 transition" />
             </a>
           </div>
         </div>

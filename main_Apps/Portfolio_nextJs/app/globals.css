@@ -207,10 +207,20 @@ html.dark {
     pointer-events: none;
 }
 
-canvas {
+#model canvas {
     width: 100% !important;
     height: 100% !important;
 }
+
+.custom-scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 
 canvas a,
 #model>a,

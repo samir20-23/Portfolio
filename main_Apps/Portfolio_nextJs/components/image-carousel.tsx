@@ -1,31 +1,42 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface ImageCarouselProps {
     images: string[];
-    title: string;
+    autoplayDelay?: number;
 }
 
-export default function ImageCarousel({ images, title }: ImageCarouselProps) {
+export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCarouselProps) {
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
         if (images.length <= 1) return;
-
-        const interval = setInterval(() => {
+        const timer = setInterval(() => {
             setIndex((prev) => (prev + 1) % images.length);
-        }, 4000);
+        }, autoplayDelay);
+        return () => clearInterval(timer);
+    }, [images.length, autoplayDelay]);
 
-        return () => clearInterval(interval);
-    }, [images.length]);
+    const next = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        e.preventDefault();
+        setIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prev = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        e.preventDefault();
+        setIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
 
     if (!images || images.length === 0) return null;
 
     return (
-        <div className="relative w-full h-full overflow-hidden rounded-xl">
+        <div className="relative w-full h-full group overflow-hidden">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
@@ -33,26 +44,45 @@ export default function ImageCarousel({ images, title }: ImageCarouselProps) {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="relative w-full h-full"
+                    className="absolute inset-0"
                 >
                     <Image
                         src={images[index]}
-                        alt={`${title} screenshot ${index + 1}`}
+                        alt={`Project image ${index + 1}`}
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        priority={index === 0}
                     />
                 </motion.div>
             </AnimatePresence>
 
+            {/* Manual Navigation Arrows */}
+            {images.length > 1 && (
+                <>
+                    <button
+                        onClick={prev}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60 z-10"
+                        aria-label="Previous image"
+                    >
+                        <FaChevronLeft size={12} />
+                    </button>
+                    <button
+                        onClick={next}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60 z-10"
+                        aria-label="Next image"
+                    >
+                        <FaChevronRight size={12} />
+                    </button>
+                </>
+            )}
+
             {/* Dots Indicator */}
             {images.length > 1 && (
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
                     {images.map((_, i) => (
                         <div
                             key={i}
-                            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${index === i ? "bg-white w-3" : "bg-white/40"
+                            className={`h-1 rounded-full transition-all ${i === index ? "w-4 bg-purple-500" : "w-1 bg-white/40"
                                 }`}
                         />
                     ))}

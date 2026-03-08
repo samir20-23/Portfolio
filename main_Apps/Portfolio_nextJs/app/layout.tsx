@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
+import SocialDock from "@/components/social-dock";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import Script from "next/script";
@@ -64,7 +65,7 @@ export default function RootLayout({
             <div className="cursor" />
             {children}
             <Footer />
-
+            <SocialDock />
             <Toaster position="top-right" />
             <ThemeSwitch />
           </ActiveSectionContextProvider>

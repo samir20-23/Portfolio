@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope,FaInstagram, FaFileDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaFileDownload } from "react-icons/fa";
 import { HiOutlineChatAlt2 } from "react-icons/hi";
 
 const socialLinks = [
@@ -38,7 +38,8 @@ export default function SocialDock() {
             initial={{ y: 100, x: "-50%", opacity: 0 }}
             animate={{ y: 0, x: "-50%", opacity: 1 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className="fixed bottom-3 left-1/2 -translate-x-1/2 z-[100] px-6 py-3 bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center gap-6"
+            className="fixed bottom-1 left-1/2 -translate-x-1/2 z-[100] px-6 py-3 bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center gap-6"
+
         >
             {socialLinks.map((link, i) => (
                 <a

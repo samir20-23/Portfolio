@@ -2,33 +2,43 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare, FaHeadset } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { BsArrowRight, BsLinkedin, BsCpu, BsCodeSlash } from "react-icons/bs";
+
+import { HiDownload, HiOutlineSparkles, HiOutlineLightningBolt } from "react-icons/hi";
+import { FaGithubSquare, FaHeadset, FaTerminal, FaLayerGroup } from "react-icons/fa";
+import { RiRocketLine, RiJavascriptLine } from "react-icons/ri";
+import { LuBrainCircuit } from "react-icons/lu";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import "../app/intro.css";
 import Modal from "./modal";
 import ContactForm from "./contact-form";
 
+// Sleek, technical icons list
+const techIcons = [
+  <BsCodeSlash key="code" />,
+  <RiRocketLine key="rocket" />,
+  <HiOutlineSparkles key="sparkle" />,
+  <LuBrainCircuit key="brain" />,
+  <FaTerminal key="terminal" />,
+  <HiOutlineLightningBolt key="bolt" />,
+  <BsCpu key="cpu" />,
+  <FaLayerGroup key="stack" />,
+];
+
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
-  const icons = ["🔥", "✨", "🚀", "👨‍💻", "🎯", "💡", "⚡️", "🌟", "🧠", "🛠", "📦", "🎉"];
-  const [randomIcon, setRandomIcon] = useState("🚀");
+  const [iconIndex, setIconIndex] = useState(0);
   const [isCVModalOpen, setIsCVModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
-    const pick = () => {
-      const idx = Math.floor(Math.random() * icons.length);
-      setRandomIcon(icons[idx]);
-    };
-
-    pick();
-    const interval = setInterval(pick, 3000);
+    const interval = setInterval(() => {
+      setIconIndex((prev) => (prev + 1) % techIcons.length);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -37,6 +47,7 @@ export default function Intro() {
       ref={ref}
       id="home"
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] relative"
+      style={{ marginTop: "88px" }}
     >
       <div className="flex items-center justify-center">
         <div className="relative">
@@ -58,8 +69,8 @@ export default function Intro() {
               <Image
                 src="/samir.jpg"
                 alt="Aoulad Amar Samir"
-                width="160"
-                height="160"
+                width="150"
+                height="150"
                 quality={100}
                 priority
                 id="profile-img"
@@ -73,14 +84,18 @@ export default function Intro() {
             </div>
           </motion.div>
 
-          <motion.span
-            className="absolute bottom-0 right-0 text-3xl z-20"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 125, delay: 0.1, duration: 0.7 }}
+          {/* New Sleek Icon Badge */}
+          <motion.div
+            key={iconIndex}
+            className="absolute bottom-2 right-2 w-5 h-5  md:w-8 md:h-8 border border-white/20 rounded-full flex items-center justify-center text-white text-xl z-20 shadow-xl"
+            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            exit={{ opacity: 0, scale: 0.5 }}
+            transition={{ type: "spring", stiffness: 200, damping: 10 }}
+            style={{ filter: "blur(0.2px)" }}
           >
-            {randomIcon}
-          </motion.span>
+            {techIcons[iconIndex]}
+          </motion.div>
         </div>
       </div>
 

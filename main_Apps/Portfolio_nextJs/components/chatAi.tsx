@@ -107,8 +107,8 @@ export default function ChatAi() {
                 >
                   <div
                     className={`max-w-[80%] p-3 rounded-2xl text-sm ${msg.role === "user"
-                        ? "bg-blue-600 text-white rounded-tr-none"
-                        : "bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-tl-none"
+                      ? "bg-blue-600 text-white rounded-tr-none"
+                      : "bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-tl-none"
                       } shadow-md`}
                   >
                     {msg.content}
@@ -140,7 +140,11 @@ export default function ChatAi() {
       </AnimatePresence>
 
       <button
-        className="bg-blue-600 w-14 h-14 bg-opacity-90 backdrop-blur-md border border-white border-opacity-20 shadow-2xl rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-all text-white active:bg-blue-700 relative group"
+        className="fixed   bg-white w-[2rem] h-[2rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950 "
+        style={{
+          bottom: "61px",
+          right: "7px"
+        }}
         onClick={toggleChat}
         aria-label="Toggle AI Assistant"
       >

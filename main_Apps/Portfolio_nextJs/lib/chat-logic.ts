@@ -22,27 +22,38 @@ export function getAIResponse(input: string): { text: string; link?: KnowledgeIt
     const sanitizedInput = input.toLowerCase().trim();
     const inputWords = normalizeAndSplit(sanitizedInput);
 
-    // 1. Check for greetings
-    const greetingKeywords = ["hi", "hello", "hey", "greetings", "salam", "morning", "evening"];
-    if (greetingKeywords.some(keyword => sanitizedInput.includes(keyword))) {
-        const randomIndex = Math.floor(Math.random() * GREETINGS.length);
-        return { text: GREETINGS[randomIndex] };
+    // Handle specific commands
+    if (sanitizedInput === "/skills") {
+        const { SKILLS_LIST } = require("./chat-data");
+        return {
+            text: `Here are my technical skills and tools:\n\n${SKILLS_LIST.map((s: string) => `• ${s}`).join("\n")}`,
+            link: KNOWLEDGE_BASE.find(k => k.title === "Skills")
+        };
     }
 
-    // 2. Personal Questions
-    const personalKeywords = ["who are you", "what is your name", "who is samir", "about you", "your background", "biography"];
-    if (personalKeywords.some(keyword => sanitizedInput.includes(keyword))) {
+    if (sanitizedInput === "/projects" || sanitizedInput.includes("projects")) {
+        const projects = KNOWLEDGE_BASE.filter(item => item.routeUrl.startsWith("/projects/")).slice(0, 3);
+        const projectsText = projects.map(p => `**${p.title}**\n${p.description?.substring(0, 100)}...`).join("\n\n");
         return {
-            text: `I'm ${SAMIR_PERSONAL_INFO.name}, a ${SAMIR_PERSONAL_INFO.role}. ${SAMIR_PERSONAL_INFO.bio} I'm currently based in ${SAMIR_PERSONAL_INFO.location}.`,
+            text: `I've built several exciting projects! Here are a few:\n\n${projectsText}\n\nYou can see all of them in my projects section.`,
+            link: { title: "All Projects", routeUrl: "/#projects", tags: [] } as any,
+            images: projects.flatMap(p => (p.images || []).slice(0, 1))
+        };
+    }
+
+    if (sanitizedInput === "/about") {
+        return {
+            text: `I'm ${SAMIR_PERSONAL_INFO.name}, a ${SAMIR_PERSONAL_INFO.role}. ${SAMIR_PERSONAL_INFO.bio}`,
             link: KNOWLEDGE_BASE.find(k => k.title === "About Me")
         };
     }
 
-    // 3. Skills Questions
-    const skillKeywords = ["skill", "tech", "stack", "react", "next", "laravel", "tailwind", "css", "js", "typescript", "php", "aws"];
-    if (skillKeywords.some(keyword => sanitizedInput.includes(keyword)) && !KNOWLEDGE_BASE.some(k => sanitizedInput.includes(k.title.toLowerCase()))) {
+    // 3. Skills Questions (Keyword based)
+    const skillKeywords = ["skill", "tech", "stack", "react", "next", "laravel", "tailwind", "css", "js", "typescript", "php", "aws", "languages", "tools"];
+    if (skillKeywords.some(keyword => sanitizedInput.includes(keyword)) && !KNOWLEDGE_BASE.slice(4).some(k => sanitizedInput.includes(k.title.toLowerCase()))) {
+        const { SKILLS_LIST } = require("./chat-data");
         return {
-            text: "I specialize in modern technologies like React, Next.js, and Laravel. I'm also proficient in cloud services like AWS and database management with Supabase. Want to see my specific skills?",
+            text: `I specialize in a wide range of technologies including React, Next.js, and Laravel. My full tech stack: ${SKILLS_LIST.join(", ")}.`,
             link: KNOWLEDGE_BASE.find(k => k.title === "Skills")
         };
     }
@@ -63,13 +74,8 @@ export function getAIResponse(input: string): { text: string; link?: KnowledgeIt
 
         // Word-based scoring
         for (const word of inputWords) {
-            // Check title words
             if (itemTitle.includes(word)) score += 10;
-
-            // Check tags
             if (itemTags.some(tag => tag.includes(word))) score += 5;
-
-            // Check description (Deep search)
             if (itemDesc.includes(word)) score += 2;
         }
 
@@ -81,39 +87,24 @@ export function getAIResponse(input: string): { text: string; link?: KnowledgeIt
 
     // Threshold for a good match
     if (bestMatch && maxScore >= 5) {
-        let responsePrefix = "I found something relevant! ";
-        if (maxScore > 30) responsePrefix = "I have exactly what you're looking for! ";
-
-        let responseText = `${responsePrefix}${bestMatch.description || ""} `;
-        responseText += `Explore more here: `;
+        // If it's a project match, link it to the main projects list if preferred
+        const isProject = bestMatch.routeUrl.startsWith("/projects/");
 
         return {
-            text: responseText,
-            link: bestMatch,
+            text: `**${bestMatch.title}**\n${bestMatch.description || ""}`,
+            link: isProject ? { title: "See All Projects", routeUrl: "/#projects", tags: [] } as any : bestMatch,
             images: bestMatch.images
         };
     }
 
-    // 5. Smarter Fallback with Random Project Suggestions
+    // 5. Smarter Fallback
     const projectItems = KNOWLEDGE_BASE.filter(item => item.routeUrl.startsWith("/projects/"));
     const shuffled = [...projectItems].sort(() => 0.5 - Math.random());
     const randomProjects = shuffled.slice(0, 2);
 
-    const fallbackTexts = [
-        "I'm not exactly sure about that, but check out some of my other work!",
-        "Hmm, I didn't find a direct match. How about these instead?",
-        "I'm still learning! But here are a few projects I'm particularly proud of:",
-        "That's a bit outside my current database. Would you like to explore these projects?",
-        "I couldn't find exactly that, but as a full-stack dev, I've built some cool things like these:"
-    ];
-
-    const randomText = fallbackTexts[Math.floor(Math.random() * fallbackTexts.length)];
-
-    // We'll return the first random project as a "link" and combine images if possible, 
-    // or just return a rich response structure.
     return {
-        text: randomText,
-        link: randomProjects[0], // Suggest the first one as a primary link
+        text: "I'm not exactly sure about that, but feel free to explore my projects or skills! I've built everything from luxury estate platforms to exam simulation systems.",
+        link: { title: "View Projects", routeUrl: "/#projects", tags: [] } as any,
         images: [
             ...(randomProjects[0]?.images || []).slice(0, 1),
             ...(randomProjects[1]?.images || []).slice(0, 1)

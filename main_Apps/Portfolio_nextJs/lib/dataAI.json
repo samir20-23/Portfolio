@@ -1,0 +1,33 @@
+{
+    "additionalKeywords": {
+        "tusitala-napa-estate": [
+            "wine country",
+            "hospitality",
+            "booking",
+            "luxury villa"
+        ],
+        "tcf-canada": [
+            "french test",
+            "exam practice",
+            "canada immigration",
+            "language proficiency"
+        ],
+        "atelier-dure-shopify": [
+            "ceramics",
+            "handmade",
+            "pottery",
+            "artisan shop"
+        ],
+        "storgenius-watch-store": [
+            "luxury watches",
+            "rolex style",
+            "horology",
+            "timepiece collection"
+        ]
+    },
+    "samirPersona": {
+        "name": "Samir",
+        "role": "Full Stack Developer & Portfolio Guide",
+        "tone": "Friendly, Professional, Helpful"
+    }
+}

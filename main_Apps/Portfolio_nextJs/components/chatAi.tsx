@@ -7,10 +7,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { getAIResponse, ChatMessage } from "@/lib/chat-logic";
+import { HiDownload } from "react-icons/hi";
+import Modal from "./modal";
+import { SKILLS_LIST } from "@/lib/chat-data";
+import { FaProjectDiagram, FaUserCircle, FaBookOpen } from "react-icons/fa";
 
 export default function ChatAi() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "ai",
@@ -32,44 +37,119 @@ export default function ChatAi() {
     setIsOpen(!isOpen);
   };
 
-  const handleSend = async (e?: React.FormEvent) => {
+  const handleSend = async (e?: React.FormEvent, msg?: string) => {
     e?.preventDefault();
-    if (!input.trim()) return;
+    const currentInput = typeof msg === "string" ? msg : input;
+    if (!currentInput.trim()) return;
 
     const userMessage: ChatMessage = {
       role: "user",
-      content: input,
+      content: currentInput,
       timestamp: new Date(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
-    const currentInput = input;
     setInput("");
 
-    // Simulate AI thinking
-    setTimeout(() => {
-      const response = getAIResponse(currentInput);
+    // 1. Try Local Logic First (Quick Filter)
+    const sanitizedInput = currentInput.toLowerCase().trim();
+
+    // Check for greetings
+    const greetingKeywords = ["hi", "hello", "hey", "greetings", "salam", "morning", "evening"];
+    if (greetingKeywords.some(keyword => sanitizedInput.includes(keyword))) {
+      setTimeout(() => {
+        const aiMessage: ChatMessage = {
+          role: "ai",
+          content: "Salam! I'm Samir. How can I help you today?",
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, aiMessage]);
+      }, 600);
+      return;
+    }
+
+    const localResponse = getAIResponse(currentInput);
+
+    // If it's a high-confidence local match, use it immediately
+    // Or if it's a greeting/personal info
+    const isSpecialMatch = localResponse.link ||
+      ["hi", "hello", "salam", "samir"].some(k => currentInput.toLowerCase().includes(k));
+
+    if (isSpecialMatch) {
+      setTimeout(() => {
+        const aiMessage: ChatMessage = {
+          role: "ai",
+          content: (
+            <span>
+              {localResponse.text}
+              <div className="flex flex-wrap gap-2 mt-2">
+                {localResponse.link && (
+                  <Link
+                    href={localResponse.link.routeUrl}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white rounded-xl text-xs font-semibold hover:bg-blue-700 transition-all"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    View: {localResponse.link.title}
+                  </Link>
+                )}
+                {(currentInput.toLowerCase().includes("cv") || currentInput.toLowerCase().includes("resume") || currentInput.toLowerCase().includes("download")) && (
+                  <a
+                    href="/aouladAmarSamir.pdf"
+                    target="_blank"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 border border-gray-200 dark:border-gray-700 rounded-xl text-xs font-semibold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all cursor-pointer"
+                  >
+                    <HiDownload /> Download CV
+                  </a>
+                )}
+              </div>
+            </span>
+          ),
+          images: localResponse.images,
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, aiMessage]);
+      }, 600);
+      return;
+    }
+
+    // 2. Otherwise, use Gemini AI
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: currentInput,
+          history: messages.map(m => ({ role: m.role, content: typeof m.content === 'string' ? m.content : '' }))
+        }),
+      });
+
+      const data = await res.json();
+
+      let aiContent = data.text || localResponse.text;
+      // Client-side safety: replace gemini with DevGeniUs
+      if (typeof aiContent === 'string') {
+        aiContent = aiContent.replace(/gemini/gi, "DevGeniUs");
+      }
+
       const aiMessage: ChatMessage = {
         role: "ai",
-        content: (
-          <span>
-            {response.text}
-            {response.link && (
-              <Link
-                href={response.link.routeUrl}
-                className="text-blue-500 hover:underline font-semibold ml-1 block mt-1"
-                onClick={() => setIsOpen(false)}
-              >
-                View: {response.link.title}
-              </Link>
-            )}
-          </span>
-        ),
-        images: response.images,
+        content: aiContent,
+        images: data.text ? [] : localResponse.images,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, aiMessage]);
-    }, 600);
+
+    } catch (error) {
+      console.error("Chat Error:", error);
+      // Fallback to local logic on error
+      const aiMessage: ChatMessage = {
+        role: "ai",
+        content: localResponse.text,
+        images: localResponse.images,
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, aiMessage]);
+    }
   };
 
   return (
@@ -139,8 +219,40 @@ export default function ChatAi() {
               <div ref={messagesEndRef} />
             </div>
 
+            {/* Suggestions */}
+            <div className="px-4 py-2 flex gap-2 overflow-x-auto custom-scrollbar-hide bg-gray-50/30 dark:bg-gray-900/30 border-t border-gray-100 dark:border-gray-800">
+              <button
+                onClick={() => handleSend(undefined, "/skills")}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[11px] font-medium text-gray-600 dark:text-gray-300 hover:border-blue-500 transition-all whitespace-nowrap shadow-sm"
+              >
+                <FaBookOpen className="text-blue-500" /> /skills
+              </button>
+              <button
+                onClick={() => handleSend(undefined, "/projects")}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[11px] font-medium text-gray-600 dark:text-gray-300 hover:border-blue-500 transition-all whitespace-nowrap shadow-sm"
+              >
+                <FaProjectDiagram className="text-purple-500" /> /projects
+              </button>
+              <button
+                onClick={() => handleSend(undefined, "/about")}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[11px] font-medium text-gray-600 dark:text-gray-300 hover:border-blue-500 transition-all whitespace-nowrap shadow-sm"
+              >
+                <FaUserCircle className="text-green-500" /> /about
+              </button>
+              <a
+                href="/aouladAmarSamir.pdf"
+                target="_blank"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 text-[11px] font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-100 transition-all whitespace-nowrap shadow-sm cursor-pointer"
+              >
+                <HiDownload /> Download CV
+              </a>
+            </div>
+
             {/* Input */}
             <form onSubmit={handleSend} className="p-4 border-t border-gray-200 dark:border-gray-800 flex gap-2 bg-gray-50/50 dark:bg-gray-900/50">
+              <div style={{ display: "flex", alignItems: "center", textAlign: "center", cursor: "pointer", fontSize: "1.2rem", color: "#000" }}>
+                <i className="fa fa-list" aria-hidden="true"></i>
+              </div>
               <input
                 type="text"
                 value={input}
@@ -159,6 +271,12 @@ export default function ChatAi() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <Modal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} title="Curriculum Vitae">
+        <div className="flex flex-col gap-6 h-full min-h-[650px]">
+          <iframe src="/aouladAmarSamir.pdf#toolbar=0" className="w-full h-full min-h-[550px]" title="CV Viewer" />
+        </div>
+      </Modal>
 
       <button
         className="fixed bg-white w-[2rem] h-[2rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center  transition-all dark:bg-gray-950 z-[1001]"

@@ -65,3 +65,4 @@ const PROJECT_KNOWLEDGE: KnowledgeItem[] = data.projectsData.map((project) => ({
 }));
 
 export const KNOWLEDGE_BASE: KnowledgeItem[] = [...BASE_KNOWLEDGE, ...PROJECT_KNOWLEDGE];
+export const SKILLS_LIST = data.skillsData;

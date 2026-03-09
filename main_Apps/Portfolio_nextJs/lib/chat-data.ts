@@ -1,3 +1,5 @@
+import data from "./data.json";
+
 export interface KnowledgeItem {
     title: string;
     tags: string[];
@@ -29,7 +31,7 @@ export const FALLBACK_RESPONSES = [
     "That's a good question! I'm mainly focused on delivering premium UI/UX and scalable backends. Would you like to see my featured work?",
 ];
 
-export const KNOWLEDGE_BASE: KnowledgeItem[] = [
+const BASE_KNOWLEDGE: KnowledgeItem[] = [
     {
         title: "Home",
         tags: ["home", "main", "start", "intro", "welcome"],
@@ -51,67 +53,15 @@ export const KNOWLEDGE_BASE: KnowledgeItem[] = [
         tags: ["contact", "email", "get in touch", "hire", "message", "reach out", "location", "where are you"],
         routeUrl: "/#contact",
     },
-    {
-        title: "Tusitala: Luxury Napa Valley Estate Platform",
-        tags: ["tusitala", "napa", "estate", "luxury", "real estate", "wordpress", "aws", "lightsail", "elementor"],
-        routeUrl: "/projects/tusitala-napa-estate",
-        images: [
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/homePage/section1.png",
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagegallery.png"
-        ]
-    },
-    {
-        title: "TCF-Canada: Exam Simulation & Training Platform",
-        tags: ["tcf", "canada", "exam", "simulation", "test", "nextjs", "supabase", "stripe", "study"],
-        routeUrl: "/projects/tcf-canada",
-        images: [
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/landingPageHeroSection.png",
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/studentDashboard.png"
-        ]
-    },
-    {
-        title: "Five Systems: Technical Installations & Maintenance",
-        tags: ["five systems", "electrical", "hvac", "maintenance", "installation", "construction", "nextjs"],
-        routeUrl: "/projects/five-systems",
-        images: [
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem0.png",
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/FiveSystems.png"
-        ]
-    },
-    {
-        title: "Atelier Duré: Artisanal E-commerce Store",
-        tags: ["atelier", "dure", "shopify", "ecommerce", "ceramics", "handcrafted", "artisanal", "store"],
-        routeUrl: "/projects/atelier-dure-shopify",
-        images: [
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/fullhomepage.png",
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section1.png"
-        ]
-    },
-    {
-        title: "SoliLMS: Educational Management",
-        tags: ["solilms", "lms", "education", "laravel", "php", "documents", "management"],
-        routeUrl: "/projects/solilms",
-        images: [
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS.png",
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS2.png"
-        ]
-    },
-    {
-        title: "TikTok-Flow: Social Video Sharing",
-        tags: ["tiktok", "flow", "video", "social", "firebase", "sharing", "nextjs"],
-        routeUrl: "/projects/tiktok-flow",
-        images: [
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow1.png",
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow2.png"
-        ]
-    },
-    {
-        title: "Kan-Kids: Kids Clothing Store",
-        tags: ["kan", "kids", "clothing", "ecommerce", "children", "laravel", "stripe"],
-        routeUrl: "/projects/kan-kids",
-        images: [
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan1.png",
-            "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan2.png"
-        ]
-    },
 ];
+
+// Dynamically generate project knowledge from data.json
+const PROJECT_KNOWLEDGE: KnowledgeItem[] = data.projectsData.map((project) => ({
+    title: project.title,
+    tags: project.tags,
+    routeUrl: `/projects/${project.slug}`,
+    description: project.description,
+    images: project.dynamicImages
+}));
+
+export const KNOWLEDGE_BASE: KnowledgeItem[] = [...BASE_KNOWLEDGE, ...PROJECT_KNOWLEDGE];

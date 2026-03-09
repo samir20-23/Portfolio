@@ -117,6 +117,6 @@ This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for d
 
 ## 📫 Contact
 
-- 🌐 **Website**: [Your Portfolio](https://your-portfolio-link)
-- 📧 **Email**: your-email@example.com
+- 🌐 **Website**: [Your Portfolio](https://samiraouladamar-portfolio.vercel.app/)
+- 📧 **Email**: aouladamarsamir@gmail.com
 

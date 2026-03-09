@@ -25,7 +25,8 @@
  
 ---
 
-![alt text](src/fullScreenPage.png) 
+![alt text](src/fullScrennPage2.png) 
+![alt text](src/fullprojectpage.png) 
 
  
 

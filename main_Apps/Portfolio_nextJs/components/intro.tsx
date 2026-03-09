@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { BsArrowRight, BsLinkedin, BsCpu, BsCodeSlash } from "react-icons/bs";
-
 import { HiDownload, HiOutlineSparkles, HiOutlineLightningBolt } from "react-icons/hi";
 import { FaGithubSquare, FaHeadset, FaTerminal, FaLayerGroup } from "react-icons/fa";
-import { RiRocketLine, RiJavascriptLine } from "react-icons/ri";
+import { RiRocketLine } from "react-icons/ri";
 import { LuBrainCircuit } from "react-icons/lu";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
@@ -15,7 +14,6 @@ import "../app/intro.css";
 import Modal from "./modal";
 import ContactForm from "./contact-form";
 
-// Sleek, technical icons list
 const techIcons = [
   <BsCodeSlash key="code" />,
   <RiRocketLine key="rocket" />,
@@ -42,6 +40,51 @@ export default function Intro() {
     return () => clearInterval(interval);
   }, []);
 
+  // --- YOUR SCRIPT INTEGRATED HERE ---
+  useEffect(() => {
+    // 1. Text circle logic
+    const text = document.querySelector(".textcircletext");
+    if (text) {
+      text.innerHTML = (text as HTMLElement).innerText
+        .split("")
+        .map(
+          (char, i) => `<span style="transform:rotate(${i * 10}deg)">${char}</span>`
+        )
+        .join("");
+    }
+
+    // 2. Cursor logic
+    const cursor = document.querySelector(".cursor");
+    
+    const moveCursor = (e: MouseEvent) => {
+      if (!cursor) return;
+      const x = e.pageX;
+      const y = e.pageY;
+
+      // move main custom cursor
+      (cursor as HTMLElement).style.left = `${x}px`;
+      (cursor as HTMLElement).style.top = `${y}px`;
+
+      // particle
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+      document.body.appendChild(particle);
+      particle.style.left = `${x}px`;
+      particle.style.top = `${y}px`;
+
+      setTimeout(() => {
+        particle.remove();
+      }, 500);
+    };
+
+    document.addEventListener("mousemove", moveCursor);
+
+    // Cleanup to prevent performance issues
+    return () => {
+      document.removeEventListener("mousemove", moveCursor);
+    };
+  }, []);
+
   return (
     <section
       ref={ref}
@@ -49,6 +92,9 @@ export default function Intro() {
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] relative"
       style={{ marginTop: "88px" }}
     >
+      {/* Ensure this div exists for your script to find */}
+      <div className="cursor hidden md:block" />
+
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
@@ -57,15 +103,10 @@ export default function Intro() {
             transition={{ type: "spring", stiffness: 125, duration: 0.5 }}
             className="relative"
           >
-            {/* Spinning/Pulse Background Effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 blur-2xl opacity-20 animate-pulse pointer-events-none" />
             <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-30 blur animate-[spin_8s_linear_infinite] pointer-events-none" />
 
-            <div
-              className="layla-thumb layla-thumbtwo m-auto text-center mt-4 mb-13 relative z-10"
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
+            <div className="layla-thumb layla-thumbtwo m-auto text-center mt-4 mb-13 relative z-10">
               <Image
                 src="/samir.jpg"
                 alt="Aoulad Amar Samir"
@@ -76,23 +117,21 @@ export default function Intro() {
                 id="profile-img"
                 className="rounded-full object-cover border-[4px] border-white/10 shadow-2xl transition-transform hover:scale-105 duration-500"
               />
-              <div className="textcircle">
+              <div className="textcircle"> 
+                {/* Your script targets this class */}
                 <div className="textcircletext">
-                  <p>fullstack developer frontEnd backEnd</p>
+                  fullstack developer frontEnd backEnd 
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* New Sleek Icon Badge */}
           <motion.div
             key={iconIndex}
-            className="absolute bottom-2 right-2 w-5 h-5  md:w-8 md:h-8 border border-white/20 rounded-full flex items-center justify-center text-white text-xl z-20 shadow-xl"
+            className="absolute bottom-2 right-2 w-5 h-5 md:w-8 md:h-8 border border-white/20 rounded-full flex items-center justify-center text-white text-xl z-20 shadow-xl bg-black/40 backdrop-blur-sm"
             initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            exit={{ opacity: 0, scale: 0.5 }}
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
-            style={{ filter: "blur(0.2px)" }}
           >
             {techIcons[iconIndex]}
           </motion.div>
@@ -112,9 +151,7 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold text-white">Hi, I'm Samir.</span> I'm a
-        <span className="font-bold text-purple-400"> full-stack developer</span> based
-        in Tangier. I specialize in crafting{" "}
-        <span className="italic underline decoration-purple-500/30">premium web experiences</span>.
+        <span className="font-bold text-purple-400"> full-stack developer</span>.
       </motion.h1>
 
       <motion.div
@@ -125,28 +162,28 @@ export default function Intro() {
       >
         <button
           onClick={() => setIsCVModalOpen(true)}
-          className="group bg-white/10 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-110 active:scale-105 transition-all cursor-pointer border border-white/10 hover:bg-white/20 shadow-lg"
+          className="group bg-white/10 text-white px-7 py-3 flex items-center gap-2 rounded-full border border-white/10 hover:bg-white/20 transition-all"
         >
           Get My CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </button>
 
         <button
           onClick={() => setIsContactModalOpen(true)}
-          className="group bg-purple-600 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-110 hover:bg-purple-700 active:scale-105 transition-all shadow-lg active:shadow-purple-500/20"
+          className="group bg-purple-600 text-white px-7 py-3 flex items-center gap-2 rounded-full hover:bg-purple-700 transition-all"
         >
           Get in Touch <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </button>
 
         <div className="flex gap-4">
           <a
-            className="bg-white/5 p-4 text-gray-400 flex items-center gap-2 rounded-full hover:text-white hover:bg-white/10 border border-white/10 transition-all active:scale-95"
+            className="bg-white/5 p-4 text-gray-400 flex items-center gap-2 rounded-full hover:text-white border border-white/10 transition-all"
             href="https://www.linkedin.com/in/samir-aoulad-amar-a238a9334/"
             target="_blank"
           >
             <BsLinkedin />
           </a>
           <a
-            className="bg-white/5 p-4 text-gray-400 flex items-center gap-2 rounded-full hover:text-white hover:bg-white/10 border border-white/10 transition-all active:scale-95"
+            className="bg-white/5 p-4 text-gray-400 flex items-center gap-2 rounded-full hover:text-white border border-white/10 transition-all"
             href="https://github.com/samir20-23"
             target="_blank"
           >
@@ -155,50 +192,15 @@ export default function Intro() {
         </div>
       </motion.div>
 
-      {/* CV Modal */}
-      <Modal
-        isOpen={isCVModalOpen}
-        onClose={() => setIsCVModalOpen(false)}
-        title="Curriculum Vitae"
-      >
+      {/* Modals */}
+      <Modal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} title="Curriculum Vitae">
         <div className="flex flex-col gap-6 h-full min-h-[650px]">
-          <div className="flex-1 w-full bg-black/20 rounded-2xl overflow-hidden relative border border-white/5">
-            <iframe
-              src="/aouladAmarSamir.pdf#toolbar=0"
-              className="w-full h-full min-h-[550px]"
-              title="CV Viewer"
-            />
-          </div>
-          <div className="flex justify-center">
-            <a
-              href="/aouladAmarSamir.pdf"
-              download
-              className="group bg-purple-600 px-8 py-3 flex items-center gap-3 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition shadow-lg text-white font-bold"
-            >
-              Download PDF <HiDownload className="opacity-70 group-hover:translate-y-1 transition" />
-            </a>
-          </div>
+          <iframe src="/aouladAmarSamir.pdf#toolbar=0" className="w-full h-full min-h-[550px]" title="CV Viewer" />
         </div>
       </Modal>
 
-      {/* Contact Modal */}
-      <Modal
-        isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
-        title="Send a Message"
-      >
-        <div className="max-w-2xl mx-auto py-4">
-          <div className="flex items-center gap-4 mb-8 bg-purple-500/10 p-6 rounded-2xl border border-purple-500/20">
-            <div className="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white text-xl">
-              <FaHeadset />
-            </div>
-            <div>
-              <h4 className="font-bold text-white text-lg">Let's work together!</h4>
-              <p className="text-gray-400 text-sm">I'm currently available for full-time or freelance opportunities.</p>
-            </div>
-          </div>
-          <ContactForm />
-        </div>
+      <Modal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} title="Send a Message">
+        <ContactForm />
       </Modal>
     </section>
   );

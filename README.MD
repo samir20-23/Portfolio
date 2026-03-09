@@ -9,6 +9,7 @@
  <h3>
  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=17&duration=4&pause=40&color=FFFFFF&center=true&vCenter=true&width=482&lines=Languages+and+Tools+:+" alt="Samir Aoulad Amar" /></h3>
 
+![alt text](src\heroWithChat.png)  
 <div align="center">
   <a href="https://skillicons.dev/icons?i=nextjs,react">
        <img src="https://skillicons.dev/icons?i=figma,nextjs,tailwind,npm,vercel" /><br><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=50&duration=4&pause=20&color=9B31FE&center=true&vCenter=true&width=482&lines=..." alt="Samir Aoulad Amar" />

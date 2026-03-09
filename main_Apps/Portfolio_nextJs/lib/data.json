@@ -191,6 +191,40 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan7.png"
       ],
       "pageUrl": "https://kan-kids-ecommerce.vercel.app/"
+    },
+    {
+      "title": "Dev_Adidas Store: Responsive Adidas-style E-commerce",
+      "slug": "dev-adidas-store",
+      "description": "Dev_Adidas is a polished, mobile-first ecommerce prototype inspired by the Adidas storefront. Built with Next.js 16 and TypeScript, it reproduces the original React UI exactly while adding App Router navigation and Turbopack performance. Features include a full product catalog, product detail pages, cart flow, auth (login/register), profile and settings pages, dark/light theme with ThemeContext, bilingual support (EN / AR) via i18next, search and category filters, promotional sections (NEW COLLECTION / Trending), and responsive mobile layouts. The project preserves original CSS visuals, focuses on fast client navigation, accessibility and SEO friendly markup, and is deployed at dev-adidas.vercel.app.",
+      "tags": [
+        "Next.js 16",
+        "TypeScript",
+        "CSS Modules",
+        "i18next (EN/AR)",
+        "ThemeContext (Dark/Light)",
+        "Turbopack",
+        "Responsive Design",
+        "Ecommerce UI",
+        "Client Navigation",
+        "Performance Optimization"
+      ],
+      "dynamicImages": [
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/herosection.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/T%20fullscreenhomepageMobile.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/cardsProducts.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/mobileCArdsProductsMobile.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/cardProduct.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/cartPageMobile.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/cartpageWhiteModeMobile.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/profilePage.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/profilepageWhiteModeMobile.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/registerFormWhitemode.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/bergermenuMobile.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/logoLoadingMobile.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/loadinpageMobile.png",
+        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/Screenshot%202026-03-09%20150531.png"
+      ],
+      "pageUrl": "https://dev-adidas.vercel.app/"
     }
   ],
   "skillsData": [

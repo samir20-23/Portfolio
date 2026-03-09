@@ -13,10 +13,10 @@ export default function ProjectList() {
   const projects = projectsData.slice(0, 10);
 
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28 mb-28 w-full   px-4" style={{ width: "95%" }}>
+    <section ref={ref} id="projects" className="scroll-mt-28 mb-28 w-full justify-items-center md:px-4" style={{ width: "85%" }}>
       <SectionHeading>Recent Projects</SectionHeading>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center mt-12 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center mt-12 w-full" style={{ maxWidth: "1800px" }}>
         {projects.map((proj) => (
           <Project key={proj.slug} {...proj} />
         ))}

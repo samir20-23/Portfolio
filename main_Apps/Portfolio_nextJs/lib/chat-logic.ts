@@ -94,14 +94,29 @@ export function getAIResponse(input: string): { text: string; link?: KnowledgeIt
         };
     }
 
-    // 5. Smarter Fallback (Less repetitive)
-    const randomFallbacks = [
-        ...FALLBACK_RESPONSES,
-        "It seems I don't have a direct answer for that. But I can tell you all about my web development projects if you're interested!",
-        "Hmm, that's not in my immediate database. Maybe try asking about 'Tusitala' or 'TCF-Canada'?",
-        "I'm still learning! Ask me about my tech stack or see my 'About' section to know me better.",
-        "Could you be more specific? I have several projects involving E-commerce, Real Estate, and Education.",
+    // 5. Smarter Fallback with Random Project Suggestions
+    const projectItems = KNOWLEDGE_BASE.filter(item => item.routeUrl.startsWith("/projects/"));
+    const shuffled = [...projectItems].sort(() => 0.5 - Math.random());
+    const randomProjects = shuffled.slice(0, 2);
+
+    const fallbackTexts = [
+        "I'm not exactly sure about that, but check out some of my other work!",
+        "Hmm, I didn't find a direct match. How about these instead?",
+        "I'm still learning! But here are a few projects I'm particularly proud of:",
+        "That's a bit outside my current database. Would you like to explore these projects?",
+        "I couldn't find exactly that, but as a full-stack dev, I've built some cool things like these:"
     ];
-    const uniqueFallback = randomFallbacks[Math.floor(Date.now() % randomFallbacks.length)];
-    return { text: uniqueFallback };
+
+    const randomText = fallbackTexts[Math.floor(Math.random() * fallbackTexts.length)];
+
+    // We'll return the first random project as a "link" and combine images if possible, 
+    // or just return a rich response structure.
+    return {
+        text: randomText,
+        link: randomProjects[0], // Suggest the first one as a primary link
+        images: [
+            ...(randomProjects[0]?.images || []).slice(0, 1),
+            ...(randomProjects[1]?.images || []).slice(0, 1)
+        ]
+    };
 }

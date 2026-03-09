@@ -57,10 +57,10 @@ export default function ChatAi() {
             {response.link && (
               <Link
                 href={response.link.routeUrl}
-                className="text-blue-500 hover:underline font-semibold ml-1"
+                className="text-blue-500 hover:underline font-semibold ml-1 block mt-1"
                 onClick={() => setIsOpen(false)}
               >
-                {response.link.title}
+                View: {response.link.title}
               </Link>
             )}
           </span>

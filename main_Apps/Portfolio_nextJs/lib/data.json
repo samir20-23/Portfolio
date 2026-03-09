@@ -74,7 +74,8 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/cardStartTest.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/dashboard.png"
       ],
-      "pageUrl": "https://tcf-platform.vercel.app/"
+      "pageUrl": "https://tcf-platform.vercel.app/",
+      "githubUrl": "https://github.com/samir20-23/TCF_Platform"
     },
     {
       "title": "Five Systems: Technical Installations & Maintenance",
@@ -119,7 +120,8 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section5.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/contactForm.png"
       ],
-      "pageUrl": "https://atelierdure.com/"
+      "pageUrl": "https://atelierdure.com/",
+      "githubUrl": "https://github.com/samir20-23/"
     },
     {
       "title": "SoliLMS: Centralized Educational Resource Management",
@@ -139,7 +141,8 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS2.png"
       ],
-      "pageUrl": "https://github.com/samir20-23/FileRouge_v2"
+      "pageUrl": "https://github.com/samir20-23/FileRouge_v2",
+      "githubUrl": "https://github.com/samir20-23/"
     },
     {
       "title": "TikTok-Flow: Social Video Sharing App",
@@ -152,7 +155,6 @@
         "Tailwind CSS",
         "Firebase",
         "Firestore",
-        "supabase",
         "Authentication",
         "Responsive Design"
       ],
@@ -163,7 +165,8 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow4.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow5.png"
       ],
-      "pageUrl": "https://tiktok-flow.vercel.app"
+      "pageUrl": "https://tiktok-flow.vercel.app",
+      "githubUrl": "https://github.com/samir20-23"
     },
     {
       "title": "Kan-Kids: Kids Clothing E-commerce Store",
@@ -190,7 +193,8 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan6.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan7.png"
       ],
-      "pageUrl": "https://kan-kids-ecommerce.vercel.app/"
+      "pageUrl": "https://kan-kids-ecommerce.vercel.app/",
+      "githubUrl": "https://github.com/samir20-23/"
     },
     {
       "title": "Dev_Adidas Store: Responsive Adidas-style E-commerce",
@@ -209,22 +213,50 @@
         "Performance Optimization"
       ],
       "dynamicImages": [
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/herosection.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/T%20fullscreenhomepageMobile.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/cardsProducts.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/mobileCArdsProductsMobile.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/cardProduct.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/cartPageMobile.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/cartpageWhiteModeMobile.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/profilePage.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/profilepageWhiteModeMobile.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/registerFormWhitemode.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/bergermenuMobile.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/logoLoadingMobile.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/loadinpageMobile.png",
-        "https://raw.githubusercontent.com/samir20-23/Dev_Adidas/main/public/dev_adidas/Screenshot%202026-03-09%20150531.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/herosection.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/fullscreenhomepageMobile.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cardsProducts.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cardProduct.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/mobileCArdsProductsMobile.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cartPageMobile.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cartpageWhiteModeMobile.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/profilePage.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/profilepageWhiteModeMobile.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/registerFormWhitemode.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/bergermenuMobile.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/logoLoadingMobile.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/loadinpageMobile.png"
       ],
-      "pageUrl": "https://dev-adidas.vercel.app/"
+      "pageUrl": "https://dev-adidas.vercel.app/",
+      "githubUrl": "https://github.com/samir20-23/dev_Adidas/"
+    },
+    {
+      "title": "The-Curated-Rank: Curated Rankings Platform",
+      "slug": "The-Curated-Rank-curated-rankings",
+      "description": "The-Curated-Rank is a curated ranking platform designed to organize and showcase top lists of movies, TV shows, music, and digital content. Built with Next.js and TypeScript, the application provides an intuitive interface for browsing curated categories, exploring ranked posts, and discovering content across different genres and decades. The platform includes a dashboard for managing categories and posts, dynamic tables for ranking lists, search functionality integrated with external APIs (OMDb / TMDb), and responsive layouts optimized for both desktop and mobile users. The project focuses on clean UI/UX, modular component architecture, and scalable content management for curated media collections.",
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "API Integration",
+        "OMDb API",
+        "TMDb API",
+        "Content Curation Platform",
+        "Dashboard UI",
+        "Responsive Design"
+      ],
+      "dynamicImages": [
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/Screenshot%202025-12-26%20221726.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/ListCategory.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/postsListWithfooter.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/postsListWithfooter2.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/tableltemsLIstRancck.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/tableltemsLIsMobiletRancck.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/dashboardSharts.png"
+      ],
+      "pageUrl": "https://github.com/samir20-23/The-Curated-Rank",
+      "githubUrl": "https://github.com/samir20-23/The-Curated-Rank"
     }
   ],
   "skillsData": [

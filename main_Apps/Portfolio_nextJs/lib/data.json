@@ -74,7 +74,6 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/cardStartTest.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/dashboard.png"
       ],
-      "pageUrl": "https://tcf-platform.vercel.app/",
       "githubUrl": "https://github.com/samir20-23/TCF_Platform"
     },
     {
@@ -165,7 +164,6 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow4.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow5.png"
       ],
-      "pageUrl": "https://tiktok-flow.vercel.app",
       "githubUrl": "https://github.com/samir20-23"
     },
     {
@@ -193,7 +191,6 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan6.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan7.png"
       ],
-      "pageUrl": "https://kan-kids-ecommerce.vercel.app/",
       "githubUrl": "https://github.com/samir20-23/"
     },
     {
@@ -227,7 +224,6 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/logoLoadingMobile.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/loadinpageMobile.png"
       ],
-      "pageUrl": "https://dev-adidas.vercel.app/",
       "githubUrl": "https://github.com/samir20-23/dev_Adidas/"
     },
     {
@@ -247,16 +243,41 @@
         "Responsive Design"
       ],
       "dynamicImages": [
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/tableItemsLIstRancck.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/categorycardmobile.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/dashboardSharts.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/ListCategory.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/postsListWithfooter.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/postsListWithfooter2.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/tableItemsLIsMobiletRancck.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/tableItemsLIstRancck.png"
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/tableItemsLIsMobiletRancck.png"
       ],
-      "pageUrl": "https://github.com/samir20-23/The-Curated-Rank",
       "githubUrl": "https://github.com/samir20-23/The-Curated-Rank"
+    },
+    {
+      "title": "StorGenius: Curated Luxury Watch Store UI",
+      "slug": "storgenius-watch-store",
+      "description": "A polished watch store UI showcasing premium timepieces and curated collections. Built with Next.js and modern frontend tooling, the interface focuses on clear product discovery, advanced filtering, responsive product grids, and a streamlined product to cart flow. The design highlights featured watches, brand trust indicators, and conversion-friendly product pages while remaining fully responsive for mobile and desktop.",
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "E-commerce UI",
+        "Product Filters",
+        "Responsive Design",
+        "UI/UX"
+      ],
+      "dynamicImages": [
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/heroSection.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/sectionproducts.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageproductswithfilter.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/sectinoproductswithfilterform.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageProductsdetailsCart.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageProduct.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageConfirmForm.png"
+      ],
+      "pageUrl": "https://stor-genius.vercel.app/",
+      "githubUrl": "https://github.com/samir20-23/StorGenius"
     }
   ],
   "skillsData": [

@@ -269,6 +269,7 @@
       ],
       "dynamicImages": [
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/heroSection.png",
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/video1.gif",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/sectionproducts.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageproductswithfilter.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/sectinoproductswithfilterform.png",
@@ -276,7 +277,6 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageProduct.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageConfirmForm.png"
       ],
-      "pageUrl": "https://stor-genius.vercel.app/",
       "githubUrl": "https://github.com/samir20-23/StorGenius"
     }
   ],

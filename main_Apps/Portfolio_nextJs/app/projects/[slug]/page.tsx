@@ -21,7 +21,7 @@ export default function ProjectDetails({ params }: { params: { slug: string } })
 
     return (
         <main className="min-h-screen bg-gray-950 text-white selection:bg-purple-500/30">
-            <div className="pt-40 pb-20 px-4 max-w-5xl mx-auto">
+            <div className="pt-40 pb-20 px-4 mx-auto" style={{ width: "95%" }}>
                 {/* Back Button */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -162,14 +162,16 @@ export default function ProjectDetails({ params }: { params: { slug: string } })
                                         <FaExternalLinkAlt className="group-hover:rotate-12 transition-transform" /> Live Project
                                     </Link>
                                 )}
+                                {project.githubUrl && (
+                                    <Link
+                                        href={project.githubUrl}
+                                        target="_blank"
+                                        className="flex items-center justify-center gap-3 w-full py-4 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-bold transition-all active:scale-95 border border-white/5 hover:border-white/10"
+                                    >
+                                        <FaGithub /> Source Code
+                                    </Link>
+                                )}
 
-                                <Link
-                                    href="https://github.com/samir20-23/"
-                                    target="_blank"
-                                    className="flex items-center justify-center gap-3 w-full py-4 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-bold transition-all active:scale-95 border border-white/5 hover:border-white/10"
-                                >
-                                    <FaGithub /> Source Code
-                                </Link>
                             </div>
 
                             <div className="mt-10 pt-8 border-t border-white/5 text-center">

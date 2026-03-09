@@ -32,8 +32,8 @@ export default function ProjectsPage() {
 
     return (
         <main className="min-h-screen bg-gray-950 text-white selection:bg-purple-500/30">
-            <div className="pt-40 pb-20 px-4 max-w-7xl mx-auto">
-                <motion.div
+            <div className="pt-40 pb-20 px-4   mx-auto" style={{ width: "95%" }}> 
+                <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"

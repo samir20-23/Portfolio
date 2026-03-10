@@ -60,23 +60,30 @@ export default function ProjectDetails({ params }: { params: { slug: string } })
                 </motion.div>
 
                 {/* Featured Image */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="relative aspect-video w-full rounded-[2rem] overflow-hidden border border-white/10 mb-16 shadow-2xl group cursor-zoom-in"
-                    onClick={() => setSelectedImage(project.dynamicImages?.[0] || null)}
-                >
-                    <Image
-                        src={project.dynamicImages?.[0] || ""}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-xs font-bold">Click to Enlarge</span>
-                    </div>
-                </motion.div>
+             {/* Featured Image */}
+<motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ opacity: 1, scale: 1 }}
+    className="relative aspect-video w-full rounded-[2rem] overflow-hidden border border-white/10 mb-16 shadow-2xl group cursor-zoom-in"
+    // Update the modal state with the fallback as well
+    onClick={() => setSelectedImage(
+        project.dynamicImages?.[0] || "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/src/demo.gif"
+    )}
+>
+    <Image
+        // If the first image doesn't exist, use the demo.gif
+        src={project.dynamicImages?.[0] || "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/src/demo.gif"}
+        alt={project.title}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        priority
+    />
+    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+        <span className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-xs font-bold">
+            Click to Enlarge
+        </span>
+    </div>
+</motion.div>
 
                 {/* Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">

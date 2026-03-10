@@ -66,7 +66,7 @@
         "Real-time Scoring",
         "PostgreSQL"
       ],
-      "dynamicImages": [ 
+      "dynamicImages": [
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/landingPageHeroSection.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/studentDashboard.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/gallery.png",
@@ -162,7 +162,7 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow1.png", 
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow1.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow5.png"
       ],
       "githubUrl": "https://github.com/samir20-23"
@@ -185,7 +185,7 @@
       ],
       "dynamicImages": [
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan1.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan2.png", 
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan2.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan4.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan5.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan6.png",
@@ -217,9 +217,9 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cardProduct.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/mobileCArdsProductsMobile.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cartPageMobile.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cartpageWhiteModeMobile.png", 
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cartpageWhiteModeMobile.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/profilepageWhiteModeMobile.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/registerFormWhitemode.png", 
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/registerFormWhitemode.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/logoLoadingMobile.png",
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/loadinpageMobile.png"
       ],
@@ -278,6 +278,42 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageConfirmForm.png"
       ],
       "githubUrl": "https://github.com/samir20-23/StorGenius"
+    },
+    {
+      "title": "NexRail Concept Platform",
+      "slug": "nexrail-concept-platform",
+      "description": "Futuristic transportation concept interface showcasing an advanced rail network powered by autonomous systems and renewable energy. The project focuses on modern UI design, animated sections, and interactive layouts built with Next.js and styled components, presenting a vision of high speed sustainable travel technology.",
+      "tags": [
+        "Next.js",
+        "React",
+        "Styled Components",
+        "UI Design",
+        "Frontend"
+      ],
+      "dynamicImages": [
+        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/NexRail/hero.png"
+      ]
+    },
+    {
+      "title": "Station Du Cycles  Motorcycle Store Platform",
+      "slug": "station-du-cycles-store",
+      "description": "A modern motorcycle and scooter dealership website designed for a Moroccan store. The platform showcases available brands, store information, contact options, and customer services in a visually engaging interface. Built with HTML, JavaScript, and TailwindCSS, the project focuses on responsive UI, animated hero sections, multilingual support (Arabic / French), theme switching (dark/light mode), and interactive components such as maps, contact forms, and store hour tracking. The interface emphasizes accessibility, smooth navigation, and mobile friendly design to provide customers with quick access to product brands, contact information, and dealership services.",
+      "tags": [
+        "HTML",
+        "JavaScript",
+        "Tailwind CSS",
+        "UI Design",
+        "Responsive Design",
+        "Leaflet Map",
+        "Tailwind",
+        "BootStrap",
+        "SASS",
+        "JavaScript",
+        "TypeScript",
+        "Dark Light Theme",
+        "i18n",
+        "Frontend"
+      ]
     }
   ],
   "skillsData": [

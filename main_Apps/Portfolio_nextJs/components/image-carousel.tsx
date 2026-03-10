@@ -46,7 +46,7 @@ export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCar
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                     className="absolute inset-0"
                     style={{ width: "100%" }}
-                >
+                > 
                     <Image
                         src={images[index]}
                         alt={`Project image ${index + 1}`}

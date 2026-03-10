@@ -27,14 +27,21 @@ export default function Project({
       className="group relative bg-white/5 border border-white/10 rounded-3xl   hover:bg-white/10 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col h-[100%] w-full max-w-[100%]"
     >
       {/* Image Section */}
-      <div className="relative w-full shrink-0 overflow-hidden" style={{ height: "51vh", width: "100%" }}>
-        <ImageCarousel images={dynamicImages || []} autoplayDelay={randomDelay} />
 
-        {/* Hover Overlay for Carousel Nav Instruction */}
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity flex items-center justify-between px-4">
-          <span className="text-white/20 text-xs"></span>
+      {/* Image Section - Only renders if at least one valid URL exists */}
+      {dynamicImages && dynamicImages.filter(Boolean).length > 0 && (
+        <div className="relative w-full shrink-0 overflow-hidden" style={{ height: "51vh", width: "100%" }}>
+          <ImageCarousel
+            images={dynamicImages.filter(Boolean)} // Pass the clean list here too
+            autoplayDelay={randomDelay}
+          />
+
+          {/* Hover Overlay */}
+          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity flex items-center justify-between px-4">
+            <span className="text-white/20 text-xs"></span>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Content Section */}
       <div className="p-8 flex flex-col flex-1 min-h-0">

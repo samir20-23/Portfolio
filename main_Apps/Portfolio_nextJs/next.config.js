@@ -20,10 +20,15 @@ const nextConfig = {
         hostname: "raw.githubusercontent.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "skillicons.dev",
+      },
+      {
+        protocol: "https",
+        hostname: "readme-typing-svg.herokuapp.com",
+      },
     ],
-  },
-  experimental: {
-    serverActions: true,
   },
 };
 

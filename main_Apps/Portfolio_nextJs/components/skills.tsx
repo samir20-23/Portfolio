@@ -4,6 +4,7 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const skillGroups = {
   Frontend: ["html", "css", "js", "ts", "react", "nextjs", "tailwind", "bootstrap", "sass"],
@@ -16,7 +17,7 @@ export default function Skills() {
 
   return (
     <section
-      id="skills" 
+      id="skills"
       ref={ref}
       className="mb-28 max-w-[65rem] scroll-mt-28 text-center sm:mb-40"
     >
@@ -36,10 +37,13 @@ export default function Skills() {
               {category}
             </h3>
             <div className="flex flex-center justify-center">
-              <img
+              <Image
                 src={`https://skillicons.dev/icons?i=${items.join(",")}&perline=5`}
                 alt={`${category} Skills`}
-                className="max-w-full"
+                width={300}
+                height={200}
+                className="max-w-full h-auto"
+                unoptimized
               />
             </div>
           </motion.div>
@@ -52,10 +56,13 @@ export default function Skills() {
         transition={{ delay: 0.5 }}
         className="mt-16"
       >
-        <img
+        <Image
           src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=18&duration=4000&pause=1000&color=A855F7&center=true&vCenter=true&width=482&lines=Continuous+learning.+Constant+evolving."
           alt="Typing SVG"
-          className="mx-auto"
+          width={482}
+          height={40}
+          className="mx-auto h-auto"
+          unoptimized
         />
       </motion.div>
     </section>

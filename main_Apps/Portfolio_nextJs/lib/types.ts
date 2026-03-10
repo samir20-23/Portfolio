@@ -9,5 +9,6 @@ export type ProjectData = {
     tags: string[];
     imageUrl?: string;
     dynamicImages?: string[];
-    pageUrl: string;
+    pageUrl?: string;
+    githubUrl?: string;
 };

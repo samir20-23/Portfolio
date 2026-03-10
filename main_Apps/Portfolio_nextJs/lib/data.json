@@ -314,6 +314,165 @@
         "i18n",
         "Frontend"
       ]
+    },
+    {
+      "title": "DevChat Bluetooth Messenger",
+      "slug": "devchat-bluetooth-messenger",
+      "description": "A peer to peer mobile chat application that enables offline messaging through Bluetooth connectivity. The project demonstrates device discovery, direct device communication, and real time message exchange without internet access. Built with Flutter and Dart, the application focuses on mobile interface design, Bluetooth communication handling, and lightweight offline messaging architecture for local device networks.",
+      "tags": [
+        "Flutter",
+        "Dart",
+        "Bluetooth",
+        "Mobile App",
+        "Offline Messaging",
+        "Peer to Peer",
+        "Mobile Development"
+      ],
+      "githubUrl": "https://github.com/samir20-23/DevChat_Bluetooth/tree/main/My-DevChat_Bluetooth/macos"
+    },
+    {
+      "title": "Flutter GPS Tracker Mobile App",
+      "slug": "flutter-gps-tracker-mobile-app",
+      "description": "A mobile GPS tracking application built with Flutter that displays the real time location of the device on an interactive map. The project integrates OpenStreetMap using flutter_map and uses the Geolocator package to retrieve and stream location updates. It demonstrates mobile location services, reactive state management with GetX, and a custom iPhone style device shell used for UI testing during development. The application focuses on real time tracking, map visualization, and lightweight mobile architecture for location based apps.",
+      "tags": [
+        "Flutter",
+        "Dart",
+        "GPS",
+        "Geolocation",
+        "Mobile App",
+        "OpenStreetMap",
+        "GetX",
+        "Mobile Development"
+      ],
+      "githubUrl": "https://github.com/samir20-23/Flutter_App"
+    },
+    {
+      "title": "ASP.NET React Fullstack Platform",
+      "slug": "aspnet-react-fullstack-platform",
+      "description": "A fullstack web application combining ASP.NET backend services with a modern React frontend architecture. The project demonstrates integration between a C# ASP.NET API and a React interface powered by Vite, Redux Toolkit, and TailwindCSS. It includes routing with React Router, data visualization using D3.js and Recharts, advanced form handling with React Hook Form, and smooth UI animations through Framer Motion. The platform highlights scalable fullstack structure, API driven communication, and responsive UI development.",
+      "tags": [
+        "C#",
+        "ASP.NET",
+        "React",
+        "Vite",
+        "Redux Toolkit",
+        "TailwindCSS",
+        "Fullstack",
+        "API",
+        "Data Visualization"
+      ],
+      "githubUrl": "https://github.com/samir20-23/cSharp-AspDotNet_React"
+    },
+    {
+      "title": "React Chess Online",
+      "slug": "react-chess-online",
+      "description": "Online chess game built with React and TypeScript, featuring custom hooks for game logic, music player integration, and responsive gameplay interface.",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Hooks",
+        "CSS",
+        "Chess Logic",
+        "Game UI"
+      ],
+      "githubUrl": "https://github.com/samir20-23/DevGenius_Ai/tree/main/B_Applications-react-chess/chessONline"
+    },
+    {
+      "title": "Anime API Trailer",
+      "slug": "anime-api-trailer",
+      "description": "Dynamic project delivering anime previews and trailers using multiple APIs, fast and sleek for anime fans.",
+      "tags": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Anime",
+        "APIs",
+        "Trailers",
+        "Fetch",
+        "Entertainment"
+      ],
+      "githubUrl": "https://github.com/samir20-23/anime-API-trailer"
+    },
+    {
+      "title": "Project Booking",
+      "slug": "project-booking",
+      "description": "Web application for browsing, booking, and managing coworking spaces with Laravel backend and VueJS frontend. Includes user authentication, payment integration via Stripe, and admin management tools.",
+      "tags": [
+        "Laravel",
+        "VueJS",
+        "Tailwind CSS",
+        "Stripe",
+        "Booking",
+        "Coworking",
+        "Full-Stack",
+        "Web App"
+      ],
+      "githubUrl": "https://github.com/samir20-23/Project_Booking"
+    },
+    {
+      "title": "DevType",
+      "slug": "devtype",
+      "description": "DevType is a fun and interactive typing game designed to help users improve their typing speed and accuracy. It features multiple versions of the game, tracking of user progress over time, and a clean, responsive interface suitable for both desktop and mobile devices. Players can challenge themselves with increasing difficulty levels, compete for high scores, and enjoy smooth animations that make practicing typing engaging and enjoyable.",
+      "tags": [
+        "HTML",
+        "PHP",
+        "Blade",
+        "Typing Game",
+        "Web App",
+        "Responsive Design"
+      ],
+      "githubUrl": "https://github.com/samir20-23/_DevType_"
+    },
+    {
+      "title": "FootBall App",
+      "slug": "football-app",
+      "description": "FootBall App is a web application built with Laravel and Blade to manage UEFA Champions League standings. Users can view real-time team statistics including matches played, wins, draws, losses, goals, and points. The app features editable tables for admins, automatic calculation of points and goal differences, sortable standings, and quick stats cards for matchday, total goals, teams, and groups. Its modern, responsive interface includes animations, badges for top teams, and integrated Bootstrap styling for a professional look.",
+      "tags": [
+        "Laravel",
+        "Blade",
+        "PHP",
+        "Bootstrap",
+        "Football",
+        "Standings",
+        "Web App",
+        "Responsive Design"
+      ],
+      "githubUrl": "https://github.com/samir20-23/FootBall_App"
+    },
+    {
+      "title": "MarketingCom",
+      "slug": "marketingcom",
+      "description": "MarketingCom is a full-stack marketing website project that combines backend PHP scripts with a responsive frontend. It provides features to display services, marketing campaigns, and detailed service information. The frontend is built with HTML, CSS, and JavaScript, using custom fonts and styling for a modern look. The backend manages user activity, marketing data, and database connectivity, enabling a functional marketing platform for businesses to showcase their offerings effectively.",
+      "tags": [
+        "PHP",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Marketing",
+        "Web App",
+        "Frontend",
+        "Backend",
+        "SQL"
+      ],
+      "githubUrl": "https://github.com/samir20-23/NewMarketingcom/tree/main/MARKETINGCOM"
+    },
+    {
+      "title": "PHALCON App",
+      "slug": "phalcon-app",
+      "description": "PHALCON App is an advanced web application framework built using the Phalcon PHP framework. It provides a modular and structured architecture with dedicated folders for MVC components, providers, utilities, and resources. The project includes services for routing, database access, caching, session management, logging, and view rendering. It is designed for high-performance, scalable web applications and demonstrates clean coding practices and provider-based dependency management.",
+      "tags": [
+        "PHP",
+        "Phalcon",
+        "MVC",
+        "Web App",
+        "Backend",
+        "Providers",
+        "Database",
+        "Caching",
+        "Routing"
+      ],
+      "githubUrl": "https://github.com/samir20-23/PHALCON_app/tree/main/src"
     }
   ],
   "skillsData": [

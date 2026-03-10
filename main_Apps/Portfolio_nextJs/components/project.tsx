@@ -24,10 +24,10 @@ export default function Project({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col h-[550px] w-full max-w-[550px]"
+      className="group relative bg-white/5 border border-white/10 rounded-3xl   hover:bg-white/10 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col h-[100%] w-full max-w-[100%]"
     >
       {/* Image Section */}
-      <div className="relative h-64 w-full shrink-0 overflow-hidden">
+      <div className="relative w-full shrink-0 overflow-hidden" style={{ height: "51vh", width: "100%" }}>
         <ImageCarousel images={dynamicImages || []} autoplayDelay={randomDelay} />
 
         {/* Hover Overlay for Carousel Nav Instruction */}
@@ -48,8 +48,8 @@ export default function Project({
         </div>
 
         {/* Scrollable Description Box */}
-        <div className="flex-1 overflow-y-auto pr-2 mb-6 custom-scrollbar-hide cursor-default">
-          <p className="text-gray-400 leading-relaxed text-sm">
+        <div className="flex-1 overflow-hidden cursor-default">
+          <p className="text-gray-400 leading-relaxed text-sm line-clamp-7">
             {description}
           </p>
         </div>

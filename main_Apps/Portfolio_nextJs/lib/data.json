@@ -295,9 +295,9 @@
     "Fullstack"
   ],
   "dynamicImages": [
-    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AaniDani/heroMenuImg.png",
-    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AaniDani/listFoodCard.png",
-    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AaniDani/menuIamgesCardsForFoods.png",
+    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/heroMenuImg.png",
+    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/listFoodCard.png",
+    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/menuIamgesCardsForFoods.png",
     "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/cardFoodWithAnimation.gif",
     "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/eventsCards.gif"
   ],

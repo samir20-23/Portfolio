@@ -279,6 +279,33 @@
       ],
       "githubUrl": "https://github.com/samir20-23/StorGenius"
     },
+
+   {
+  "title": "AANI & DANI Restaurant Menu Platform",
+  "slug": "aani-dani-restaurant-menu",
+  "description": "A fullstack restaurant platform built for AANI & DANI using Next.js for the frontend and Laravel for the backend. The application delivers a complete digital menu system with dynamic categories including breakfasts, fast food, desserts, drinks, and full meals. The Laravel API handles menu data, structure, and admin management, while the Next.js frontend provides a fast, responsive, and modern user experience. The platform also includes restaurant details such as location, contact, and opening hours, creating a seamless digital experience for customers.",
+  "tags": [
+    "Next.js",
+    "React",
+    "Laravel",
+    "PHP",
+    "REST API",
+    "Tailwind CSS",
+    "Fullstack",
+    "Responsive Design",
+    "Restaurant Platform"
+  ],
+  "dynamicImages": [
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png",
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png",
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png",
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png",
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png",
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png"
+  ],
+  "pageUrl": "https://your-live-site-link.com"
+},
+    
     {
       "title": "NexRail Concept Platform",
       "slug": "nexrail-concept-platform",

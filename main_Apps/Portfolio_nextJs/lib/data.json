@@ -279,11 +279,10 @@
       ],
       "githubUrl": "https://github.com/samir20-23/StorGenius"
     },
-
-   {
+{
   "title": "AANI & DANI Restaurant Menu Platform",
   "slug": "aani-dani-restaurant-menu",
-  "description": "A fullstack restaurant platform built for AANI & DANI using Next.js for the frontend and Laravel for the backend. The application delivers a complete digital menu system with dynamic categories including breakfasts, fast food, desserts, drinks, and full meals. The Laravel API handles menu data, structure, and admin management, while the Next.js frontend provides a fast, responsive, and modern user experience. The platform also includes restaurant details such as location, contact, and opening hours, creating a seamless digital experience for customers.",
+  "description": "A restaurant menu platform built for AANI & DANI using Next.js for the frontend and Laravel for the backend. The app is designed for customers inside the restaurant to browse the full menu, view food categories, check item details, and see prices in a clean and responsive interface. The Laravel backend manages the menu data and structure, while the Next.js frontend delivers a fast and smooth browsing experience. The project also includes restaurant presentation pages, giving the brand a modern digital presence.",
   "tags": [
     "Next.js",
     "React",
@@ -291,20 +290,20 @@
     "PHP",
     "REST API",
     "Tailwind CSS",
-    "Fullstack",
+    "Restaurant Menu",
     "Responsive Design",
-    "Restaurant Platform"
+    "Fullstack"
   ],
   "dynamicImages": [
-    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png",
-    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png",
-    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png",
-    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png",
-    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png",
-    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/screencapture-localhost-3000-2026-03-28-15_17_55.png"
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/heroMenuImg.png",
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/listFoodCard.png",
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/menuIamgesCardsForFoods.png",
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/cardFoodWithAnimation.mp4",
+    "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/AANI%20%26%20DANI/eventsCards.mp4"
   ],
-  "pageUrl": "https://your-live-site-link.com"
-},
+  "pageUrl": "https://anni-dani.vercel.app",
+  "githubUrl": "https://github.com/samir20-23/ANNI-DANI-restaurant"
+}
     
     {
       "title": "NexRail Concept Platform",

@@ -77,6 +77,33 @@
       ],
       "githubUrl": "https://github.com/samir20-23/TCF_Platform"
     },
+{
+  "title": "AANI & DANI Restaurant Menu Platform",
+  "slug": "aani-dani-restaurant-menu",
+  "description": "A restaurant menu platform built for AANI & DANI using Next.js for the frontend and Laravel for the backend. The app is designed for customers inside the restaurant to browse the full menu, view food categories, check item details, and see prices in a clean and responsive interface. The Laravel backend manages the menu data and structure, while the Next.js frontend delivers a fast and smooth browsing experience. The project also includes restaurant presentation pages, giving the brand a modern digital presence.",
+  "tags": [
+    "Next.js",
+    "React",
+    "Laravel",
+    "PHP",
+    "REST API",
+    "Tailwind CSS",
+    "Restaurant Menu",
+    "Responsive Design",
+    "Fullstack"
+  ],
+  "dynamicImages": [
+
+    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/cardFoodAnimations.gif",
+    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/heroMenuImg.png",
+    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/listFoodCard.png",
+    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/menuIamgesCardsForFoods.png",
+    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/eventsCards.gif"
+
+  ],
+  "pageUrl": "https://anni-dani.vercel.app",
+  "githubUrl": "https://github.com/samir20-23/ANNI-DANI-restaurant"
+},
     {
       "title": "Five Systems: Technical Installations & Maintenance",
       "slug": "five-systems",
@@ -278,33 +305,7 @@
         "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageConfirmForm.png"
       ],
       "githubUrl": "https://github.com/samir20-23/StorGenius"
-    },
-{
-  "title": "AANI & DANI Restaurant Menu Platform",
-  "slug": "aani-dani-restaurant-menu",
-  "description": "A restaurant menu platform built for AANI & DANI using Next.js for the frontend and Laravel for the backend. The app is designed for customers inside the restaurant to browse the full menu, view food categories, check item details, and see prices in a clean and responsive interface. The Laravel backend manages the menu data and structure, while the Next.js frontend delivers a fast and smooth browsing experience. The project also includes restaurant presentation pages, giving the brand a modern digital presence.",
-  "tags": [
-    "Next.js",
-    "React",
-    "Laravel",
-    "PHP",
-    "REST API",
-    "Tailwind CSS",
-    "Restaurant Menu",
-    "Responsive Design",
-    "Fullstack"
-  ],
-  "dynamicImages": [
-    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/heroMenuImg.png",
-    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/listFoodCard.png",
-    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/menuIamgesCardsForFoods.png",
-    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/eventsCards.gif",
-    "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/cardFoodAnimations.gif"
-
-  ],
-  "pageUrl": "https://anni-dani.vercel.app",
-  "githubUrl": "https://github.com/samir20-23/ANNI-DANI-restaurant"
-}
+    }
     ,
     {
       "title": "NexRail Concept Platform",

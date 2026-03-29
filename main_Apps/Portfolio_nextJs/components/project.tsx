@@ -64,7 +64,7 @@ export default function Project({
         {/* Bottom Section: Tags and Link */}
         <div className="mt-auto pt-6 border-t border-white/10">
           <div className="flex flex-wrap gap-2 mb-6">
-            {tags.slice(0, 4).map((tag) => (
+            {(tags || []).slice(0, 4).map((tag) => (
               <span
                 key={tag}
                 className="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-[10px] font-medium text-purple-300 uppercase tracking-wider"

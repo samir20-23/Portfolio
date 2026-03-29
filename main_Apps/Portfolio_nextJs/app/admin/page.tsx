@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { getProjects, saveProject, deleteProject, getTags, Project } from "@/actions/projects";
+import { getProjects, saveProject, deleteProject, getTags, checkFolderExists, Project } from "@/actions/projects";
 import { toast } from "react-hot-toast";
 import { FiEdit, FiTrash2, FiPlus, FiX, FiGithub, FiExternalLink, FiImage, FiLoader, FiFolder } from "react-icons/fi";
 
@@ -104,6 +104,21 @@ export default function AdminPage() {
   const handleOpenEdit = (index: number) => {
     const p = projects[index];
     setEditingIndex(index);
+    
+    // Extract folder name from existing images if possible
+    let currentFolder = "";
+    if (p.dynamicImages && p.dynamicImages.length > 0) {
+      const firstImg = p.dynamicImages[0];
+      if (firstImg.startsWith(GITHUB_URL_PREFIX)) {
+        const parts = firstImg.split("/");
+        // Folder is the second to last part
+        currentFolder = parts[parts.length - 2];
+      } else if (firstImg.startsWith("/")) {
+        const parts = firstImg.split("/");
+        currentFolder = parts[1];
+      }
+    }
+
     setFormData({
       title: p.title || "",
       slug: p.slug || "",
@@ -111,7 +126,7 @@ export default function AdminPage() {
       tags: p.tags || [],
       githubUrl: p.githubUrl || "",
       pageUrl: p.pageUrl || "",
-      imageFolder: "", 
+      imageFolder: currentFolder, 
     });
     setExistingImages(p.dynamicImages || []);
     setSelectedFiles([]);
@@ -144,10 +159,15 @@ export default function AdminPage() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const files = Array.from(e.target.files);
-      setSelectedFiles(files);
+      setSelectedFiles(prev => [...prev, ...files]);
       const urls = files.map(file => URL.createObjectURL(file));
-      setPreviewUrls(urls);
+      setPreviewUrls(prev => [...prev, ...urls]);
     }
+  };
+
+  const handleClearSelectedFiles = () => {
+    setSelectedFiles([]);
+    setPreviewUrls([]);
   };
 
   const handleRemoveExistingImage = (img: string) => {
@@ -166,6 +186,35 @@ export default function AdminPage() {
     if (formData.imageFolder && /\s/.test(formData.imageFolder)) {
       toast.error("Folder name cannot contain spaces");
       return;
+    }
+
+    // Check if folder exists (only for new projects or if folder name changed)
+    const currentFolder = (formData.imageFolder || formData.slug || formData.title.toLowerCase().replace(/\s+/g, "")).replace(/\s+/g, "-");
+    
+    // We only check for existence if we are UPLOADING NEW IMAGES
+    if (selectedFiles.length > 0) {
+        // If it's a new project OR the folder name changed during edit
+        let folderChanged = true;
+        if (editingIndex !== null) {
+            const p = projects[editingIndex];
+            // Try to extract existing folder
+            let oldFolder = "";
+            if (p.dynamicImages && p.dynamicImages.length > 0) {
+                const parts = p.dynamicImages[0].split("/");
+                oldFolder = parts[parts.length - 2];
+            }
+            if (oldFolder === currentFolder) {
+                folderChanged = false;
+            }
+        }
+
+        if (folderChanged) {
+            const exists = await checkFolderExists(currentFolder);
+            if (exists) {
+                toast.error(`The folder "${currentFolder}" already exists in public/. Please choose a different name for images.`);
+                return;
+            }
+        }
     }
 
     setIsUploading(true);
@@ -367,23 +416,23 @@ export default function AdminPage() {
             <form onSubmit={handleSubmit} className="p-8 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold uppercase tracking-wider text-slate-500 ml-1">Title *</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-slate-500 ml-1">Title * (No spaces)</label>
                   <input 
                     required
                     type="text"
-                    placeholder="E.g. My Awesome App"
+                    placeholder="E.g. MyProject"
                     value={formData.title}
-                    onChange={e => setFormData({ ...formData, title: e.target.value })}
+                    onChange={e => setFormData({ ...formData, title: e.target.value.replace(/\s+/g, "") })}
                     className="w-full p-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-900/50 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all focus:bg-white dark:focus:bg-slate-900"
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold uppercase tracking-wider text-slate-500 ml-1">Slug (optional)</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-slate-500 ml-1">Slug (optional) (No spaces)</label>
                   <input 
                     type="text"
                     placeholder="auto-generated-slug"
                     value={formData.slug}
-                    onChange={e => setFormData({ ...formData, slug: e.target.value })}
+                    onChange={e => setFormData({ ...formData, slug: e.target.value.replace(/\s+/g, "-") })}
                     className="w-full p-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-900/50 dark:text-white outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -572,8 +621,21 @@ export default function AdminPage() {
                   <label htmlFor="image-upload" className="cursor-pointer border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-3xl p-10 text-center block transition-all group-hover:border-blue-500 group-hover:bg-blue-50/50 dark:group-hover:bg-blue-900/10">
                     <FiImage size={48} className="mx-auto text-slate-400 group-hover:text-blue-500 mb-3 transition-colors" />
                     <p className="font-bold text-slate-600 dark:text-slate-300 group-hover:text-blue-600">Click to upload new images</p>
-                    <p className="text-xs text-slate-400 mt-2">GIF, PNG, JPG, JPEG supported</p>
-                    {selectedFiles.length > 0 && <span className="inline-block mt-3 px-3 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 rounded-full text-xs font-bold">{selectedFiles.length} files selected</span>}
+                    <p className="text-xs text-slate-400 mt-2">GIF, PNG, JPG, JPEG supported (Select multiple files)</p>
+                    {selectedFiles.length > 0 && (
+                        <div className="mt-3 flex flex-col items-center gap-2">
+                            <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 rounded-full text-xs font-bold">
+                                {selectedFiles.length} files selected
+                            </span>
+                            <button 
+                                type="button" 
+                                onClick={(e) => { e.preventDefault(); handleClearSelectedFiles(); }}
+                                className="text-[10px] text-red-500 hover:underline font-bold"
+                            >
+                                Clear Selection
+                            </button>
+                        </div>
+                    )}
                   </label>
                 </div>
               </div>

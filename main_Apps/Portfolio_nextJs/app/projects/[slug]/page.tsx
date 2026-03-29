@@ -105,22 +105,25 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                             </p>
                         </section>
 
-                        <section>
-                            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                                <span className="w-8 h-[2px] bg-purple-500"></span>
-                                Technologies Used
-                            </h2>
-                            <div className="flex flex-wrap gap-3">
-                                {project.tags.map((tag) => (
-                                    <span
-                                        key={tag}
-                                        className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-medium hover:bg-white/10 hover:border-purple-500/30 transition-all cursor-default"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </section>
+                        {/* Technologies Used */}
+                        {(project.tags && project.tags.length > 0) && (
+                            <section>
+                                <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                                    <span className="w-8 h-[2px] bg-purple-500"></span>
+                                    Technologies Used
+                                </h2>
+                                <div className="flex flex-wrap gap-3">
+                                    {project.tags.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-medium hover:bg-white/10 hover:border-purple-500/30 transition-all cursor-default"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </section>
+                        )}
 
                         {/* Gallery */}
                         {project.dynamicImages && project.dynamicImages.length > 1 && (

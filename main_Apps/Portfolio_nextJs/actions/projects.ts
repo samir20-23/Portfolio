@@ -45,13 +45,13 @@ export async function saveProject(formData: FormData) {
   try {
     const projectIdxStr = formData.get("projectIndex") as string | null;
     const projectIndex = projectIdxStr !== null ? parseInt(projectIdxStr) : null;
-    const title = formData.get("title") as string;
+    const title = (formData.get("title") as string || "").replace(/\s+/g, ""); // Force no spaces in title
     let slug = formData.get("slug") as string;
     const description = formData.get("description") as string;
     const tagsStr = formData.get("tags") as string;
     const githubUrl = formData.get("githubUrl") as string;
     const pageUrl = formData.get("pageUrl") as string;
-    const imageFolder = formData.get("imageFolder") as string;
+    const imageFolder = (formData.get("imageFolder") as string || "").replace(/\s+/g, "-"); // Force no spaces in folder
     const files = formData.getAll("images") as File[];
 
     if (!title) {
@@ -60,41 +60,32 @@ export async function saveProject(formData: FormData) {
 
     // Auto-generate slug if missing
     if (!slug) {
-      slug = title
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/(^-|-$)/g, "");
+      slug = title.toLowerCase();
     }
 
-    const tags = tagsStr ? JSON.parse(tagsStr) : [];
+    // Clean tags: remove empty strings and duplicates
+    let tags = tagsStr ? JSON.parse(tagsStr) : [];
+    tags = Array.from(new Set(tags.filter((t: string) => t && t.trim() !== "")));
     
     let imageUrls: string[] = [];
+    const folderName = imageFolder || slug || "random";
 
     // Handle image uploads
-    if (files.length > 0 && files[0].size > 0) {
-      const folderName = imageFolder || slug || "random";
+    if (files.length > 0 && files[0].name !== "undefined" && files[0].size > 0) {
       const uploadDir = path.join(PUBLIC_DIR, folderName);
       if (!fs.existsSync(uploadDir)) {
         fs.mkdirSync(uploadDir, { recursive: true });
       }
 
       for (const file of files) {
-        if (!file || file.size === 0) {
-          console.log("Skipping empty file or null file");
-          continue;
-        }
-        
-        console.log(`Processing file: ${file.name}, size: ${file.size}`);
+        if (!file || file.size === 0) continue;
         
         try {
           const arrayBuffer = await file.arrayBuffer();
-          const fileName = file.name; // Keep original name as requested
+          const fileName = file.name;
           const filePath = path.join(uploadDir, fileName);
           
           fs.writeFileSync(filePath, new Uint8Array(arrayBuffer));
-          
-          console.log(`Successfully wrote ${arrayBuffer.byteLength} bytes to ${filePath}`);
-          // Save FULL GitHub URL as requested
           imageUrls.push(`${GITHUB_URL_PREFIX}/${folderName}/${fileName}`);
         } catch (fileError) {
           console.error(`Error writing file ${file.name}:`, fileError);
@@ -103,24 +94,35 @@ export async function saveProject(formData: FormData) {
     }
 
     const data = readData();
+    const keepImagesStr = formData.get("keepImages") as string;
+    let existingImages = keepImagesStr ? JSON.parse(keepImagesStr) : [];
+
+    // If folderName changed, update existing image paths to point to the new folder
+    if (imageFolder) {
+      existingImages = existingImages.map((img: string) => {
+        if (img.startsWith(GITHUB_URL_PREFIX)) {
+          const parts = img.split("/");
+          const oldFileName = parts[parts.length - 1];
+          return `${GITHUB_URL_PREFIX}/${folderName}/${oldFileName}`;
+        }
+        return img;
+      });
+    }
+
+    const finalImages = [...existingImages, ...imageUrls];
+
     const newProject: Project = {
       title,
       slug,
-      description: description || undefined,
+      description: description && description.trim() !== "" ? description : undefined,
       tags: tags.length > 0 ? tags : undefined,
-      githubUrl: githubUrl || undefined,
-      pageUrl: pageUrl || undefined,
-      dynamicImages: imageUrls.length > 0 ? imageUrls : undefined,
+      githubUrl: githubUrl && githubUrl.trim() !== "" ? githubUrl : undefined,
+      pageUrl: pageUrl && pageUrl.trim() !== "" ? pageUrl : undefined,
+      dynamicImages: finalImages.length > 0 ? finalImages : undefined,
     };
 
     if (projectIndex !== null) {
-      const idx = projectIndex;
-      const keepImagesStr = formData.get("keepImages") as string;
-      const keepImages = keepImagesStr ? JSON.parse(keepImagesStr) : [];
-      newProject.dynamicImages = [...keepImages, ...imageUrls];
-      if (newProject.dynamicImages.length === 0) delete newProject.dynamicImages;
-
-      data.projectsData[idx] = newProject;
+      data.projectsData[projectIndex] = newProject;
     } else {
       data.projectsData.push(newProject);
     }
@@ -167,4 +169,9 @@ export async function deleteProject(index: number) {
     console.error("Delete error:", error);
     return { success: false, error: error.message };
   }
+}
+
+export async function checkFolderExists(folderName: string) {
+  const folderPath = path.join(PUBLIC_DIR, folderName);
+  return fs.existsSync(folderPath);
 }

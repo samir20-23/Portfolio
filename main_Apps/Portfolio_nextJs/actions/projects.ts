@@ -82,7 +82,15 @@ export async function saveProject(formData: FormData) {
         
         try {
           const arrayBuffer = await file.arrayBuffer();
-          const fileName = file.name;
+          
+          // Clean filename: remove spaces and all special characters from the base name
+          const originalName = file.name;
+          const ext = path.extname(originalName); // e.g., .png
+          const baseName = path.basename(originalName, ext);
+          // Remove everything except alphanumeric characters
+          const cleanBase = baseName.replace(/[^a-z0-9]/gi, "").toLowerCase();
+          const fileName = `${cleanBase}${ext}`;
+          
           const filePath = path.join(uploadDir, fileName);
           
           fs.writeFileSync(filePath, new Uint8Array(arrayBuffer));

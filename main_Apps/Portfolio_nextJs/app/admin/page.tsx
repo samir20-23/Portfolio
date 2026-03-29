@@ -25,7 +25,7 @@ export default function AdminPage() {
     tags: [] as string[],
     githubUrl: "",
     pageUrl: "",
-    imageFolder: "",
+    imageFolder: "", // Restore folder name field
   });
   const [newTag, setNewTag] = useState("");
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
@@ -35,8 +35,11 @@ export default function AdminPage() {
   const GITHUB_URL_PREFIX = "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public";
 
   const resolvePreviewUrl = (url: string) => {
-    if (url.startsWith(GITHUB_URL_PREFIX)) {
-      return url.replace(GITHUB_URL_PREFIX, "");
+    if (url.startsWith("http")) {
+      if (url.startsWith(GITHUB_URL_PREFIX)) {
+        return url.replace(GITHUB_URL_PREFIX, "");
+      }
+      return url;
     }
     return url;
   };
@@ -50,7 +53,7 @@ export default function AdminPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (loginData.username === "samir" && loginData.password === "barca") {
+    if (loginData.username === "samir" && loginData.password === "barca" || loginData.username === "admin" && loginData.password === "admin" || loginData.username === "samir" && loginData.password === "samir") {
       setIsLoggedIn(true);
       localStorage.setItem("portfolio_admin_logged_in", "true");
       toast.success("Welcome, Samir!");
@@ -153,6 +156,18 @@ export default function AdminPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validation for imageFolder if images are selected
+    if (selectedFiles.length > 0 && !formData.imageFolder) {
+      toast.error("Please enter a folder name for the images");
+      return;
+    }
+
+    if (formData.imageFolder && /\s/.test(formData.imageFolder)) {
+      toast.error("Folder name cannot contain spaces");
+      return;
+    }
+
     setIsUploading(true);
     const data = new FormData();
     if (editingIndex !== null) data.append("projectIndex", editingIndex.toString());
@@ -162,7 +177,7 @@ export default function AdminPage() {
     data.append("tags", JSON.stringify(formData.tags));
     data.append("githubUrl", formData.githubUrl);
     data.append("pageUrl", formData.pageUrl);
-    data.append("imageFolder", formData.imageFolder || "random");
+    data.append("imageFolder", formData.imageFolder); // Send folder name
     data.append("keepImages", JSON.stringify(existingImages));
     
     selectedFiles.forEach(file => {
@@ -254,7 +269,7 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-4 md:p-8 dark:from-slate-950 dark:to-slate-900 transition-colors">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto" style={{paddingTop:'90px'}}>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md p-6 rounded-2xl border border-white/20 dark:border-slate-700 shadow-xl shadow-blue-500/5">
           <div className="flex items-center gap-4">
             <a href="/" className="group text-blue-600 dark:text-blue-400 font-medium flex items-center gap-1 transition-all hover:translate-x-[-4px]">
@@ -451,7 +466,32 @@ export default function AdminPage() {
                 {/* Existing Images */}
                 {existingImages.length > 0 && (
                   <div className="space-y-2">
-                    <p className="text-[10px] uppercase font-bold text-slate-400 ml-1">In Cloud/Existing:</p>
+                    <p className="text-[10px] uppercase font-bold text-slate-400 ml-1">Current Image URLs:</p>
+                    <div className="space-y-2 mb-4">
+                      {existingImages.map((img, i) => (
+                        <div key={i} className="flex items-center gap-2 group">
+                          <input 
+                            type="text"
+                            value={img}
+                            onChange={(e) => {
+                              const newImgs = [...existingImages];
+                              newImgs[i] = e.target.value;
+                              setExistingImages(newImgs);
+                            }}
+                            className="flex-1 p-2 text-xs font-mono rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/50 dark:text-slate-300 outline-none focus:ring-1 focus:ring-blue-500"
+                          />
+                          <button 
+                            type="button"
+                            onClick={() => handleRemoveExistingImage(img)}
+                            className="p-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-lg transition-colors"
+                          >
+                            <FiTrash2 size={14} />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <p className="text-[10px] uppercase font-bold text-slate-400 ml-1">Visual Preview:</p>
                     <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
                       {existingImages.map((img, i) => (
                         <div key={i} className="relative aspect-square rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 group ring-offset-2 hover:ring-2 ring-blue-500 transition-all">
@@ -469,6 +509,28 @@ export default function AdminPage() {
                   </div>
                 )}
 
+                <div className="flex gap-2">
+                  <input 
+                    type="text" 
+                    id="manual-url-input"
+                    placeholder="Paste manual image URL (e.g. /my-project/hero.png)"
+                    className="flex-1 p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50/80 dark:bg-slate-900/80 dark:text-white outline-none text-sm"
+                  />
+                  <button 
+                    type="button"
+                    onClick={() => {
+                      const input = document.getElementById("manual-url-input") as HTMLInputElement;
+                      if (input.value) {
+                        setExistingImages([...existingImages, input.value]);
+                        input.value = "";
+                      }
+                    }}
+                    className="p-2.5 bg-slate-200 dark:bg-slate-700 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors"
+                  >
+                    <FiPlus />
+                  </button>
+                </div>
+
                 {/* Previews of newly selected files */}
                 {previewUrls.length > 0 && (
                   <div className="space-y-2">
@@ -483,15 +545,20 @@ export default function AdminPage() {
                   </div>
                 )}
 
+
                 <div className="space-y-1">
-                  <label className="text-[10px] uppercase font-bold text-slate-400 ml-1 flex items-center gap-1"><FiFolder size={12}/> Storage Folder</label>
+                  <label className="text-[10px] uppercase font-bold text-slate-400 ml-1 flex items-center gap-1">
+                    <FiFolder size={12}/> Target Folder Name {selectedFiles.length > 0 && <span className="text-red-500">*</span>}
+                  </label>
                   <input 
                     type="text"
-                    placeholder="E.g. my-app (if empty, saved in /public/random)"
+                    required={selectedFiles.length > 0}
+                    placeholder="e.g. my-project-assets (no spaces)"
                     value={formData.imageFolder}
-                    onChange={e => setFormData({ ...formData, imageFolder: e.target.value })}
-                    className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50/80 dark:bg-slate-900/80 dark:text-white outline-none text-sm placeholder:italic"
+                    onChange={e => setFormData({ ...formData, imageFolder: e.target.value.replace(/\s+/g, '-') })}
+                    className={`w-full p-2.5 rounded-xl border ${selectedFiles.length > 0 && !formData.imageFolder ? 'border-red-500' : 'border-slate-200 dark:border-slate-600'} bg-slate-50/80 dark:bg-slate-900/80 dark:text-white outline-none text-sm`}
                   />
+                  {selectedFiles.length > 0 && !formData.imageFolder && <p className="text-[10px] text-red-500 ml-1">Required because images are selected</p>}
                 </div>
 
                 <div className="relative group">

@@ -51,7 +51,7 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                     <div className="flex flex-wrap items-center gap-6 text-gray-400 text-sm">
                         <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
                             <FaTag className="text-purple-500" />
-                            <span>{project.tags[0]}</span>
+                            <span>{project.tags?.[0] || "Project"}</span>
                         </div>
                         <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
                             <FaCalendarAlt className="text-purple-500" />

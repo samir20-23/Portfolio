@@ -72,7 +72,7 @@ export async function saveProject(formData: FormData) {
 
     // Handle image uploads
     if (files.length > 0 && files[0].size > 0) {
-      const folderName = imageFolder || "random";
+      const folderName = imageFolder || slug || "random";
       const uploadDir = path.join(PUBLIC_DIR, folderName);
       if (!fs.existsSync(uploadDir)) {
         fs.mkdirSync(uploadDir, { recursive: true });
@@ -88,20 +88,13 @@ export async function saveProject(formData: FormData) {
         
         try {
           const arrayBuffer = await file.arrayBuffer();
-          const buffer = Buffer.from(arrayBuffer);
-          
-          if (buffer.length === 0) {
-            console.error(`Buffer is empty for file: ${file.name}`);
-            continue;
-          }
-
-          const fileName = `${Date.now()}-${file.name.replace(/[^a-z0-9.]/gi, '_').toLowerCase()}`;
+          const fileName = file.name; // Keep original name as requested
           const filePath = path.join(uploadDir, fileName);
           
-          // Use synchronous write for local dev safety
           fs.writeFileSync(filePath, new Uint8Array(arrayBuffer));
           
-          console.log(`Successfully wrote ${buffer.length} bytes to ${filePath}`);
+          console.log(`Successfully wrote ${arrayBuffer.byteLength} bytes to ${filePath}`);
+          // Save FULL GitHub URL as requested
           imageUrls.push(`${GITHUB_URL_PREFIX}/${folderName}/${fileName}`);
         } catch (fileError) {
           console.error(`Error writing file ${file.name}:`, fileError);
@@ -134,7 +127,8 @@ export async function saveProject(formData: FormData) {
 
     writeData(data);
     revalidatePath("/admin");
-    revalidatePath("/");
+    revalidatePath("/projects");
+    revalidatePath("/", "layout");
     return { success: true };
   } catch (error: any) {
     console.error("CRITICAL SAVE ERROR:", error);
@@ -166,7 +160,8 @@ export async function deleteProject(index: number) {
     data.projectsData.splice(index, 1);
     writeData(data);
     revalidatePath("/admin");
-    revalidatePath("/");
+    revalidatePath("/projects");
+    revalidatePath("/", "layout");
     return { success: true };
   } catch (error: any) {
     console.error("Delete error:", error);

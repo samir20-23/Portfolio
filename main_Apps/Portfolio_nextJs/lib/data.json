@@ -500,16 +500,19 @@
       "githubUrl": "https://github.com/samir20-23/PHALCON_app/tree/main/src"
     },
     {
-      "title": "test",
-      "slug": "test",
-      "description": "test",
+      "title": "my",
+      "slug": "my",
+      "description": "my",
       "tags": [
-        "test"
+        "my",
+        "Luxury UI/UX"
       ],
+      "githubUrl": "https://github.com/samir20-23",
+      "pageUrl": "https://github.com/samir20-23",
       "dynamicImages": [
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/test/screencapturelocalhost300020260328151755.png",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/test/eventscards.gif"
-      ] 
+        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/my/1773268975630.png",
+        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/my/file00000000920072439091494230496b65.png"
+      ]
     }
   ],
   "skillsData": [

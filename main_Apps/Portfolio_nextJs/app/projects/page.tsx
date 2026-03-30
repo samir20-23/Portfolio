@@ -18,9 +18,9 @@ export default function ProjectsPage() {
     const filteredProjects = useMemo(() => {
         return projectsData.filter((project) => {
             const matchesSearch = project.title.toLowerCase().includes(search.toLowerCase()) ||
-                project.description.toLowerCase().includes(search.toLowerCase());
+                (project.description || "").toLowerCase().includes(search.toLowerCase());
 
-            const projectTags = project.tags.map(t => t.toLowerCase());
+            const projectTags = (project.tags || []).map(t => t.toLowerCase());
             const matchesCategory = activeTab === "All" ||
                 projectTags.includes(activeTab.toLowerCase()) ||
                 (activeTab === "Fullstack" && projectTags.some(tag => ["laravel", "next.js", "php", "supabase"].includes(tag))) ||

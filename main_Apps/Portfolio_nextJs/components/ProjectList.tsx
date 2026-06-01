@@ -25,6 +25,7 @@ export default function ProjectList() {
       <div className="flex justify-center mt-20">
         <Link
           href="/projects"
+  prefetch={true}
           className="group relative px-8 py-4 bg-white/5 border border-white/10 rounded-2xl font-bold text-white overflow-hidden transition-all hover:bg-white/10 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(147,51,234,0.15)] flex items-center gap-3 active:scale-95"
         >
           <span className="relative z-10 text-lg">View All Projects</span>

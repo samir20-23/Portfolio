@@ -32,6 +32,7 @@ export default function Intro() {
   const [iconIndex, setIconIndex] = useState(0);
   const [isCVModalOpen, setIsCVModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [selectedCV, setSelectedCV] = useState("/aouladAmarSamir.pdf");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -160,12 +161,14 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        <button
+        <a
+          href={selectedCV}
+          download
           onClick={() => setIsCVModalOpen(true)}
-          className="group bg-white/10 text-white px-7 py-3 flex items-center gap-2 rounded-full border border-white/10 hover:bg-white/20 transition-all"
+          className="group bg-white/10 text-white px-7 py-3 flex items-center gap-2 rounded-full border border-white/10 hover:bg-white/20 transition-all cursor-pointer"
         >
           Get My CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-        </button>
+        </a>
 
         <button
           onClick={() => setIsContactModalOpen(true)}
@@ -195,7 +198,32 @@ export default function Intro() {
       {/* Modals */}
       <Modal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} title="Curriculum Vitae">
         <div className="flex flex-col gap-6 h-full min-h-[650px]">
-          <iframe src="/aouladAmarSamir.pdf#toolbar=0" className="w-full h-full min-h-[550px]" title="CV Viewer" />
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-gray-400 font-medium">Select Version:</span>
+              <select 
+                value={selectedCV}
+                onChange={(e) => setSelectedCV(e.target.value)}
+                className="bg-black/20 text-white text-sm rounded-lg border border-white/10 p-2 outline-none focus:border-purple-500 transition-colors cursor-pointer"
+              >
+                <option value="/aouladAmarSamir.pdf">Default CV</option>
+                <option value="/AouladAmarSamir_cv-E.pdf">English Version</option>
+                <option value="/AouladAmarSamir_cv-F.pdf">French Version</option>
+              </select>
+            </div>
+            <a 
+              href={selectedCV}
+              download
+              className="flex items-center gap-2 px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-full text-sm font-medium transition-all active:scale-95 shadow-lg shadow-purple-500/20"
+            >
+              <HiDownload /> Download PDF
+            </a>
+          </div>
+          <iframe 
+            src={`${selectedCV}#toolbar=0`} 
+            className="w-full h-full min-h-[550px] rounded-xl border border-white/5" 
+            title="CV Viewer" 
+          />
         </div>
       </Modal>
 

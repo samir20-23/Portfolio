@@ -24,7 +24,7 @@ export default function Project({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="group relative bg-white/5 border border-white/10 rounded-3xl   hover:bg-white/10 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col h-[100%] w-full max-w-[100%]"
+      className="group relative bg-gray-100 dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-3xl hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col h-[100%] w-full max-w-[100%]"
     >
       {/* Image Section */}
 
@@ -47,7 +47,7 @@ export default function Project({
       <div className="p-8 flex flex-col flex-1 min-h-0">
         <div className="flex justify-between items-start mb-4">
           <Link href={`/projects/${slug}`}>
-            <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
+            <h3 className="text-2xl font-bold text-gray-950 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
               {title}
             </h3>
           </Link>
@@ -56,18 +56,18 @@ export default function Project({
 
         {/* Scrollable Description Box */}
         <div className="flex-1 overflow-hidden cursor-default">
-          <p className="text-gray-400 leading-relaxed text-sm line-clamp-7">
+          <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm line-clamp-7">
             {description}
           </p>
         </div>
 
         {/* Bottom Section: Tags and Link */}
-        <div className="mt-auto pt-6 border-t border-white/10">
+        <div className="mt-auto pt-6 border-t border-black/5 dark:border-white/10">
           <div className="flex flex-wrap gap-2 mb-6">
             {(tags || []).slice(0, 4).map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-[10px] font-medium text-purple-300 uppercase tracking-wider"
+                className="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-[10px] font-medium text-purple-600 dark:text-purple-300 uppercase tracking-wider"
               >
                 {tag}
               </span>
@@ -76,10 +76,10 @@ export default function Project({
 
           <Link
             href={`/projects/${slug}`}
-            className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-purple-400 transition-colors group/link"
+            className="inline-flex items-center gap-2 text-sm font-bold text-gray-950 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors group/link"
           >
             Explore Project Details
-            <span className="block w-4 h-[1px] bg-white group-hover/link:bg-purple-400 group-hover/link:translate-x-1 transition-all" />
+            <span className="block w-4 h-[1px] bg-gray-950 dark:bg-white group-hover/link:bg-purple-600 dark:group-hover/link:bg-purple-400 group-hover/link:translate-x-1 transition-all" />
             <FaArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
           </Link>
         </div>

@@ -26,7 +26,7 @@ export default function ProjectList() {
         <Link
           href="/projects"
   prefetch={true}
-          className="group relative px-8 py-4 bg-white/5 border border-white/10 rounded-2xl font-bold text-white overflow-hidden transition-all hover:bg-white/10 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(147,51,234,0.15)] flex items-center gap-3 active:scale-95"
+          className="group relative px-8 py-4 bg-gray-100 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl font-bold text-gray-950 dark:text-white overflow-hidden transition-all hover:bg-gray-200 dark:hover:bg-white/10 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(147,51,234,0.15)] flex items-center gap-3 active:scale-95"
         >
           <span className="relative z-10 text-lg">View All Projects</span>
           <FaArrowRight className="relative z-10 transition-transform group-hover:translate-x-1" />

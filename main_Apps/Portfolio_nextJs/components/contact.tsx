@@ -21,10 +21,10 @@ export default function Contact() {
     >
       <SectionHeading>Contact Me</SectionHeading>
 
-      <p className="text-gray-400 -mt-6 mb-12">
+      <p className="text-gray-600 dark:text-gray-400 -mt-6 mb-12">
         Reach out to me directly at{" "}
         <a
-          className="underline text-purple-400 hover:text-purple-300 transition-colors font-medium"
+          className="underline text-purple-600 dark:text-purple-400 hover:text-purple-500 dark:hover:text-purple-300 transition-colors font-medium"
           href="mailto:aouladamarsamir@gmail.com"
         >
           aouladamarsamir@gmail.com
@@ -32,7 +32,7 @@ export default function Contact() {
         or use the form below to send a message.
       </p>
 
-      <div className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm text-left">
+      <div className="bg-gray-100 dark:bg-white/5 border border-black/5 dark:border-white/10 p-8 rounded-3xl backdrop-blur-sm text-left shadow-sm dark:shadow-none">
         <ContactForm />
       </div>
     </motion.section>

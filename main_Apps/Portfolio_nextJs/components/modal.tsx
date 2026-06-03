@@ -41,21 +41,21 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="relative w-full max-w-4xl max-h-[90vh] bg-gray-900 border border-white/10 rounded-3xl z-[1000] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col"
+                        className="relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-gray-900 border border-black/5 dark:border-white/10 rounded-3xl z-[1000] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.2)] dark:shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col"
                     >
                         {/* Header */}
-                        <div className="flex items-center justify-between p-6 border-b border-white/10 shrink-0 bg-gray-900/50 backdrop-blur-md">
-                            <h3 className="text-xl font-bold text-white">{title}</h3>
+                        <div className="flex items-center justify-between p-6 border-b border-black/5 dark:border-white/10 shrink-0 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md">
+                            <h3 className="text-xl font-bold text-gray-950 dark:text-white">{title}</h3>
                             <button
                                 onClick={onClose}
-                                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white transition-all active:scale-95"
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 text-gray-950 dark:text-white transition-all active:scale-95"
                             >
                                 <FaTimes />
                             </button>
                         </div>
 
                         {/* Content */}
-                        <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
+                        <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar text-gray-900 dark:text-gray-200">
                             {children}
                         </div>
                     </motion.div>

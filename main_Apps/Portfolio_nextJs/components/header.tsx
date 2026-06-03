@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <header className="z-[999] relative">
       <motion.div
-        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white/10 bg-gray-950/40 backdrop-blur-[0.5rem] shadow-[0_0_20px_rgba(0,0,0,0.3)] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
+        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-black/5 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 backdrop-blur-[0.5rem] shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(0,0,0,0.3)] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>
@@ -35,10 +35,10 @@ export default function Header() {
               >
                 <Link
                   className={clsx(
-                    "flex w-full items-center justify-center px-3 py-3 hover:text-white transition-colors duration-200",
+                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 dark:hover:text-white transition-colors duration-200",
                     {
-                      "text-purple-400": activeSection === link.name,
-                      "text-gray-400": activeSection !== link.name,
+                      "text-purple-600 dark:text-purple-400": activeSection === link.name,
+                      "text-gray-500 dark:text-gray-400": activeSection !== link.name,
                     }
                   )}
                   href={targetHash}
@@ -51,7 +51,7 @@ export default function Header() {
 
                   {link.name === activeSection && (
                     <motion.span
-                      className="bg-white/5 rounded-full absolute inset-0 -z-10 border border-white/10 shadow-[0_0_15px_rgba(168,85,247,0.15)]"
+                      className="bg-gray-100 dark:bg-white/5 rounded-full absolute inset-0 -z-10 border border-black/5 dark:border-white/10 shadow-[0_0_15px_rgba(168,85,247,0.1)] dark:shadow-[0_0_15px_rgba(168,85,247,0.15)]"
                       layoutId="activeSection"
                       transition={{
                         type: "spring",

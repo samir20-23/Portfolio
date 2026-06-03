@@ -147,12 +147,12 @@ export default function Intro() {
       </div>
 
       <motion.h1
-        className="mb-10 mt-8 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl text-gray-200"
+        className="mb-10 mt-8 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl text-gray-700 dark:text-gray-200"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold text-white">Hi, I'm Samir.</span> I'm a
-        <span className="font-bold text-purple-400"> full-stack developer</span>.
+        <span className="font-bold text-gray-950 dark:text-white">Hi, I'm Samir.</span> I'm a
+        <span className="font-bold text-purple-600 dark:text-purple-400"> full-stack developer</span>.
       </motion.h1>
 
       <motion.div
@@ -165,7 +165,7 @@ export default function Intro() {
           href={selectedCV}
           download
           onClick={() => setIsCVModalOpen(true)}
-          className="group bg-white/10 text-white px-7 py-3 flex items-center gap-2 rounded-full border border-white/10 hover:bg-white/20 transition-all cursor-pointer"
+          className="group bg-white dark:bg-white/10 text-gray-950 dark:text-white px-7 py-3 flex items-center gap-2 rounded-full border border-black/10 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/20 transition-all cursor-pointer shadow-sm dark:shadow-none"
         >
           Get My CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>

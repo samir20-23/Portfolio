@@ -22,7 +22,7 @@ export default function ContactForm() {
             }}
         >
             <input
-                className="h-14 px-6 rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all"
+                className="h-14 px-6 rounded-2xl bg-gray-100 dark:bg-white/5 border border-black/10 dark:border-white/10 text-gray-950 dark:text-white placeholder:text-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all"
                 name="senderEmail"
                 type="email"
                 required
@@ -30,7 +30,7 @@ export default function ContactForm() {
                 placeholder="Your email address"
             />
             <textarea
-                className="h-52 rounded-2xl bg-white/5 border border-white/10 p-6 text-white placeholder:text-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all resize-none"
+                className="h-52 rounded-2xl bg-gray-100 dark:bg-white/5 border border-black/10 dark:border-white/10 p-6 text-gray-950 dark:text-white placeholder:text-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all resize-none"
                 name="message"
                 placeholder="How can I help you?"
                 required

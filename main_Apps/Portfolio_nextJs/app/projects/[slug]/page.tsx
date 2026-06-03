@@ -21,7 +21,7 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
     }
 
     return (
-        <main className="min-h-screen bg-gray-950 text-white selection:bg-purple-500/30">
+        <main className="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-950 dark:text-white selection:bg-purple-500/30">
             <div className="pt-40 pb-20 px-4 mx-auto" style={{ width: "95%" }}>
                 {/* Back Button */}
                 <motion.div
@@ -31,7 +31,7 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                 >
                     <Link
                         href="/projects"
-                        className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
+                        className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-950 dark:hover:text-white transition-colors group"
                     >
                         <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
                         Back to Projects
@@ -44,35 +44,32 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-12"
                 >
-                    <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-purple-400 mb-6 tracking-tight">
+                    <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-purple-600 dark:from-white dark:via-white dark:to-purple-400 mb-6 tracking-tight">
                         {project.title}
                     </h1>
 
-                    <div className="flex flex-wrap items-center gap-6 text-gray-400 text-sm">
-                        <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
-                            <FaTag className="text-purple-500" />
+                    <div className="flex flex-wrap items-center gap-6 text-gray-500 dark:text-gray-400 text-sm">
+                        <div className="flex items-center gap-2 px-3 py-1 bg-gray-100 dark:bg-white/5 rounded-full border border-black/5 dark:border-white/10">
+                            <FaTag className="text-purple-600 dark:text-purple-500" />
                             <span>{project.tags?.[0] || "Project"}</span>
                         </div>
-                        <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
-                            <FaCalendarAlt className="text-purple-500" />
+                        <div className="flex items-center gap-2 px-3 py-1 bg-gray-100 dark:bg-white/5 rounded-full border border-black/5 dark:border-white/10">
+                            <FaCalendarAlt className="text-purple-600 dark:text-purple-500" />
                             <span>Project Review</span>
                         </div>
                     </div>
                 </motion.div>
 
                 {/* Featured Image */}
-                {/* Featured Image */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="relative aspect-video w-full rounded-[2rem] overflow-hidden border border-white/10 mb-16 shadow-2xl group cursor-zoom-in"
-                    // Update the modal state with the fallback as well
+                    className="relative aspect-video w-full rounded-[2rem] overflow-hidden border border-black/5 dark:border-white/10 mb-16 shadow-2xl group cursor-zoom-in"
                     onClick={() => setSelectedImage(
                         project.dynamicImages?.[0] || "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/src/demo.gif"
                     )}
                 >
                     <Image
-                        // If the first image doesn't exist, use the demo.gif
                         src={project.dynamicImages?.[0] || "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/src/demo.gif"}
                         alt={project.title}
                         fill
@@ -80,7 +77,7 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                         priority
                     />
                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-xs font-bold">
+                        <span className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-xs font-bold text-white">
                             Click to Enlarge
                         </span>
                     </div>
@@ -97,10 +94,10 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                     >
                         <section>
                             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                                <span className="w-8 h-[2px] bg-purple-500"></span>
+                                <span className="w-8 h-[2px] bg-purple-600 dark:bg-purple-500"></span>
                                 Project Overview
                             </h2>
-                            <p className="text-gray-400 leading-relaxed text-lg">
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
                                 {project.description}
                             </p>
                         </section>
@@ -109,14 +106,14 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                         {(project.tags && project.tags.length > 0) && (
                             <section>
                                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                                    <span className="w-8 h-[2px] bg-purple-500"></span>
+                                    <span className="w-8 h-[2px] bg-purple-600 dark:bg-purple-500"></span>
                                     Technologies Used
                                 </h2>
                                 <div className="flex flex-wrap gap-3">
                                     {project.tags.map((tag) => (
                                         <span
                                             key={tag}
-                                            className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-medium hover:bg-white/10 hover:border-purple-500/30 transition-all cursor-default"
+                                            className="px-4 py-2 bg-gray-100 dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl text-sm font-medium hover:bg-gray-200 dark:hover:bg-white/10 hover:border-purple-500/30 transition-all cursor-default"
                                         >
                                             {tag}
                                         </span>
@@ -129,14 +126,14 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                         {project.dynamicImages && project.dynamicImages.length > 1 && (
                             <section>
                                 <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                                    <span className="w-8 h-[2px] bg-purple-500"></span>
+                                    <span className="w-8 h-[2px] bg-purple-600 dark:bg-purple-500"></span>
                                     Visual Gallery
                                 </h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     {project.dynamicImages.slice(1).map((img, i) => (
                                         <div
                                             key={i}
-                                            className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 group cursor-zoom-in shadow-lg"
+                                            className="relative aspect-video rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 group cursor-zoom-in shadow-lg"
                                             onClick={() => setSelectedImage(img)}
                                         >
                                             <Image
@@ -160,7 +157,7 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                         transition={{ delay: 0.3 }}
                         className="space-y-8"
                     >
-                        <div className="bg-white/5 border border-white/10 p-8 rounded-[2rem] backdrop-blur-md sticky top-32 shadow-xl">
+                        <div className="bg-gray-100 dark:bg-white/5 border border-black/5 dark:border-white/10 p-8 rounded-[2rem] backdrop-blur-md sticky top-32 shadow-xl">
                             <h3 className="text-xl font-bold mb-8 tracking-tight">Project Resources</h3>
 
                             <div className="space-y-4">
@@ -177,7 +174,7 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                                     <Link
                                         href={project.githubUrl}
                                         target="_blank"
-                                        className="flex items-center justify-center gap-3 w-full py-4 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-bold transition-all active:scale-95 border border-white/5 hover:border-white/10"
+                                        className="flex items-center justify-center gap-3 w-full py-4 bg-gray-200 dark:bg-white/10 hover:bg-gray-300 dark:hover:bg-white/20 text-gray-950 dark:text-white rounded-2xl font-bold transition-all active:scale-95 border border-black/5 dark:border-white/5 hover:border-black/10 dark:hover:border-white/10"
                                     >
                                         <FaGithub /> Source Code
                                     </Link>
@@ -185,13 +182,13 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
 
                             </div>
 
-                            <div className="mt-10 pt-8 border-t border-white/5 text-center">
+                            <div className="mt-10 pt-8 border-t border-black/5 dark:border-white/5 text-center">
                                 <p className="text-gray-500 text-sm italic mb-6">
                                     Have a similar project in mind? Let's talk about it.
                                 </p>
                                 <button
                                     onClick={() => setIsContactModalOpen(true)}
-                                    className="text-purple-400 font-bold hover:text-purple-300 transition-colors flex items-center gap-2 mx-auto decoration-2 underline-offset-4 hover:underline"
+                                    className="text-purple-600 dark:text-purple-400 font-bold hover:text-purple-700 dark:hover:text-purple-300 transition-colors flex items-center gap-2 mx-auto decoration-2 underline-offset-4 hover:underline"
                                 >
                                     <FaHeadset /> Get in touch
                                 </button>
@@ -232,8 +229,8 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                             <FaHeadset />
                         </div>
                         <div>
-                            <h4 className="font-bold text-white text-lg tracking-tight">Ready to collaborate?</h4>
-                            <p className="text-gray-400 text-sm">Send me a message and I'll get back to you within 24 hours.</p>
+                            <h4 className="font-bold text-gray-950 dark:text-white text-lg tracking-tight">Ready to collaborate?</h4>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm">Send me a message and I'll get back to you within 24 hours.</p>
                         </div>
                     </div>
                     <ContactForm />

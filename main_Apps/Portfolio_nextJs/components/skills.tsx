@@ -31,9 +31,9 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: catIndex * 0.1 }}
             viewport={{ once: true }}
-            className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm hover:bg-white/10 transition-all group"
+            className="bg-gray-100 dark:bg-white/5 border border-black/5 dark:border-white/10 p-8 rounded-3xl backdrop-blur-sm hover:bg-gray-200 dark:hover:bg-white/10 transition-all group shadow-sm dark:shadow-none"
           >
-            <h3 className="text-xl font-bold mb-8 text-purple-400 group-hover:text-purple-300 transition-colors">
+            <h3 className="text-xl font-bold mb-8 text-purple-600 dark:text-purple-400 group-hover:text-purple-500 dark:group-hover:text-purple-300 transition-colors">
               {category}
             </h3>
             <div className="flex flex-center justify-center">

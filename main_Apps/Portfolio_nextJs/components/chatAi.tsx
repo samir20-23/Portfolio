@@ -20,7 +20,7 @@ export default function ChatAi() {
     {
       role: "ai",
       content: "Salam! I'm Samir. How can I help you explore my work today?",
-      timestamp: new Date(),
+      timestamp: new Date("2024-01-01T00:00:00Z"),
     },
   ]);
   const messagesEndRef = useRef<HTMLDivElement>(null);

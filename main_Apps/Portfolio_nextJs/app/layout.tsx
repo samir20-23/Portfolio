@@ -9,6 +9,7 @@ import ChatAi from "@/components/chatAi";
 import SocialDock from "@/components/social-dock";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
+import ScrollToTop from "@/components/scroll-to-top";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], display: 'swap' });
@@ -67,6 +68,7 @@ export default function RootLayout({
             {children}
             <Footer />
             <SocialDock />
+            <ScrollToTop />
             <Toaster position="top-right" />
             <div
               className="fixed  right-3 bg-white w-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center transition-all dark:bg-gray-950 dark:border-gray-800 z-50"

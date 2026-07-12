@@ -64,7 +64,7 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="relative aspect-video w-full rounded-[2rem] overflow-hidden border border-black/5 dark:border-white/10 mb-16 shadow-2xl group cursor-zoom-in"
+                    className="relative aspect-video w-full rounded-[2rem] overflow-hidden border border-black/5 dark:border-white/10 mb-16 shadow-2xl group cursor-zoom-in bg-black/5 dark:bg-white/5"
                     onClick={() => setSelectedImage(
                         project.dynamicImages?.[0] || "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/src/demo.gif"
                     )}
@@ -73,7 +73,7 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                         src={project.dynamicImages?.[0] || "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/src/demo.gif"}
                         alt={project.title}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-contain transition-transform duration-700 group-hover:scale-105"
                         priority
                     />
                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -133,14 +133,14 @@ export default function ProjectDetails({ params }: { params: Promise<{ slug: str
                                     {project.dynamicImages.slice(1).map((img, i) => (
                                         <div
                                             key={i}
-                                            className="relative aspect-video rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 group cursor-zoom-in shadow-lg"
+                                            className="relative aspect-video rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 group cursor-zoom-in shadow-lg bg-black/5 dark:bg-white/5"
                                             onClick={() => setSelectedImage(img)}
                                         >
                                             <Image
                                                 src={img}
                                                 alt={`${project.title} screenshot ${i + 2}`}
                                                 fill
-                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                className="object-contain transition-transform duration-500 group-hover:scale-110"
                                             />
                                             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                                         </div>

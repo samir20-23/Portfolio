@@ -4,6 +4,36 @@
 
 html {
     --line-color: #5c3ad7;
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: rgba(147, 51, 234, 0.3); /* Purple selection */
+    color: inherit;
+}
+
+/* Custom Scrollbar for entire site */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(147, 51, 234, 0.5); /* Purple-500 with opacity */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(147, 51, 234, 0.8);
 }
 
 html.dark {

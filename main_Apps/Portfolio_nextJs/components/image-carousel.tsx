@@ -74,9 +74,6 @@ export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCar
                         alt={`Project image ${index + 1}`}
                         onLoad={() => handleLoad(index)}
                         className="w-full h-full object-contain bg-slate-900/40"
-                        style={{
-                            borderRadius: "25px",
-                        }}
                         loading={index === 0 ? "eager" : "lazy"}
                         decoding="async"
                     />

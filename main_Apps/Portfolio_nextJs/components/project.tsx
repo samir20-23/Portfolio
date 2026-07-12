@@ -30,7 +30,7 @@ export default function Project({
 
       {/* Image Section - Only renders if at least one valid URL exists */}
       {dynamicImages && dynamicImages.filter(Boolean).length > 0 && (
-        <div className="relative w-full shrink-0 overflow-hidden" style={{ height: "51vh", width: "100%" }}>
+        <div className="relative w-full shrink-0 overflow-hidden aspect-video border-b border-black/5 dark:border-white/10 rounded-t-3xl">
           <ImageCarousel
             images={dynamicImages.filter(Boolean)} // Pass the clean list here too
             autoplayDelay={randomDelay}

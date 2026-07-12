@@ -26,6 +26,9 @@ const nextConfig = {
       bodySizeLimit: '50mb',
     },
   },
+  outputFileTracingExcludes: {
+    "/*": ["./public/**/*"],
+  },
 };
 
 module.exports = nextConfig;

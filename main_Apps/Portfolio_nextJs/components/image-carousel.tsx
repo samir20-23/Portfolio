@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface ImageCarouselProps {
@@ -12,13 +11,25 @@ interface ImageCarouselProps {
 
 export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCarouselProps) {
     const [index, setIndex] = useState(0);
+    const [loaded, setLoaded] = useState<boolean[]>(new Array(images.length).fill(false));
+    const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+    // Preload next image in background
+    useEffect(() => {
+        const nextIdx = (index + 1) % images.length;
+        const img = new window.Image();
+        img.src = images[nextIdx];
+    }, [index, images]);
+
+    // Autoplay
     useEffect(() => {
         if (images.length <= 1) return;
-        const timer = setInterval(() => {
+        timerRef.current = setInterval(() => {
             setIndex((prev) => (prev + 1) % images.length);
         }, autoplayDelay);
-        return () => clearInterval(timer);
+        return () => {
+            if (timerRef.current) clearInterval(timerRef.current);
+        };
     }, [images.length, autoplayDelay]);
 
     const next = (e: React.MouseEvent) => {
@@ -33,32 +44,49 @@ export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCar
         setIndex((prev) => (prev - 1 + images.length) % images.length);
     };
 
+    const handleLoad = (i: number) => {
+        setLoaded((prev) => {
+            const next = [...prev];
+            next[i] = true;
+            return next;
+        });
+    };
+
     if (!images || images.length === 0) return null;
 
     return (
-        <div className="relative w-full h-full group overflow-hidden" >
+        <div className="relative w-full h-full group overflow-hidden">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
                     className="absolute inset-0"
-                    style={{ width: "100%" }}
-                > 
-                    <Image
+                >
+                    {/* Skeleton loader shown while image loads */}
+                    {!loaded[index] && (
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 animate-pulse rounded-[25px]" />
+                    )}
+                    {/* Use native <img> for everything — bypasses Next.js optimization overhead for remote/LFS images */}
+                    <img
                         src={images[index]}
                         alt={`Project image ${index + 1}`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 100%) 100vw, (max-width: 100%) 50vw, (max-width: 100%) 33vw"
-                        style={{ width: "100%", borderRadius: "25px" }}
+                        onLoad={() => handleLoad(index)}
+                        className="w-full h-full object-cover"
+                        style={{
+                            borderRadius: "25px",
+                            opacity: loaded[index] ? 1 : 0,
+                            transition: "opacity 0.3s ease"
+                        }}
+                        loading={index === 0 ? "eager" : "lazy"}
+                        decoding="async"
                     />
                 </motion.div>
             </AnimatePresence>
 
-            {/* Manual Navigation Arrows */}
+            {/* Navigation Arrows */}
             {images.length > 1 && (
                 <>
                     <button
@@ -82,10 +110,11 @@ export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCar
             {images.length > 1 && (
                 <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
                     {images.map((_, i) => (
-                        <div
+                        <button
                             key={i}
-                            className={`h-1 rounded-full transition-all ${i === index ? "w-4 bg-purple-500" : "w-1 bg-white/40"
-                                }`}
+                            onClick={(e) => { e.stopPropagation(); e.preventDefault(); setIndex(i); }}
+                            className={`h-1 rounded-full transition-all ${i === index ? "w-4 bg-purple-500" : "w-1 bg-white/40"}`}
+                            aria-label={`Go to image ${i + 1}`}
                         />
                     ))}
                 </div>

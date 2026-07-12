@@ -4,21 +4,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "media.githubusercontent.com",
-      },
-      {
-        protocol: "https",
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
-      },
-      {
-        protocol: "https",
-        hostname: "raw.githubusercontent.com",
-        pathname: "/**",
       },
       {
         protocol: "https",
@@ -34,6 +25,9 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '50mb',
     },
+  },
+  outputFileTracingExcludes: {
+    "/*": ["./public/**/*"],
   },
 };
 

@@ -10,6 +10,11 @@ interface ImageCarouselProps {
     autoplayDelay?: number;
 }
 
+/** Returns true if the URL points to a GIF */
+function isGif(src: string): boolean {
+    return src.toLowerCase().endsWith(".gif");
+}
+
 export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCarouselProps) {
     const [index, setIndex] = useState(0);
 
@@ -36,7 +41,7 @@ export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCar
     if (!images || images.length === 0) return null;
 
     return (
-        <div className="relative w-full h-full group overflow-hidden" >
+        <div className="relative w-full h-full group overflow-hidden">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
@@ -46,15 +51,27 @@ export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCar
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                     className="absolute inset-0"
                     style={{ width: "100%" }}
-                > 
-                    <Image
-                        src={images[index]}
-                        alt={`Project image ${index + 1}`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 100%) 100vw, (max-width: 100%) 50vw, (max-width: 100%) 33vw"
-                        style={{ width: "100%", borderRadius: "25px" }}
-                    />
+                >
+                    {isGif(images[index]) ? (
+                        /* Use native <img> for GIFs — Next/Image strips animation */
+                        <img
+                            src={images[index]}
+                            alt={`Project image ${index + 1}`}
+                            className="w-full h-full object-cover"
+                            style={{ borderRadius: "25px" }}
+                            loading="lazy"
+                        />
+                    ) : (
+                        <Image
+                            src={images[index]}
+                            alt={`Project image ${index + 1}`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            style={{ borderRadius: "25px" }}
+                            priority={index === 0}
+                        />
+                    )}
                 </motion.div>
             </AnimatePresence>
 

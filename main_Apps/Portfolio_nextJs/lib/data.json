@@ -37,19 +37,19 @@
         "Real Estate Tech"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagehome.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/homePage/section1.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/homePage/section2.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpageExperience.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/experiencePage/section1.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/experiencePage/section2.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagetheEstate.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagelocation.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/locationPage/section1.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/locationPage/section2.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/fullpagegallery.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/napa_tusitala/contactform.png"
-      ],
+        "/napa_tusitala/fullpagehome.png",
+        "/napa_tusitala/homePage/section1.png",
+        "/napa_tusitala/homePage/section2.png",
+        "/napa_tusitala/fullpageExperience.png",
+        "/napa_tusitala/experiencePage/section1.png",
+        "/napa_tusitala/experiencePage/section2.png",
+        "/napa_tusitala/fullpagetheEstate.png",
+        "/napa_tusitala/fullpagelocation.png",
+        "/napa_tusitala/locationPage/section1.png",
+        "/napa_tusitala/locationPage/section2.png",
+        "/napa_tusitala/fullpagegallery.png",
+        "/napa_tusitala/contactform.png"
+      ], 
       "pageUrl": "https://napaluxuryrental.com"
     },
     {
@@ -67,13 +67,12 @@
         "PostgreSQL"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/landingPageHeroSection.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/studentDashboard.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/gallery.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/TestPage.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/attempts.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/cardStartTest.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tcf_canada/dashboard.png"
+        "/tcf_canada/landingPageHeroSection.png",
+        "/tcf_canada/studentDashboard.png",
+        "/tcf_canada/TestPage.png",
+        "/tcf_canada/attempts.png",
+        "/tcf_canada/cardStartTest.png",
+        "/tcf_canada/dashboard.png"
       ],
       "githubUrl": "https://github.com/samir20-23/TCF_Platform"
     },
@@ -93,13 +92,11 @@
         "Fullstack"
       ],
       "dynamicImages": [
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/cardFoodAnimations.gif",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/heroMenuImg.png",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/cardFoodAnimations.gif",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/listFoodCard.png",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/menuIamgesCardsForFoods.png",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/cardFoodAnimations.gif",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/AaniDani/eventsCards.gif"
+        "/AaniDani/cardFoodAnimations.gif",
+        "/AaniDani/heroMenuImg.png",
+        "/AaniDani/listFoodCard.png",
+        "/AaniDani/menuIamgesCardsForFoods.png",
+        "/AaniDani/eventsCards.gif"
       ],
       "pageUrl": "https://anni-dani.vercel.app",
       "githubUrl": "https://github.com/samir20-23/ANNI-DANI-restaurant"
@@ -117,20 +114,20 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem0.png",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/fiveSystems/hero.gif",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem1.png",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/fiveSystems/servicesCard.gif",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/fivesystem2.png",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/fiveSystems/services.gif",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/fiveSystems/FiveSystems.png"
+        "/fiveSystems/fivesystem0.png",
+        "/fiveSystems/hero.gif",
+        "/fiveSystems/fivesystem1.png",
+        "/fiveSystems/servicesCard.gif",
+        "/fiveSystems/fivesystem2.png",
+        "/fiveSystems/services.gif",
+        "/fiveSystems/FiveSystems.png"
       ],
       "pageUrl": "https://five-systems.vercel.app"
     },
     {
       "title": "Atelier Duré: Artisanal E-commerce Store",
       "slug": "atelier-dure-shopify",
-      "description": "A premium e-commerce platform built on Shopify for a handcrafted ceramics brand. I managed the end-to-end store setup, including custom theme liquid modifications to align with the brand’s 'Art of Handmade' aesthetic. The project involved advanced product catalog management with complex variant pricing (Sets of 2, 4, 6, and 12), SEO optimization for artisanal keywords, and the integration of a seamless, high-conversion checkout flow. I focused on maintaining a minimalist UI/UX that reflects the organic nature of the pottery products.",
+      "description": "A premium e-commerce platform built on Shopify for a handcrafted ceramics brand. I managed the end-to-end store setup, including custom theme liquid modifications to align with the brand's 'Art of Handmade' aesthetic. The project involved advanced product catalog management with complex variant pricing (Sets of 2, 4, 6, and 12), SEO optimization for artisanal keywords, and the integration of a seamless, high-conversion checkout flow. I focused on maintaining a minimalist UI/UX that reflects the organic nature of the pottery products.",
       "tags": [
         "Shopify",
         "Liquid",
@@ -142,13 +139,13 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/fullhomepage.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section1.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section2.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section3.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section4.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/section5.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/shopify_atelierdure/contactForm.png"
+        "/shopify_atelierdure/fullhomepage.png",
+        "/shopify_atelierdure/section1.png",
+        "/shopify_atelierdure/section2.png",
+        "/shopify_atelierdure/section3.png",
+        "/shopify_atelierdure/section4.png",
+        "/shopify_atelierdure/section5.png",
+        "/shopify_atelierdure/contactForm.png"
       ],
       "pageUrl": "https://atelierdure.com/",
       "githubUrl": "https://github.com/samir20-23/"
@@ -168,8 +165,8 @@
         "Dashboard"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/Solilms/SoliLMS2.png"
+        "/Solilms/SoliLMS.png",
+        "/Solilms/SoliLMS2.png"
       ],
       "pageUrl": "https://github.com/samir20-23/FileRouge_v2",
       "githubUrl": "https://github.com/samir20-23/"
@@ -189,8 +186,8 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow1.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/tiktok-flow/tiktokflow5.png"
+        "/tiktok-flow/tiktokflow1.png",
+        "/tiktok-flow/tiktokflow5.png"
       ],
       "githubUrl": "https://github.com/samir20-23"
     },
@@ -211,12 +208,12 @@
         "Admin Panel"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan1.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan2.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan4.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan5.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan6.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/kan-kids/kan7.png"
+        "/kan-kids/kan1.png",
+        "/kan-kids/kan2.png",
+        "/kan-kids/kan4.png",
+        "/kan-kids/kan5.png",
+        "/kan-kids/kan6.png",
+        "/kan-kids/kan7.png"
       ],
       "githubUrl": "https://github.com/samir20-23/"
     },
@@ -237,18 +234,18 @@
         "Performance Optimization"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/herosection.png",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/dev_adidas/lead.gif",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/fullscreenhomepageMobile.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cardsProducts.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cardProduct.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/mobileCArdsProductsMobile.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cartPageMobile.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/cartpageWhiteModeMobile.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/profilepageWhiteModeMobile.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/registerFormWhitemode.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/logoLoadingMobile.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/dev_adidas/loadinpageMobile.png"
+        "/dev_adidas/herosection.png",
+        "/dev_adidas/load.gif",
+        "/dev_adidas/fullscreenhomepageMobile.png",
+        "/dev_adidas/cardsProducts.png",
+        "/dev_adidas/cardProduct.png",
+        "/dev_adidas/mobileCArdsProductsMobile.png",
+        "/dev_adidas/cartPageMobile.png",
+        "/dev_adidas/cartpageWhiteModeMobile.png",
+        "/dev_adidas/profilepageWhiteModeMobile.png",
+        "/dev_adidas/registerFormWhitemode.png",
+        "/dev_adidas/logoLoadingMobile.png",
+        "/dev_adidas/loadinpageMobile.png"
       ],
       "githubUrl": "https://github.com/samir20-23/dev_Adidas/"
     },
@@ -269,13 +266,13 @@
         "Responsive Design"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/tableItemsLIstRancck.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/categorycardmobile.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/dashboardSharts.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/ListCategory.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/postsListWithfooter.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/postsListWithfooter2.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/The-Curated-Rank/tableItemsLIsMobiletRancck.png"
+        "/The-Curated-Rank/tableItemsLIstRancck.png",
+        "/The-Curated-Rank/categorycardmobile.png",
+        "/The-Curated-Rank/dashboardSharts.png",
+        "/The-Curated-Rank/ListCategory.png",
+        "/The-Curated-Rank/postsListWithfooter.png",
+        "/The-Curated-Rank/postsListWithfooter2.png",
+        "/The-Curated-Rank/tableItemsLIsMobiletRancck.png"
       ],
       "githubUrl": "https://github.com/samir20-23/The-Curated-Rank"
     },
@@ -294,15 +291,15 @@
         "UI/UX"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/heroSection.png",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/video1.gif",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/sectionproducts.png",
-        "https://raw.githubusercontent.com/samir20-23/Portfolio/refs/heads/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/cardProduct.gif",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageproductswithfilter.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/sectinoproductswithfilterform.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageProductsdetailsCart.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageProduct.png",
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/stor-watchGenius/pageConfirmForm.png"
+        "/stor-watchGenius/heroSection.png",
+        "/stor-watchGenius/video1.gif",
+        "/stor-watchGenius/sectionproducts.png",
+        "/stor-watchGenius/cardProduct.gif",
+        "/stor-watchGenius/pageproductswithfilter.png",
+        "/stor-watchGenius/sectinoproductswithfilterform.png",
+        "/stor-watchGenius/pageProductsdetailsCart.png",
+        "/stor-watchGenius/pageProduct.png",
+        "/stor-watchGenius/pageConfirmForm.png"
       ],
       "githubUrl": "https://github.com/samir20-23/StorGenius"
     },
@@ -318,7 +315,7 @@
         "Frontend"
       ],
       "dynamicImages": [
-        "https://media.githubusercontent.com/media/samir20-23/Portfolio/main/main_Apps/Portfolio_nextJs/public/NexRail/hero.png"
+        "/NexRail/hero.png"
       ]
     },
     {

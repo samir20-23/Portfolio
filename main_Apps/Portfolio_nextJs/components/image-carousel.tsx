@@ -55,25 +55,34 @@ export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCar
     if (!images || images.length === 0) return null;
 
     return (
-        <div className="relative w-full h-full group overflow-hidden">
+        <div className="relative w-full h-full group overflow-hidden bg-black/5 dark:bg-slate-900/40">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute inset-0"
+                    className="absolute inset-0 flex items-center justify-center overflow-hidden"
                 >
                     {/* Skeleton loader shown behind image while it loads */}
                     {!loaded[index] && (
-                        <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 animate-pulse rounded-[25px]" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 animate-pulse" />
                     )}
-                    {/* Use native <img> for everything — bypasses Next.js optimization overhead for remote/LFS images */}
+                    
+                    {/* Blurred Background to handle mixed aspect ratios */}
+                    <img
+                        src={images[index]}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-50 scale-110"
+                        aria-hidden="true"
+                    />
+
+                    {/* Main Image - object-contain ensures it fits perfectly without cropping */}
                     <img
                         src={images[index]}
                         alt={`Project image ${index + 1}`}
                         onLoad={() => handleLoad(index)}
-                        className="w-full h-full object-contain bg-slate-900/40"
+                        className="relative w-full h-full object-contain z-10 max-h-full drop-shadow-2xl"
                         loading={index === 0 ? "eager" : "lazy"}
                         decoding="async"
                     />

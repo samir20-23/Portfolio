@@ -10,8 +10,8 @@
 }
 
 .layla-thumbtwo .textcircletext {
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 230px;
     color: var(--n0);
     font-size: 14px;
     animation: textRotation 20s linear infinite;
@@ -27,7 +27,7 @@
     position: absolute;
     left: 50%;
     font-size: 14px;
-    transform-origin: 0 100px;
+    transform-origin: 0 115px;
     color: rgba(255, 255, 255, 0.6);
     font-weight: 400 !important;
     font-family: initial;
@@ -82,13 +82,13 @@
 
 @media (max-width: 640px) {
     .layla-thumbtwo .textcircletext {
-        width: 180px;
-        height: 180px;
+        width: 210px;
+        height: 210px;
         font-size: 13px;
     }
 
     .layla-thumbtwo .textcircletext span {
         font-size: 13px;
-        transform-origin: 0 90px;
+        transform-origin: 0 105px;
     }
 }

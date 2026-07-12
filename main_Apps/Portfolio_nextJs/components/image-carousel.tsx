@@ -61,11 +61,10 @@ export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCar
                     key={index}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                     className="absolute inset-0"
                 >
-                    {/* Skeleton loader shown while image loads */}
+                    {/* Skeleton loader shown behind image while it loads */}
                     {!loaded[index] && (
                         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 animate-pulse rounded-[25px]" />
                     )}
@@ -77,8 +76,6 @@ export default function ImageCarousel({ images, autoplayDelay = 5000 }: ImageCar
                         className="w-full h-full object-cover"
                         style={{
                             borderRadius: "25px",
-                            opacity: loaded[index] ? 1 : 0,
-                            transition: "opacity 0.3s ease"
                         }}
                         loading={index === 0 ? "eager" : "lazy"}
                         decoding="async"
